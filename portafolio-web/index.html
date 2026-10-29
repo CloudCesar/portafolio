@@ -621,7 +621,9 @@ footer { border-top: 0; }
 .about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 64px; align-items: start; }
 .about h2 { font-size: clamp(2.25rem, 5vw, 3.5rem); font-weight: 600; letter-spacing: -0.015em; line-height: 1.07; margin-bottom: 28px; }
 .about-lead { font-size: clamp(1.2rem, 2vw, 1.45rem); line-height: 1.4; letter-spacing: -0.01em; margin-bottom: 18px; max-width: 34ch; }
-.about-txt > p:not(.about-lead) { color: var(--muted); max-width: 52ch; }
+.about-txt > p:not(.about-lead) { color: var(--muted); max-width: 52ch; margin-bottom: 14px; }
+.about-q { margin: 26px 0 0; padding-left: 18px; border-left: 2px solid var(--mandarina); font-size: 1.08rem; line-height: 1.45; max-width: 44ch; }
+.about-txt > p.about-cta { color: var(--ink); margin: 0 0 16px; }
 .about-facts { margin: 32px 0; border-top: 1px solid var(--line); }
 .about-facts div { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); }
 .about-facts dt { font-size: 0.88rem; color: var(--dim); }
@@ -740,20 +742,24 @@ footer a:hover { text-decoration: underline; }
       <div class="about">
         <div class="about-txt">
           <h2>Sobre mí</h2>
-          <p class="about-lead">Llevo seis años en la atención de Gtd y Telsur. Empecé como analista leyendo conversaciones de chat y WhatsApp; hoy dirijo la estrategia de todos los canales de atención y venta.</p>
-          <p>Mi foco es que el cliente resuelva solo, en el canal que elija, y que la IA haga crecer la atención y la venta sin crecer en dotación. Trabajo con tecnología, producto, operaciones y negocio, y priorizo por impacto en experiencia, eficiencia y conversión.</p>
+          <p class="about-lead">Empecé en terreno, instalando servicios y atendiendo clientes cara a cara. Hoy lidero la estrategia digital con la que Gtd atiende a sus clientes usando IA y automatización. Entre esos dos puntos hay más de 15 años y una sola obsesión: que la atención resuelva de verdad.</p>
+          <p>Nunca diseño pensando solo en la métrica, sino en la persona que está del otro lado. Es fácil olvidarlo cuando trabajas con tecnología a escala, y ahí está la diferencia.</p>
+          <p>Mi rol es traducir entre el negocio, la tecnología y la operación: convertir una capacidad de IA en una conversación que resuelve, un objetivo comercial en un flujo sin fricción y un problema operativo en automatización, en lugar de más personas haciendo lo mismo.</p>
+          <blockquote class="about-q">No me basta con la estrategia en una lámina: me importa verla funcionando y medir su impacto real.</blockquote>
           <dl class="about-facts">
             <div><dt>Base</dt><dd>Santiago, Chile</dd></div>
             <div><dt>Formación</dt><dd>Ingeniería Civil, Universidad de Las Américas. La IA, aprendida en proyectos reales.</dd></div>
             <div><dt>Indicadores</dt><dd>NPS, FCR, satisfacción, adopción digital, deflexión de canales y eficiencia operativa.</dd></div>
           </dl>
-          <a class="btn-g" href="https://www.linkedin.com/in/cesar-osoriotorres" target="_blank" rel="noopener">Ver perfil en LinkedIn</a>
+          <p class="about-cta">¿Conversamos sobre IA aplicada a la experiencia de cliente, automatización o el futuro de los canales digitales?</p>
+          <a class="btn-g" href="https://www.linkedin.com/in/cesar-osoriotorres" target="_blank" rel="noopener">Escríbeme en LinkedIn</a>
         </div>
         <ol class="path" aria-label="Trayectoria">
-          <li class="now"><span class="yr">2026 – hoy</span><h3>Jefe de Estrategia de Canales Multisegmento</h3><span class="org">Gtd · Santiago</span><p>Estrategia de atención y venta para todos los segmentos: IA aplicada, automatización, autogestión omnicanal y eCommerce integrado al CRM.</p></li>
+          <li class="now"><span class="yr">2026 – hoy</span><h3>Jefe de Estrategia de Canales Multisegmento</h3><span class="org">Gtd · Santiago</span><p>Estrategia de canales para residencial, pyme, empresas y mayoristas, con lo digital como motor: IA aplicada, automatización, autogestión omnicanal y eCommerce.</p></li>
           <li><span class="yr">2022 – 2026</span><h3>Jefe de Plataforma de Atención, Canales Digitales</h3><span class="org">Gtd · Santiago</span><p>Redes sociales, chat web y WhatsApp. Herramientas de IA con aliados para atender en tiempo real y fomentar la autoatención.</p></li>
           <li><span class="yr">2020 – 2022</span><h3>Coordinador de Plataforma de Atención, Canales Digitales</h3><span class="org">Telsur · Valdivia</span><p>Operación diaria, KPIs y mejoras de eficiencia y calidad. Primeras iniciativas de autogestión digital.</p></li>
           <li><span class="yr">2020</span><h3>Analista de Contact Center, Canales Digitales</h3><span class="org">Telsur · Valdivia</span><p>Datos de interacciones, TMO, SLA y NPS. Apoyo en la puesta en marcha de chatbots.</p></li>
+          <li><span class="yr">Inicios</span><h3>En terreno</h3><span class="org">Instalación y atención cara a cara</span><p>Instalando servicios y atendiendo clientes en su casa. De ahí viene la idea fija: que la atención resuelva.</p></li>
         </ol>
       </div>
     </div>
