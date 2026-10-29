@@ -617,6 +617,26 @@ footer { border-top: 0; }
   .facts { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; text-align: center; }
   .facts li { grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 4px; }
 }
+/* Suite como carrusel: las 7 apps en una pista con snap; flechas, contador, barra de avance y autoplay pausable */
+.car { position: relative; }
+.car-track { position: relative; display: flex; align-items: flex-start; transition: height .4s var(--ease); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; outline: none; }
+.car-track::-webkit-scrollbar { display: none; }
+.car-track:focus-visible { box-shadow: inset 0 0 0 2px var(--cobalto); border-radius: 28px; }
+.car-track > .view { flex: 0 0 100%; scroll-snap-align: start; scroll-snap-stop: always; padding: 6px 4px 10px; }
+.car-track.drag { scroll-snap-type: none; cursor: grabbing; user-select: none; }
+.car-ctl { display: flex; align-items: center; gap: 12px; margin-top: 26px; }
+.car-b { width: 44px; height: 44px; flex: none; border-radius: 50%; border: 1px solid var(--line-2); background: transparent; color: var(--ink); display: grid; place-items: center; cursor: pointer; transition: border-color .25s; }
+.car-b:hover { border-color: var(--ink); }
+.car-n { flex: none; min-width: 4.2em; margin-left: 6px; font-size: 0.9rem; color: var(--dim); font-variant-numeric: tabular-nums; }
+.car-n b { color: var(--ink); font-weight: 600; }
+.car-bar { flex: 1; height: 2px; border-radius: 2px; background: var(--line); overflow: hidden; }
+.car-bar i { display: block; height: 100%; width: 14.3%; background: var(--mandarina); border-radius: 2px; transition: width .5s var(--ease); }
+.car-p { flex: none; min-height: 36px; padding: 0 14px; border-radius: 980px; border: 1px solid var(--line-2); background: transparent; color: var(--muted); font-size: 0.85rem; cursor: pointer; }
+.car-p:hover { color: var(--ink); border-color: var(--ink); }
+@media (max-width: 680px) {
+  .car-ctl { gap: 8px; margin-top: 18px; }
+  .car-n { margin-left: 2px; }
+}
 /* Sobre mí: biografía a la izquierda y la trayectoria como ruta en un panel carbón; el cargo actual va en amarillo */
 .about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 64px; align-items: start; }
 .about h2 { font-size: clamp(2.25rem, 5vw, 3.5rem); font-weight: 600; letter-spacing: -0.015em; line-height: 1.07; margin-bottom: 28px; }
@@ -1052,7 +1072,9 @@ footer a:hover { text-decoration: underline; }
         <button role="tab" id="ap-t7" aria-controls="ap-p7" aria-selected="false" tabindex="-1">Journey MIA</button>
       </div>
 
-      <div role="tabpanel" id="ap-p1" aria-labelledby="ap-t1" class="view">
+      <div class="car" aria-roledescription="carrusel" aria-label="Apps de la Suite Comercial">
+      <div class="car-track" tabindex="0">
+      <div role="tabpanel" id="ap-p1" aria-labelledby="ap-t1" class="view" aria-roledescription="diapositiva" aria-label="1 de 7">
         <div class="persp"><div class="device"><div class="device-bar"><i></i><i></i><i></i><span>suite.gtd / portal</span></div>
           <div class="screen">
             <div class="ui-row"><div><div class="ui-label">Hola</div><div class="ui-title">Tus apps</div></div><span class="pill ok">Sesión verificada</span></div>
@@ -1070,7 +1092,7 @@ footer a:hover { text-decoration: underline; }
           <ul class="ticks"><li>Pase firmado con HMAC por app: una clave filtrada solo sirve para su app.</li><li>Un motor único sirve a todas las apps nuevas, sin publicar nada.</li><li>Tablero con indicadores de todas las apps.</li></ul></div>
       </div>
 
-      <div role="tabpanel" id="ap-p2" aria-labelledby="ap-t2" class="view" hidden>
+      <div role="tabpanel" id="ap-p2" aria-labelledby="ap-t2" class="view" aria-roledescription="diapositiva" aria-label="2 de 7">
         <div class="persp"><div class="device"><div class="device-bar"><i></i><i></i><i></i><span>suite.gtd / asistente-empresas</span></div>
           <div class="screen" style="display:grid;gap:10px;align-content:start">
             <div class="bub u">Cliente necesita 4 racks de 5 kW en Tier III, contrato a 36 meses. ¿Qué datacenter le ofrezco?</div>
@@ -1084,7 +1106,7 @@ footer a:hover { text-decoration: underline; }
           <ul class="ticks"><li>RAG sobre presentaciones, documentos y PDF que se actualizan solos.</li><li>Crea la oportunidad con racks, kW, plazo y valores en UF.</li><li>Modelo de respaldo, registro de uso y valoración de cada respuesta.</li></ul></div>
       </div>
 
-      <div role="tabpanel" id="ap-p3" aria-labelledby="ap-t3" class="view" hidden>
+      <div role="tabpanel" id="ap-p3" aria-labelledby="ap-t3" class="view" aria-roledescription="diapositiva" aria-label="3 de 7">
         <div class="persp"><div class="device"><div class="device-bar"><i></i><i></i><i></i><span>scraper / ejecución diaria</span></div>
           <div class="screen">
             <div class="pipe"><div class="ui-card"><span class="ui-label">1</span><b>Navegar</b></div><div class="ui-card"><span class="ui-label">2</span><b>Extraer</b></div><div class="ui-card"><span class="ui-label">3</span><b>Normalizar</b></div><div class="ui-card"><span class="ui-label">4</span><b>Validar</b></div><div class="ui-card on"><span class="ui-label">5</span><b>Publicar</b></div></div>
@@ -1099,7 +1121,7 @@ footer a:hover { text-decoration: underline; }
           <ul class="ticks"><li>Navegador automático con Playwright y normalización con Gemini, cuidando el gasto de tokens.</li><li>Regla de calidad: el precio de la web siempre manda.</li><li>Pruebas automáticas por operador, histórico mensual y capturas de respaldo.</li></ul></div>
       </div>
 
-      <div role="tabpanel" id="ap-p4" aria-labelledby="ap-t4" class="view" hidden>
+      <div role="tabpanel" id="ap-p4" aria-labelledby="ap-t4" class="view" aria-roledescription="diapositiva" aria-label="4 de 7">
         <div class="persp"><div class="device"><div class="device-bar"><i></i><i></i><i></i><span>comparador / mercado</span></div>
           <div class="screen">
             <div class="ui-row" style="margin-bottom:16px"><div class="ui-title">Precio relativo por 600 Mbps</div><span class="pill">Datos ilustrativos</span></div>
@@ -1116,7 +1138,7 @@ footer a:hover { text-decoration: underline; }
           <ul class="ticks"><li>Vistas de pulso, mercado, gráficos, histórico y terreno.</li><li>Análisis con IA que explica las cifras en lenguaje simple.</li><li>Ficha de cada plan y paleta de comandos para moverse rápido.</li></ul></div>
       </div>
 
-      <div role="tabpanel" id="ap-p5" aria-labelledby="ap-t5" class="view" hidden>
+      <div role="tabpanel" id="ap-p5" aria-labelledby="ap-t5" class="view" aria-roledescription="diapositiva" aria-label="5 de 7">
         <div class="persp"><div class="device"><div class="device-bar"><i></i><i></i><i></i><span>suite.gtd / sala-de-captacion</span></div>
           <div class="screen">
             <div class="kanban">
@@ -1131,7 +1153,7 @@ footer a:hover { text-decoration: underline; }
           <ul class="ticks"><li>Agente con Gemini para consultas y role play de ventas.</li><li>Aviso al ejecutivo cuando un cliente de su cartera aparece en una campaña.</li><li>Mapa de calor de la cartera y reportes de productividad.</li></ul></div>
       </div>
 
-      <div role="tabpanel" id="ap-p6" aria-labelledby="ap-t6" class="view" hidden>
+      <div role="tabpanel" id="ap-p6" aria-labelledby="ap-t6" class="view" aria-roledescription="diapositiva" aria-label="6 de 7">
         <div class="persp"><div class="device"><div class="device-bar"><i></i><i></i><i></i><span>suite.gtd / asesor-mayorista</span></div>
           <div class="screen">
             <div class="funnel"><div class="stg"><span>Arriba</span><b>14</b></div><div class="stg"><span>Dentro</span><b>9</b></div><div class="stg"><span>De salida</span><b>6</b></div><div class="stg win"><span>Vendido</span><b>4</b></div><div class="stg"><span>Perdido</span><b>2</b></div></div>
@@ -1144,7 +1166,7 @@ footer a:hover { text-decoration: underline; }
           <ul class="ticks"><li>Embudo de 5 etapas con arrastrar y soltar, y checklist obligatorio al cerrar.</li><li>Alarmas de seguimiento y avisos al equipo de la cuenta.</li><li>Al cerrar, deja lista la orden de venta y cruza las campañas de marketing.</li></ul></div>
       </div>
 
-      <div role="tabpanel" id="ap-p7" aria-labelledby="ap-t7" class="view" hidden>
+      <div role="tabpanel" id="ap-p7" aria-labelledby="ap-t7" class="view" aria-roledescription="diapositiva" aria-label="7 de 7">
         <div class="persp"><div class="device"><div class="device-bar"><i></i><i></i><i></i><span>journey-mia / whatsapp</span></div>
           <div class="screen">
             <div class="journey">
@@ -1160,6 +1182,16 @@ footer a:hover { text-decoration: underline; }
           </div></div></div>
         <div class="app-txt"><h3>Journey MIA</h3><p>Herramienta para diseñar y revisar los recorridos de MIA, el asistente actual de WhatsApp, antes de llevarlos a producción, con vista previa tal como la verá el cliente.</p>
           <ul class="ticks"><li>Recorridos residencial y empresas.</li><li>Vista previa navegable de cada mensaje y opción.</li><li>Base para los flujos que luego corren en el contact center.</li></ul></div>
+      </div>
+
+      </div>
+      <div class="car-ctl">
+        <button type="button" class="car-b" data-car="prev" aria-label="App anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+        <button type="button" class="car-b" data-car="next" aria-label="App siguiente"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+        <span class="car-n" aria-live="polite"><b>1</b> de 7</span>
+        <div class="car-bar" aria-hidden="true"><i></i></div>
+        <button type="button" class="car-p" data-car="play" aria-pressed="false">Pausar</button>
+      </div>
       </div>
 
       <div class="ident inst" id="identidad">
@@ -1457,16 +1489,79 @@ footer a:hover { text-decoration: underline; }
   });
   scenario(0, false);
 
-  // Suite: pestañas accesibles
+  // Suite: carrusel de apps. Las pestañas sirven de acceso directo; la pista se desliza con dedo, rueda o arrastre
   var tabs = Array.prototype.slice.call(document.querySelectorAll('.dock [role="tab"]'));
-  function selectApp(tab, focus) {
-    tabs.forEach(function (t) {
-      var on = t === tab, p = document.getElementById(t.getAttribute("aria-controls"));
-      t.setAttribute("aria-selected", on ? "true" : "false"); t.tabIndex = on ? 0 : -1;
-      if (p) { p.hidden = !on; if (on) { p.classList.remove("panel-anim"); void p.offsetWidth; p.classList.add("panel-anim"); } }
+  var track = document.querySelector(".car-track"), slides = track ? Array.prototype.slice.call(track.children) : [];
+  var dock = document.querySelector(".dock"), carN = document.querySelector(".car-n b"), carBar = document.querySelector(".car-bar i");
+  var playBtn = document.querySelector('[data-car="play"]'), cur = 0, timer = null, playing = !reduce, inView = false, hold = false;
+  function markApp(i) {
+    cur = i;
+    tabs.forEach(function (t, k) { t.setAttribute("aria-selected", k === i ? "true" : "false"); t.tabIndex = k === i ? 0 : -1; });
+    slides.forEach(function (sl, k) { if (k === i) sl.removeAttribute("inert"); else sl.setAttribute("inert", ""); });
+    if (track) track.style.height = slides[i].offsetHeight + "px";
+    if (carN) carN.textContent = i + 1;
+    if (carBar) carBar.style.width = ((i + 1) / slides.length * 100).toFixed(1) + "%";
+    var t = tabs[i];
+    if (t && dock) {
+      var l = t.offsetLeft - dock.offsetLeft, r = l + t.offsetWidth;
+      if (l < dock.scrollLeft) dock.scrollLeft = l - 8;
+      else if (r > dock.scrollLeft + dock.clientWidth) dock.scrollLeft = r - dock.clientWidth + 8;
+    }
+  }
+  function goApp(i, smooth) {
+    if (!track) return;
+    i = (i + slides.length) % slides.length;
+    track.scrollTo({ left: slides[i].offsetLeft, behavior: smooth === false || reduce ? "auto" : "smooth" });
+    markApp(i);
+  }
+  function tick() { clearTimeout(timer); if (playing && inView && !hold) timer = setTimeout(function () { goApp(cur + 1); tick(); }, 6500); }
+  function setPlay(on) {
+    playing = on;
+    if (playBtn) { playBtn.textContent = on ? "Pausar" : "Reproducir"; playBtn.setAttribute("aria-pressed", on ? "false" : "true"); }
+    tick();
+  }
+  function stopAuto() { if (playing) setPlay(false); }
+  function selectApp(tab, focus) { stopAuto(); goApp(tabs.indexOf(tab)); if (focus) tab.focus(); }
+  if (track) {
+    var st = null;
+    track.addEventListener("scroll", function () {
+      clearTimeout(st);
+      st = setTimeout(function () { var i = Math.round(track.scrollLeft / track.clientWidth); if (i !== cur) markApp(i); }, 90);
+    }, { passive: true });
+    track.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight") { e.preventDefault(); stopAuto(); goApp(cur + 1); }
+      if (e.key === "ArrowLeft") { e.preventDefault(); stopAuto(); goApp(cur - 1); }
     });
-    if (focus) tab.focus();
-    tab.scrollIntoView({ block: "nearest", inline: "nearest" });
+    ["pointerenter", "focusin"].forEach(function (ev) { track.parentNode.addEventListener(ev, function () { hold = true; tick(); }); });
+    ["pointerleave", "focusout"].forEach(function (ev) { track.parentNode.addEventListener(ev, function () { hold = false; tick(); }); });
+    track.addEventListener("touchstart", stopAuto, { passive: true });
+    // Arrastre con mouse en escritorio
+    var dx = 0, sx = 0, sl0 = 0, dragging = false;
+    track.addEventListener("pointerdown", function (e) { if (e.pointerType !== "mouse" || e.button !== 0) return; dragging = true; dx = 0; sx = e.clientX; sl0 = track.scrollLeft; });
+    window.addEventListener("pointermove", function (e) {
+      if (!dragging) return;
+      dx = e.clientX - sx;
+      if (Math.abs(dx) > 4) { track.classList.add("drag"); track.scrollLeft = sl0 - dx; }
+    });
+    window.addEventListener("pointerup", function () {
+      if (!dragging) return;
+      dragging = false;
+      if (!track.classList.contains("drag")) return;
+      track.classList.remove("drag"); stopAuto();
+      goApp(Math.abs(dx) > track.clientWidth * 0.12 ? cur + (dx < 0 ? 1 : -1) : cur);
+    });
+    track.addEventListener("click", function (e) { if (Math.abs(dx) > 4) { e.preventDefault(); e.stopPropagation(); dx = 0; } }, true);
+    document.querySelectorAll("[data-car]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var k = b.getAttribute("data-car");
+        if (k === "play") { setPlay(!playing); return; }
+        stopAuto(); goApp(cur + (k === "next" ? 1 : -1));
+      });
+    });
+    try { new IntersectionObserver(function (en) { inView = en[0].isIntersecting; tick(); }, { threshold: 0.35 }).observe(track); } catch (e) {}
+    window.addEventListener("resize", function () { goApp(cur, false); });
+    setPlay(playing);
+    markApp(0);
   }
   tabs.forEach(function (t, i) {
     t.addEventListener("click", function () { selectApp(t, false); });
@@ -1480,7 +1575,10 @@ footer a:hover { text-decoration: underline; }
     });
   });
   document.querySelectorAll("[data-app]").forEach(function (a) {
-    a.addEventListener("click", function () { var t = tabs[+a.dataset.app - 1]; if (t) selectApp(t, false); });
+    a.addEventListener("click", function () {
+      var t = tabs[+a.dataset.app - 1];
+      if (t) { stopAuto(); setTimeout(function () { goApp(tabs.indexOf(t), false); }, 0); }
+    });
   });
 
   // Dispositivo que se inclina hacia el cursor
