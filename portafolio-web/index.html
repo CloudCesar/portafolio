@@ -1,0 +1,1395 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Portafolio de César Osorio</title>
+<meta name="description" content="César Osorio, Jefe de Estrategia de Canales Multisegmento. IA generativa, contact center y canales digitales, de la idea a producción.">
+<meta name="theme-color" content="#000000">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Portafolio de César Osorio">
+<meta property="og:description" content="César Osorio, Jefe de Estrategia de Canales Multisegmento. IA generativa, contact center y canales digitales, de la idea a producción.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Versión 8, modelo DESIGN.md (galería oscura): cada sección es un pedestal negro donde un proyecto se exhibe
+   como una pieza. Tipografía Inter 600 con tracking ajustado, esquinas de 28 px, sin sombras. El azul se reserva para
+   las acciones y los enlaces; el amarillo, para las cifras y la resolución. Panel carbón para MiaX y el cierre;
+   panel porcelana (claro) para el contact center, como pausa visual. */
+:root {
+  --bg: #000000;
+  --paper: #1d1d1f;
+  --tint: #0e0e0e;
+  --ink: #f5f5f7;
+  --muted: #a1a1a6;
+  --dim: #86868b;
+  --line: #333336;
+  --line-2: #48484d;
+  --cobalto: #2997ff;
+  --blue: #0071e3;
+  --mandarina: #ffd500;
+  --mandarina-t: #ffd500;
+  --menta: #30d158;
+  --menta-t: #30d158;
+  --on-c: #ffffff;
+  --n-ia: #0b2138;
+  --n-ok: #2b2700;
+  --n-sec: #0e2a17;
+  --n-on: #3a3100;
+  --shadow: none;
+  --panel: var(--paper);
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --ease: cubic-bezier(.2, .8, .2, 1);
+  color-scheme: dark;
+}
+/* Panel carbón: las piezas internas pasan a negro, como el panel de comparación del modelo */
+.band { --bg: #1d1d1f; --paper: #000000; --tint: #000000; --panel: var(--paper); --n-ia: #0b2138; --n-ok: #2b2700; --n-sec: #0e2a17; --n-on: #3a3100;
+  background: #1d1d1f; color: var(--ink); border-radius: 28px; margin-inline: clamp(8px, 1.4vw, 22px); }
+/* Panel porcelana: la pausa clara, con enlaces en azul cobalto y la resolución en cobre */
+.band-t { --bg: #f5f5f7; --paper: #ffffff; --tint: #ffffff; --ink: #1d1d1f; --muted: #6e6e73; --dim: #6e6e73; --line: #d2d2d7; --line-2: #b0b0b5;
+  --cobalto: #0066cc; --mandarina: #b64400; --mandarina-t: #b64400; --menta: #248a3d; --menta-t: #248a3d;
+  --n-ia: #eaf3ff; --n-ok: #fbefe7; --n-sec: #e9f6ec; --n-on: #fde6d6; --panel: var(--paper);
+  background: #f5f5f7; color: var(--ink); border-radius: 28px; margin-inline: clamp(8px, 1.4vw, 22px); color-scheme: light; }
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 50; background: var(--bg); }
+.wrap { max-width: 1280px; margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3, h4 { margin: 0; font-weight: 400; letter-spacing: -0.035em; line-height: 1.02; text-wrap: balance; }
+p { margin: 0; }
+a { color: inherit; }
+button { font: inherit; color: inherit; cursor: pointer; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+:focus-visible { outline: 2px solid var(--mandarina); outline-offset: 3px; border-radius: 6px; }
+.mono { font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.01em; }
+
+/* Instrumento: borde fino con esquinas de mira, el lenguaje de una sala de control */
+.inst { position: relative; border: 1px solid var(--line); background: var(--panel); border-radius: 4px;
+  background-image:
+    linear-gradient(var(--cobalto), var(--cobalto)), linear-gradient(var(--cobalto), var(--cobalto)),
+    linear-gradient(var(--cobalto), var(--cobalto)), linear-gradient(var(--cobalto), var(--cobalto)),
+    linear-gradient(var(--cobalto), var(--cobalto)), linear-gradient(var(--cobalto), var(--cobalto)),
+    linear-gradient(var(--cobalto), var(--cobalto)), linear-gradient(var(--cobalto), var(--cobalto));
+  background-size: 12px 1px, 1px 12px, 12px 1px, 1px 12px, 12px 1px, 1px 12px, 12px 1px, 1px 12px;
+  background-position: -1px -1px, -1px -1px, calc(100% + 1px) -1px, calc(100% + 1px) -1px, -1px calc(100% + 1px), -1px calc(100% + 1px), calc(100% + 1px) calc(100% + 1px), calc(100% + 1px) calc(100% + 1px);
+  background-repeat: no-repeat; background-color: var(--panel); box-shadow: var(--shadow); }
+
+/* Barra superior */
+.top { position: fixed; top: 0; left: 0; right: 0; z-index: 40; padding-top: env(safe-area-inset-top, 0px); transition: background .3s, border-color .3s; border-bottom: 1px solid transparent; }
+.top.solid { background: rgba(245, 246, 251, 0.86); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-color: var(--line); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 64px; }
+.mark { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.mark svg { width: 28px; height: 28px; flex: none; }
+.mark b { font-weight: 500; font-size: 0.95rem; white-space: nowrap; }
+.top nav { display: flex; gap: 2px; }
+.top nav a { text-decoration: none; font-size: 0.9rem; color: var(--muted); padding: 10px 14px; border-radius: 6px; transition: color .2s; }
+.top nav a:hover, .top nav a[aria-current="true"] { color: var(--ink); }
+.top nav a[aria-current="true"] { box-shadow: inset 0 -2px 0 var(--mandarina); border-radius: 0; }
+
+/* Riel de avance: la ruta de la página, se llena en ámbar */
+.rail { position: fixed; left: max(22px, env(safe-area-inset-left, 0px)); top: 50%; transform: translateY(-50%); z-index: 30; display: none; }
+.rail-line { position: absolute; left: 5px; top: 6px; bottom: 6px; width: 1px; background: var(--line-2); }
+.rail-fill { position: absolute; left: 5px; top: 6px; width: 1px; height: 0; background: var(--mandarina); box-shadow: 0 0 8px var(--mandarina); }
+.rail ol { position: relative; display: grid; gap: 30px; }
+.rail a { display: flex; align-items: center; gap: 14px; text-decoration: none; min-height: 12px; }
+.rail a i { width: 11px; height: 11px; border-radius: 50%; border: 1px solid var(--cobalto); background: var(--paper); flex: none; transition: all .3s; }
+.rail a span { font-size: 0.78rem; color: var(--ink); background: var(--paper); border: 1px solid var(--line-2); padding: 3px 9px; border-radius: 4px; opacity: 0; transform: translateX(-6px); transition: all .25s; white-space: nowrap; }
+.rail a:hover span, .rail a:focus-visible span { opacity: 1; transform: none; }
+.rail a.past i { background: var(--cobalto); }
+.rail a[aria-current="true"] i { background: var(--mandarina); border-color: var(--mandarina); box-shadow: 0 0 0 4px color-mix(in srgb, var(--mandarina) 20%, transparent); }
+
+/* Portada */
+.hero { position: relative; min-height: clamp(640px, 94vh, 920px); display: grid; overflow: hidden; isolation: isolate;
+  background:
+    radial-gradient(900px 600px at 72% 45%, rgba(59, 55, 230, 0.12), transparent 70%),
+    linear-gradient(rgba(59, 55, 230, 0.07) 1px, transparent 1px) 0 0 / 88px 88px,
+    linear-gradient(90deg, rgba(59, 55, 230, 0.07) 1px, transparent 1px) 0 0 / 88px 88px,
+    var(--bg); }
+.hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(ellipse at 60% 45%, transparent 30%, var(--bg) 78%); }
+.hero::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(ellipse 60% 45% at 18% 72%, rgba(245, 246, 251, 0.92), transparent 70%); }
+#flow { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; display: block; }
+.hero .wrap { width: 100%; display: grid; grid-template-rows: auto 1fr auto; padding-block: 104px 56px; }
+.status { display: inline-flex; align-items: center; gap: 10px; font-size: 0.9rem; color: var(--muted); justify-self: start; }
+.status i { width: 8px; height: 8px; border-radius: 50%; background: var(--menta); box-shadow: 0 0 0 4px color-mix(in srgb, var(--menta) 16%, transparent); animation: blink 2.4s infinite; }
+@keyframes blink { 50% { box-shadow: 0 0 0 8px color-mix(in srgb, var(--menta) 0%, transparent); } }
+.name { grid-row: 3; font-size: clamp(3.6rem, 12vw, 11rem); font-weight: 300; letter-spacing: -0.065em; line-height: 0.84; margin-bottom: 36px; }
+.name span { display: block; overflow: hidden; padding-bottom: 0.06em; }
+.name span b { display: block; font-weight: inherit; animation: up 1.1s var(--ease) both; }
+.name span:nth-child(2) b { animation-delay: .12s; font-weight: 500; }
+@keyframes up { from { transform: translateY(0.35em); } }
+.hero-foot { grid-row: 4; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 40px; align-items: end; border-top: 1px solid var(--line-2); padding-top: 26px; }
+.thesis { font-size: clamp(1.25rem, 2.1vw, 1.7rem); font-weight: 300; line-height: 1.32; letter-spacing: -0.02em; max-width: 32ch; }
+.facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.facts li { display: grid; gap: 4px; }
+.facts b { font-size: clamp(1.6rem, 2.6vw, 2.2rem); font-weight: 300; letter-spacing: -0.04em; font-variant-numeric: tabular-nums; line-height: 1; }
+.facts b { color: var(--cobalto); }
+.facts li:first-child b { color: var(--mandarina-t); }
+.intro { display: grid; gap: 28px; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn, .btn-g { display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 99px; text-decoration: none; font-weight: 500; font-size: 0.98rem; transition: transform .25s var(--ease), box-shadow .25s, border-color .25s; }
+.btn { background: var(--cobalto); color: var(--on-c); box-shadow: 0 12px 28px -12px color-mix(in srgb, var(--cobalto) 70%, transparent); }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 18px 34px -12px color-mix(in srgb, var(--cobalto) 80%, transparent); }
+.btn-g { background: var(--paper); color: var(--ink); border: 1px solid var(--line-2); }
+.btn-g:hover { border-color: var(--cobalto); color: var(--cobalto); }
+.facts span { font-size: 0.84rem; color: var(--muted); line-height: 1.4; }
+
+/* Secciones */
+.sec { padding-block: 128px; position: relative; scroll-margin-top: 40px; }
+.sec-h { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; align-items: end; margin-bottom: 64px; }
+.sec-h h2 { font-size: clamp(2.5rem, 6vw, 5.2rem); font-weight: 300; letter-spacing: -0.055em; line-height: 0.94; }
+.sec-h p { color: var(--muted); font-size: 1.08rem; max-width: 46ch; justify-self: end; }
+
+/* Método: cuatro estaciones sobre una ruta */
+.route { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; }
+.route::before { content: ""; position: absolute; left: 11px; right: 0; top: 10px; height: 2px; border-radius: 2px; background: linear-gradient(90deg, var(--cobalto), var(--cobalto) 72%, var(--mandarina)); }
+.route li { position: relative; display: grid; gap: 12px; align-content: start; padding-top: 50px; }
+.route li::before { content: ""; position: absolute; left: 0; top: 0; width: 22px; height: 22px; border-radius: 50%; background: var(--paper); border: 2px solid var(--cobalto); }
+.route li:last-child::before { background: var(--mandarina); border-color: var(--mandarina); box-shadow: 0 0 0 5px color-mix(in srgb, var(--mandarina) 18%, transparent), 0 0 18px var(--mandarina); }
+.route .n { font-size: clamp(2.6rem, 4vw, 3.4rem); font-weight: 300; letter-spacing: -0.06em; line-height: 1; color: var(--cobalto); font-variant-numeric: tabular-nums; }
+.route li:last-child .n { color: var(--mandarina-t); }
+.route h3 { font-size: 1.45rem; font-weight: 400; }
+.route p { color: var(--muted); font-size: 0.98rem; max-width: 30ch; }
+
+/* Índice de proyectos */
+.index { border-top: 1px solid var(--line-2); }
+.row { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1.2fr) minmax(0, 0.7fr) 40px; gap: 28px; align-items: center; padding: 30px 4px; border-bottom: 1px solid var(--line-2); text-decoration: none; position: relative; transition: padding .4s var(--ease), background .3s; }
+.row h3 { font-size: clamp(1.8rem, 3.6vw, 3.3rem); font-weight: 300; letter-spacing: -0.05em; transition: color .3s; }
+.row p { color: var(--muted); font-size: 1rem; }
+.row .area { font-size: 0.86rem; color: var(--dim); }
+.row .arr { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line-2); display: grid; place-items: center; color: var(--cobalto); transition: all .3s var(--ease); }
+.row .arr svg { width: 16px; height: 16px; }
+.row:hover, .row:focus-visible { padding-left: 28px; padding-right: 20px; background: var(--cobalto); border-radius: 4px; }
+.row:hover h3, .row:focus-visible h3 { color: var(--on-c); }
+.row:hover p, .row:hover .area, .row:focus-visible p, .row:focus-visible .area { color: rgba(255, 255, 255, 0.82); }
+.row:hover .arr, .row:focus-visible .arr { background: var(--mandarina); border-color: var(--mandarina); color: var(--ink); transform: rotate(-45deg); }
+.row.main .area { color: var(--mandarina-t); font-weight: 500; }
+.row .area, .row p { transition: color .3s; }
+.row.main:hover .area, .row.main:focus-visible .area { color: #ffc24b; }
+.row.main h3 { color: var(--ink); }
+.pv { display: none; }
+.peek { background-color: var(--paper) !important; position: fixed; left: 0; top: 0; z-index: 35; width: 320px; pointer-events: none; opacity: 0; transform: translate(-50%, -50%) scale(.92); transition: opacity .25s, transform .35s var(--ease); padding: 16px; border-radius: 6px; box-shadow: 0 30px 80px -24px rgba(23, 21, 63, 0.35); border: 1px solid var(--line); }
+.peek.on { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+
+/* Piezas pequeñas que comparten la vista previa y las maquetas */
+.bub { max-width: 84%; padding: 9px 13px; border-radius: 14px; font-size: 0.86rem; line-height: 1.45; }
+.bub.u { margin-left: auto; background: var(--cobalto); color: var(--on-c); border-bottom-right-radius: 3px; }
+.bub.b { background: color-mix(in srgb, var(--cobalto) 10%, transparent); border: 1px solid var(--line); border-bottom-left-radius: 3px; }
+.trace { display: flex; flex-wrap: wrap; gap: 6px; }
+.trace span { font-family: var(--mono); font-size: 0.7rem; padding: 2px 8px; border-radius: 99px; border: 1px solid var(--line-2); color: var(--cobalto); }
+.trace span:last-child { border-color: color-mix(in srgb, var(--mandarina) 55%, transparent); color: var(--mandarina-t); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips span { font-size: 0.78rem; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--line-2); color: var(--ink); background: var(--paper); }
+.chips span.on { border-color: var(--mandarina); color: var(--mandarina-t); }
+.opsg { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+.opsg i { height: 30px; border-radius: 3px; border: 1px solid var(--line); background: var(--paper); position: relative; overflow: hidden; }
+.opsg i::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--cobalto) 35%, transparent), transparent); transform: translateX(-100%); animation: scan 2.8s infinite; }
+.opsg i:nth-child(2n)::after { animation-delay: .5s; } .opsg i:nth-child(3n)::after { animation-delay: 1s; }
+@keyframes scan { to { transform: translateX(100%); } }
+.pv-t { font-size: 0.8rem; color: var(--muted); margin-bottom: 10px; }
+
+/* MiaX: historia guiada por scroll */
+.case-h { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 48px; align-items: end; margin-bottom: 72px; }
+.case-h .tag { font-size: 0.9rem; color: var(--mandarina-t); }
+.case-h h2 { font-size: clamp(4rem, 13vw, 12rem); font-weight: 200; letter-spacing: -0.07em; line-height: 0.82; margin-top: 12px; font-weight: 300; }
+.case-h .sum { color: var(--muted); font-size: 1.1rem; margin-top: 24px; max-width: 54ch; }
+.meta { display: grid; padding: 6px 0; }
+.meta div { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 14px; padding: 13px 20px; font-size: 0.94rem; border-bottom: 1px solid var(--line); }
+.meta div:last-child { border-bottom: 0; }
+.meta dt { color: var(--dim); }
+.meta dd { margin: 0; }
+dl { margin: 0; }
+
+.story { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 64px; }
+.steps { display: grid; }
+.st { padding-block: 0 64px; display: grid; gap: 18px; align-content: start; }
+.st .n { font-family: var(--mono); font-size: 0.8rem; color: var(--cobalto); display: flex; align-items: center; gap: 12px; }
+.st .n::after { content: ""; flex: 1; height: 1px; background: var(--line-2); }
+.st h3 { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 300; letter-spacing: -0.045em; }
+.st > p, .st li { color: var(--muted); }
+.st p strong, .st li b { color: var(--ink); font-weight: 500; }
+.ticks { display: grid; gap: 10px; }
+.ticks li { padding-left: 24px; position: relative; }
+.ticks li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 10px; height: 1px; background: var(--cobalto); }
+.stack { display: flex; flex-wrap: wrap; gap: 6px; }
+.stack span { font-size: 0.8rem; padding: 4px 11px; border-radius: 99px; border: 1px solid var(--line); color: var(--muted); }
+.stage { display: none; }
+.fig { padding: 24px; min-width: 0; }
+.fig-t { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; align-items: center; margin-bottom: 18px; }
+.fig-t b { font-weight: 500; }
+.fig-t span { font-size: 0.8rem; color: var(--dim); }
+
+.gauges { display: grid; gap: 18px; }
+.gauge { display: grid; gap: 7px; }
+.gauge-h { display: flex; justify-content: space-between; gap: 14px; font-size: 0.92rem; color: var(--muted); }
+.gauge-h b { color: var(--ink); font-weight: 400; font-size: 1.5rem; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; line-height: 1; }
+.gauge.amb .gauge-h b { color: var(--mandarina-t); }
+.bar { height: 10px; border-radius: 2px; background: repeating-linear-gradient(90deg, color-mix(in srgb, var(--cobalto) 12%, transparent) 0 6px, transparent 6px 8px); position: relative; overflow: hidden; }
+.bar i { position: absolute; inset: 0 auto 0 0; background: repeating-linear-gradient(90deg, var(--cobalto) 0 6px, transparent 6px 8px); }
+.gauge.amb .bar i { background: repeating-linear-gradient(90deg, var(--mandarina) 0 6px, transparent 6px 8px); filter: drop-shadow(0 0 4px color-mix(in srgb, var(--mandarina) 60%, transparent)); }
+.big { font-size: clamp(4.5rem, 9vw, 7.5rem); font-weight: 200; letter-spacing: -0.07em; line-height: 0.9; color: var(--mandarina-t); margin-bottom: 6px; }
+.big + p { color: var(--muted); margin-bottom: 26px; max-width: 34ch; }
+.note { font-size: 0.82rem; color: var(--dim); margin-top: 18px; }
+
+.seg { display: inline-flex; padding: 3px; border-radius: 6px; border: 1px solid var(--line-2); background: var(--paper); }
+.seg button { border: 0; background: none; padding: 8px 16px; min-height: 40px; border-radius: 4px; font-size: 0.9rem; color: var(--muted); transition: all .25s; }
+.seg button[aria-pressed="true"], .seg button[aria-checked="true"] { background: var(--cobalto); color: var(--on-c); font-weight: 500; }
+.diagram { overflow-x: auto; margin-top: 16px; }
+.diagram svg { display: block; width: 100%; min-width: 520px; height: auto; }
+svg .n { fill: var(--paper); stroke: var(--line-2); stroke-width: 1; transition: fill .3s, stroke .3s; }
+svg .n.ia { fill: var(--n-ia); stroke: var(--cobalto); }
+svg .n.ok { fill: var(--n-ok); stroke: var(--mandarina); }
+svg .n.sec { fill: var(--n-sec); stroke: color-mix(in srgb, var(--menta) 65%, transparent); }
+svg .e { fill: none; stroke: color-mix(in srgb, var(--cobalto) 40%, transparent); stroke-width: 1.3; }
+svg .e.a { stroke: var(--mandarina); stroke-width: 2; }
+svg .f { fill: none; stroke: var(--cobalto); stroke-width: 2.2; stroke-dasharray: 5 90; animation: flow 2.4s linear infinite; }
+svg .f.a { stroke: var(--mandarina); }
+@keyframes flow { to { stroke-dashoffset: -95; } }
+svg text { font-family: var(--sans); font-size: 13px; fill: var(--ink); }
+svg text.s { font-size: 11px; fill: var(--muted); }
+svg .arrow { fill: color-mix(in srgb, var(--cobalto) 60%, transparent); }
+svg .arrow.a { fill: var(--mandarina); }
+
+.cmp { display: grid; }
+.cmp-r { display: grid; grid-template-columns: 116px minmax(0, 1fr) minmax(0, 1fr); gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 0.9rem; line-height: 1.45; }
+.cmp-r:last-child { border-bottom: 0; }
+.cmp-r > div:first-child { color: var(--dim); }
+.cmp-r > div:nth-child(2) { color: var(--muted); }
+.cmp-r > div:last-child { color: var(--ink); }
+.cmp-r.h > div { font-size: 0.8rem; }
+.cmp-r.h > div:last-child { color: var(--mandarina-t); }
+
+.phases { display: grid; gap: 0; position: relative; }
+.phases::before { content: ""; position: absolute; left: 8px; top: 12px; bottom: 12px; width: 1px; background: linear-gradient(var(--mandarina), var(--cobalto) 35%, var(--line-2)); }
+.ph { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 20px; padding: 14px 0; }
+.ph i { width: 17px; height: 17px; border-radius: 50%; background: var(--paper); border: 1px solid var(--cobalto); margin-top: 3px; position: relative; }
+.ph.now i { background: var(--mandarina); border-color: var(--mandarina); box-shadow: 0 0 0 5px color-mix(in srgb, var(--mandarina) 18%, transparent), 0 0 16px var(--mandarina); }
+.ph span { font-family: var(--mono); font-size: 0.76rem; color: var(--cobalto); }
+.ph.now span { color: var(--mandarina-t); }
+.ph h4 { font-size: 1.2rem; font-weight: 400; margin: 2px 0 4px; }
+.ph p { color: var(--muted); font-size: 0.93rem; }
+
+/* Contact center: tablero que se opera */
+.board { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.6fr); gap: 0; }
+.board-side { padding: 30px; border-right: 1px solid var(--line); display: grid; gap: 22px; align-content: start; }
+.board-side h3 { font-size: 1.1rem; font-weight: 500; }
+.scen { display: grid; gap: 8px; }
+.scen button { text-align: left; border: 1px solid var(--line); background: var(--paper); border-radius: 4px; padding: 13px 16px; display: grid; gap: 2px; transition: all .25s; min-height: 44px; }
+.scen button b { font-weight: 500; font-size: 0.98rem; }
+.scen button span { font-size: 0.82rem; color: var(--muted); }
+.scen button:hover { border-color: var(--line-2); }
+.scen button[aria-checked="true"] { border-color: var(--mandarina); background: color-mix(in srgb, var(--mandarina) 8%, transparent); }
+.scen button[aria-checked="true"] b { color: var(--mandarina-t); }
+.trail { display: grid; gap: 10px; counter-reset: t; }
+.trail li { display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 12px; font-size: 0.92rem; color: var(--muted); counter-increment: t; animation: in .45s var(--ease) both; }
+.trail li::before { content: counter(t); font-family: var(--mono); font-size: 0.72rem; width: 24px; height: 24px; border-radius: 50%; border: 1px solid var(--line-2); display: grid; place-items: center; color: var(--cobalto); }
+.trail li:last-child::before { border-color: var(--mandarina); color: var(--mandarina-t); }
+.trail li:nth-child(2) { animation-delay: .08s; } .trail li:nth-child(3) { animation-delay: .16s; } .trail li:nth-child(4) { animation-delay: .24s; }
+@keyframes in { from { transform: translateX(-8px); } }
+.board-main { padding: 22px; min-width: 0; }
+.board-main .diagram { margin-top: 0; }
+.swipe { display: none; font-size: 0.82rem; color: var(--dim); margin-bottom: 10px; }
+.board-main svg { min-width: 560px; }
+#cc-route { fill: none; stroke: var(--mandarina); stroke-width: 2.4; filter: drop-shadow(0 0 5px color-mix(in srgb, var(--mandarina) 70%, transparent)); }
+#cc-dot { fill: var(--mandarina); }
+svg [data-k].on { stroke: var(--mandarina); fill: var(--n-on); }
+.caps-cc { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+.caps-cc div { padding: 22px; display: grid; gap: 6px; border-right: 1px solid var(--line); align-content: start; }
+.caps-cc div:last-child { border-right: 0; }
+.caps-cc b { font-weight: 500; }
+.caps-cc p { font-size: 0.9rem; color: var(--muted); line-height: 1.5; }
+.lynn { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; margin-top: 40px; align-items: start; }
+.lynn h3 { font-size: clamp(1.6rem, 2.6vw, 2.2rem); font-weight: 300; letter-spacing: -0.04em; }
+.lynn p { color: var(--muted); margin-top: 12px; max-width: 54ch; }
+.engines { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.engines span { padding: 14px 16px; border: 1px solid var(--line); border-radius: 4px; font-size: 0.92rem; display: flex; justify-content: space-between; gap: 10px; }
+.engines span em { font-style: normal; color: var(--dim); font-size: 0.8rem; }
+
+/* Suite: vitrina */
+.dock { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding-bottom: 4px; margin-bottom: 22px; }
+.dock::-webkit-scrollbar { display: none; }
+.dock button { flex: none; border: 1px solid var(--line); background: var(--paper); border-radius: 4px; padding: 10px 16px; min-height: 44px; font-size: 0.92rem; color: var(--muted); transition: all .25s; }
+.dock button:hover { color: var(--ink); border-color: var(--line-2); }
+.dock button[aria-selected="true"] { color: var(--on-c); background: var(--cobalto); border-color: var(--cobalto); font-weight: 500; }
+.view { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 40px; align-items: start; }
+.persp { perspective: 1800px; }
+.device { border-radius: 10px; border: 1px solid var(--line-2); background: var(--paper); overflow: hidden; box-shadow: 0 50px 100px -40px rgba(23, 21, 63, 0.45), 0 0 90px -30px color-mix(in srgb, var(--cobalto) 45%, transparent); transform: rotateY(var(--ry, -6deg)) rotateX(var(--rx, 3deg)); transition: transform .6s var(--ease); }
+.device-bar { display: flex; align-items: center; gap: 7px; padding: 12px 16px; border-bottom: 1px solid var(--line); }
+.device-bar i { width: 9px; height: 9px; border-radius: 50%; background: color-mix(in srgb, var(--cobalto) 18%, transparent); }
+.device-bar i:first-child { background: var(--mandarina); }
+.device-bar span { margin-left: 10px; font-family: var(--mono); font-size: 0.74rem; color: var(--dim); padding: 3px 12px; border-radius: 4px; background: var(--paper); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.screen { padding: 22px; min-height: 360px; }
+.app-txt { display: grid; gap: 16px; align-content: start; }
+.app-txt h3 { font-size: clamp(1.7rem, 2.8vw, 2.4rem); font-weight: 300; letter-spacing: -0.045em; }
+.app-txt > p { color: var(--muted); }
+.app-txt .ticks li { color: var(--muted); }
+.ui-card { border: 1px solid var(--line); border-radius: 6px; background: var(--bg); padding: 13px; }
+.ui-row { display: flex; gap: 10px; align-items: center; justify-content: space-between; }
+.ui-grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.ui-label { font-size: 0.74rem; color: var(--dim); }
+.ui-title { font-weight: 500; font-size: 0.96rem; }
+.pill { font-size: 0.72rem; padding: 3px 10px; border-radius: 99px; background: color-mix(in srgb, var(--cobalto) 12%, transparent); color: var(--cobalto); white-space: nowrap; }
+.pill.amb { background: color-mix(in srgb, var(--mandarina) 14%, transparent); color: var(--mandarina-t); }
+.pill.ok { background: color-mix(in srgb, var(--menta) 14%, transparent); color: var(--menta-t); }
+.track { height: 8px; border-radius: 99px; background: color-mix(in srgb, var(--cobalto) 10%, transparent); overflow: hidden; }
+.fill { height: 100%; border-radius: 99px; background: var(--cobalto); }
+.fill.amb { background: var(--mandarina); }
+.portal { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 14px; }
+.portal .ui-card { display: grid; gap: 8px; min-height: 88px; align-content: space-between; }
+.portal .ui-card.on { border-color: var(--mandarina); box-shadow: 0 0 30px -10px color-mix(in srgb, var(--mandarina) 60%, transparent); }
+.pass { margin-top: 14px; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.pass .track { flex: 1; min-width: 100px; }
+.pass .fill { animation: drain 12s linear infinite; }
+@keyframes drain { from { width: 100%; } to { width: 8%; } }
+.pipe { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
+.pipe .ui-card { display: grid; gap: 4px; text-align: center; padding: 10px 6px; }
+.pipe .ui-card b { font-size: 0.82rem; font-weight: 500; }
+.pipe .ui-card.on { border-color: var(--mandarina); }
+.opsl { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+.opsl span { font-size: 0.76rem; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--line); color: var(--muted); display: inline-flex; gap: 6px; align-items: center; }
+.opsl span::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--menta); }
+.json { margin-top: 14px; padding: 14px; border-radius: 6px; background: var(--paper); border: 1px solid var(--line); color: var(--muted); white-space: pre; overflow-x: auto; line-height: 1.65; }
+.json .k { color: var(--cobalto); } .json .v { color: var(--mandarina-t); }
+.chart { display: grid; gap: 12px; }
+.chart .lbl { font-size: 0.8rem; color: var(--muted); margin-bottom: 4px; }
+.chart .track { height: 14px; border-radius: 3px; }
+.chart .fill { border-radius: 3px; }
+.cmdk { margin-top: 18px; display: flex; gap: 10px; align-items: center; padding: 11px 14px; border-radius: 6px; border: 1px solid var(--line-2); background: var(--paper); color: var(--muted); font-size: 0.86rem; }
+.kbd { font-family: var(--mono); font-size: 0.72rem; padding: 2px 7px; border-radius: 4px; border: 1px solid var(--line-2); margin-left: auto; }
+.kanban { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.col { display: grid; gap: 8px; align-content: start; }
+.col-h { display: flex; justify-content: space-between; font-size: 0.76rem; color: var(--dim); }
+.lead { padding: 10px; border-radius: 6px; background: var(--bg); border: 1px solid var(--line); display: grid; gap: 3px; }
+.lead b { font-size: 0.82rem; font-weight: 500; }
+.lead span { font-size: 0.72rem; color: var(--dim); }
+.funnel { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
+.stg { padding: 12px 10px; border-radius: 6px; background: var(--bg); border: 1px solid var(--line); display: grid; gap: 4px; }
+.stg b { font-size: 1.4rem; font-weight: 300; font-variant-numeric: tabular-nums; }
+.stg span { font-size: 0.72rem; color: var(--muted); }
+.stg.win { border-color: var(--menta); } .stg.win b { color: var(--menta-t); }
+.ficha { margin-top: 12px; display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 10px; }
+.score { display: grid; place-items: center; text-align: center; gap: 2px; }
+.score b { font-size: 2.4rem; color: var(--mandarina-t); font-weight: 200; }
+.journey { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 24px; align-items: center; }
+.phone { width: 230px; max-width: 100%; margin: 0 auto; border-radius: 30px; border: 1px solid var(--line-2); padding: 12px; background: var(--paper); display: grid; gap: 8px; }
+.phone-h { display: flex; gap: 10px; align-items: center; padding: 4px 6px 10px; border-bottom: 1px solid var(--line); }
+.phone-h i { width: 28px; height: 28px; border-radius: 50%; background: var(--cobalto); display: grid; place-items: center; font-style: normal; font-size: 0.72rem; color: var(--on-c); font-weight: 600; }
+.phone .bub { font-size: 0.78rem; max-width: 92%; }
+.opts { display: grid; gap: 6px; }
+.opts span { font-size: 0.78rem; text-align: center; padding: 7px; border-radius: 10px; border: 1px solid var(--line-2); color: var(--cobalto); }
+.jsteps { display: grid; gap: 10px; }
+.jsteps div { display: flex; gap: 12px; align-items: center; font-size: 0.88rem; color: var(--muted); }
+.jsteps div b { font-family: var(--mono); font-size: 0.72rem; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; border: 1px solid var(--line-2); color: var(--cobalto); flex: none; font-weight: 400; }
+.jsteps div:last-child b { border-color: var(--mandarina); color: var(--mandarina-t); }
+.panel-anim { animation: swap .5s var(--ease) both; }
+@keyframes swap { from { transform: translateY(10px); } }
+
+/* Identidad */
+.ident { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; padding: 40px; margin-top: 56px; align-items: center; }
+.ident h3 { font-size: clamp(1.7rem, 3vw, 2.5rem); font-weight: 300; letter-spacing: -0.045em; }
+.ident p { color: var(--muted); margin-top: 12px; max-width: 52ch; }
+.tokens { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.tokens > div { border: 1px solid var(--line); border-radius: 4px; padding: 14px; display: grid; gap: 12px; align-content: space-between; min-height: 120px; background: var(--paper); }
+.tokens span { font-size: 0.8rem; color: var(--muted); }
+.tk-c { display: flex; gap: 4px; } .tk-c i { flex: 1; height: 30px; border-radius: 3px; }
+.tk-t { font-size: 2.6rem; font-weight: 300; letter-spacing: -0.05em; line-height: 1; }
+.tk-t small { font-size: 1rem; font-weight: 500; letter-spacing: 0; margin-left: 4px; color: var(--muted); }
+.tk-b { display: grid; gap: 6px; justify-items: start; }
+.tk-b b { font-size: 0.78rem; font-weight: 500; padding: 6px 12px; border-radius: 4px; background: var(--mandarina); color: var(--ink); }
+.tk-b em { font-style: normal; font-size: 0.72rem; padding: 2px 9px; border-radius: 99px; background: color-mix(in srgb, var(--cobalto) 12%, transparent); color: var(--cobalto); }
+
+/* Capacidades */
+.caps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border-top: 1px solid var(--line-2); }
+.cg { padding: 30px 30px 30px 0; display: grid; gap: 16px; align-content: start; }
+.cg + .cg { padding-left: 30px; border-left: 1px solid var(--line); }
+.cg h3 { font-size: 1.15rem; font-weight: 500; margin-bottom: 4px; }
+.cap { display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.95rem; color: var(--muted); }
+.lv { display: flex; gap: 4px; flex: none; }
+.lv i { width: 18px; height: 8px; border-radius: 1px; border: 1px solid var(--line-2); }
+.lv i.f { background: var(--cobalto); border-color: var(--cobalto); }
+.lv.r i.f { background: var(--mandarina); border-color: var(--mandarina); box-shadow: 0 0 6px color-mix(in srgb, var(--mandarina) 50%, transparent); }
+.legend { display: flex; gap: 22px; flex-wrap: wrap; margin-top: 24px; font-size: 0.86rem; color: var(--dim); }
+.legend span { display: inline-flex; gap: 8px; align-items: center; }
+.legend i { width: 18px; height: 8px; border-radius: 1px; }
+.tech { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; margin-top: 88px; }
+.tech h3 { font-size: 0.95rem; color: var(--cobalto); font-weight: 500; padding-bottom: 12px; border-bottom: 1px solid var(--line-2); margin-bottom: 14px; }
+.tech ul { display: grid; gap: 8px; color: var(--muted); }
+
+/* Paleta en proporción de uso */
+.strip { display: grid; grid-template-columns: 46fr 26fr 16fr 12fr; border-radius: 4px; overflow: hidden; border: 1px solid var(--line-2); }
+.strip > div { min-height: 280px; padding: 22px; display: grid; align-content: end; gap: 6px; min-width: 0; }
+.strip b { font-weight: 500; font-size: 1.1rem; }
+.strip span { font-size: 0.88rem; line-height: 1.45; }
+.strip code { font-family: var(--mono); font-size: 0.76rem; opacity: .75; }
+.sw-n { background: #f5f6fb; color: #17153f; }
+.sw-n span { color: #545275; }
+.sw-p { background: #3b37e6; color: #fff; }
+.sw-c { background: #17153f; color: #fff; }
+.sw-a { background: #ff6b2c; color: #17153f; }
+
+/* Cierre */
+.outro { padding-block: 112px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 40px; align-items: end; }
+.outro h2 { font-size: clamp(2.8rem, 8vw, 7.2rem); font-weight: 200; letter-spacing: -0.065em; line-height: 0.9; max-width: 13ch; }
+.sym { width: clamp(120px, 18vw, 220px); height: auto; }
+.sym path { fill: none; stroke-linecap: round; }
+.sym .d { stroke-dasharray: 120; stroke-dashoffset: 120; transition: stroke-dashoffset 1.6s var(--ease); }
+.sym.on .d { stroke-dashoffset: 0; }
+.sym .d2 { transition-delay: .2s; } .sym .d3 { transition-delay: .9s; }
+footer { border-top: 1px solid var(--line); }
+footer .wrap { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; padding-block: 30px 44px; font-size: 0.9rem; color: var(--muted); }
+
+/* Modelo DESIGN.md: piezas, tipografía y controles */
+body { line-height: 1.47; letter-spacing: -0.011em; }
+h1, h2, h3, h4 { font-weight: 600; letter-spacing: -0.015em; line-height: 1.07; }
+:focus-visible { outline-color: var(--cobalto); }
+.inst { background-image: none; border: 0; border-radius: 28px; box-shadow: none; background-color: var(--panel); }
+.top .wrap { height: 48px; }
+.top.solid { background: rgba(0, 0, 0, 0.8); border-color: #282828; }
+.mark b { font-weight: 600; font-size: 0.9rem; }
+.top nav a { font-size: 0.8rem; color: rgba(255, 255, 255, 0.8); padding: 8px 12px; }
+.top nav a[aria-current="true"] { box-shadow: none; color: #ffffff; }
+.rail-fill { background: var(--cobalto); box-shadow: none; }
+.rail a span { border-radius: 980px; padding: 3px 11px; }
+.rail a[aria-current="true"] i { background: var(--cobalto); border-color: var(--cobalto); box-shadow: 0 0 0 4px rgba(41, 151, 255, 0.22); }
+
+.hero { min-height: clamp(700px, 100vh, 980px); background: var(--bg); }
+.hero::after { background: radial-gradient(ellipse 62% 50% at 50% 80%, rgba(0, 0, 0, 0.94), transparent 74%); }
+.hero .wrap { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; text-align: center; padding-block: 96px 64px; }
+.status { justify-self: auto; color: var(--muted); text-wrap: balance; justify-content: center; }
+.name { grid-row: auto; font-size: clamp(3.2rem, 9vw, 6rem); font-weight: 600; letter-spacing: -0.015em; line-height: 1.04; margin: 14px 0 24px; }
+.name span:nth-child(2) b { font-weight: 600; }
+.hero-foot { grid-row: auto; width: 100%; grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 40px; border-top: 0; padding-top: 0; }
+.intro { justify-items: center; gap: 30px; }
+.thesis { font-weight: 400; letter-spacing: -0.012em; max-width: 34ch; font-size: clamp(1.15rem, 1.9vw, 1.5rem); line-height: 1.33; }
+.cta { justify-content: center; }
+.btn, .btn-g { min-height: 44px; padding: 0 22px; border-radius: 980px; font-weight: 400; font-size: 1.0625rem; letter-spacing: -0.022em; }
+.btn { background: var(--blue); color: #ffffff; box-shadow: none; }
+.btn:hover { transform: none; box-shadow: none; background: #0077ed; }
+.btn-g { background: transparent; color: var(--ink); border: 1px solid #6e6e73; }
+.btn-g:hover { border-color: var(--ink); color: var(--ink); }
+.facts { width: min(100%, 720px); }
+.facts li { justify-items: center; }
+.facts b { font-weight: 600; letter-spacing: 0.007em; font-size: clamp(1.6rem, 2.4vw, 1.75rem); color: var(--ink); }
+.facts li:first-child b { color: var(--mandarina-t); }
+.facts span { color: var(--dim); }
+
+.sec-h h2 { font-size: clamp(2.25rem, 5vw, 3.5rem); font-weight: 600; letter-spacing: -0.015em; line-height: 1.07; }
+.route::before { background: var(--line-2); height: 1px; top: 11px; }
+.route .n { font-weight: 600; letter-spacing: -0.015em; }
+.route li:last-child .n { color: var(--mandarina-t); }
+.row h3 { font-size: clamp(1.6rem, 3vw, 2.5rem); font-weight: 600; letter-spacing: -0.012em; }
+.row { border-color: var(--line); }
+.index { border-color: var(--line); }
+.row:hover, .row:focus-visible { background: var(--paper); border-radius: 28px; border-bottom-color: transparent; }
+.row:hover h3, .row:focus-visible h3 { color: var(--ink); }
+.row:hover p, .row:hover .area, .row:focus-visible p, .row:focus-visible .area { color: var(--muted); }
+.row:hover .arr, .row:focus-visible .arr { background: var(--blue); border-color: var(--blue); color: #ffffff; transform: none; }
+.row.main .area, .row.main:hover .area, .row.main:focus-visible .area { color: var(--mandarina-t); font-weight: 600; }
+.peek { border-radius: 20px; box-shadow: 0 0 0 1px #333336; border: 0; }
+.bub.u { background: var(--blue); color: #ffffff; }
+.bub.b { background: #2c2c2e; border: 0; color: #f5f5f7; }
+
+.case-h h2 { font-size: clamp(3.5rem, 9vw, 6rem); font-weight: 600; letter-spacing: -0.015em; line-height: 1.04; }
+.st h3 { font-size: clamp(1.6rem, 2.4vw, 2.1rem); }
+.st h3, .lynn h3, .app-txt h3, .ident h3 { font-weight: 600; letter-spacing: -0.012em; line-height: 1.1; }
+.fig { padding: 28px; }
+.big { font-weight: 600; letter-spacing: -0.015em; font-size: clamp(4rem, 8vw, 5.5rem); }
+.gauge-h b, .stg b, .score b, .tk-t { font-weight: 600; letter-spacing: -0.01em; }
+.gauge.amb .bar i { filter: none; }
+.seg { border-radius: 980px; background: var(--tint); border-color: var(--line-2); }
+.seg button { border-radius: 980px; }
+.seg button[aria-pressed="true"], .seg button[aria-checked="true"] { background: var(--ink); color: var(--bg); }
+.ph.now i, .route li:last-child::before { box-shadow: 0 0 0 5px color-mix(in srgb, var(--mandarina) 18%, transparent); }
+
+.scen button { border-radius: 18px; background: var(--bg); border-color: var(--line); }
+.scen button[aria-checked="true"] { border-color: var(--cobalto); background: color-mix(in srgb, var(--cobalto) 7%, var(--paper)); }
+.scen button[aria-checked="true"] b { color: var(--cobalto); }
+#cc-route { filter: none; }
+.engines span { border-radius: 18px; background: var(--paper); border-color: transparent; }
+
+.dock button { border-radius: 980px; background: transparent; border-color: var(--line-2); }
+.dock button[aria-selected="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.device { border-radius: 28px; border-color: #333336; box-shadow: none; }
+.ui-card { border-radius: 16px; }
+.lead, .stg, .json, .cmdk { border-radius: 14px; }
+.portal .ui-card.on { box-shadow: none; }
+.phone { background: var(--bg); }
+.phone-h i { background: var(--blue); color: #ffffff; }
+.tokens > div { border-radius: 18px; background: var(--bg); }
+.lv.r i.f { box-shadow: none; }
+.strip { border-radius: 28px; border: 0; grid-template-columns: 36fr 22fr 18fr 12fr 12fr; }
+.sw-n { background: #000000; color: #f5f5f7; box-shadow: inset 0 0 0 1px #333336; border-radius: 28px 0 0 28px; }
+.sw-n span { color: #a1a1a6; }
+.sw-p { background: #1d1d1f; color: #f5f5f7; }
+.sw-c { background: #f5f5f7; color: #1d1d1f; }
+.sw-a { background: #0071e3; color: #ffffff; }
+.sw-y { background: #ffd500; color: #1d1d1f; }
+.outro h2 { font-size: clamp(2.4rem, 5.2vw, 4.5rem); font-weight: 600; letter-spacing: -0.015em; line-height: 1.05; max-width: 16ch; }
+.band .outro { padding-inline: clamp(8px, 2vw, 24px); }
+footer { border-top: 0; }
+@media (max-width: 680px) {
+  .sw-n { border-radius: 28px 28px 0 0; }
+  .sw-y { min-height: 0; }
+}
+
+
+@media (min-width: 1360px) {
+  .rail { display: block; }
+}
+@media (max-width: 1119px) {
+  .story { grid-template-columns: minmax(0, 1fr); }
+  .st .fig { margin-top: 8px; }
+}
+@media (min-width: 1120px) {
+  .story.js .st .fig { display: none; }
+  .story.js .stage { display: block; position: sticky; top: 96px; height: min(640px, calc(100vh - 130px)); align-self: start; order: 2; }
+  .story.js .steps { order: 1; }
+  .stage .fig { position: absolute; inset: 0 0 auto 0; max-height: 100%; overflow: auto; opacity: 0; visibility: hidden; transform: translateY(24px) scale(.98); transition: opacity .5s, transform .6s var(--ease), visibility 0s .5s; }
+  .stage .fig.on { opacity: 1; visibility: visible; transform: none; transition: opacity .5s, transform .6s var(--ease), visibility 0s; }
+  .story.js .st { min-height: min(72vh, 680px); padding-block: min(8vh, 80px); }
+  .story.js .st:first-child { padding-top: 0; }
+  .story.js .st.on .n { color: var(--mandarina-t); }
+}
+@media (max-width: 1000px) {
+  .hero-foot, .sec-h, .case-h, .story, .board, .lynn, .view, .ident { grid-template-columns: minmax(0, 1fr); }
+  .sec-h p { justify-self: start; }
+  .route { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 48px; }
+  .route::before { display: none; }
+  .row { grid-template-columns: minmax(0, 1fr) 40px; gap: 8px 20px; }
+  .row h3 { grid-column: 1; }
+  .row p, .row .area { grid-column: 1; }
+  .row .arr { grid-column: 2; grid-row: 1 / span 3; }
+  .board-side { border-right: 0; border-bottom: 1px solid var(--line); }
+  .caps-cc { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .caps-cc div:nth-child(2) { border-right: 0; }
+  .caps-cc div:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  .caps { grid-template-columns: minmax(0, 1fr); }
+  .cg, .cg + .cg { padding: 26px 0; border-left: 0; border-bottom: 1px solid var(--line); }
+  .tech { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .device { --ry: 0deg; --rx: 0deg; }
+  .st .fig { margin-top: 8px; }
+}
+@media (max-width: 680px) {
+  body { font-size: 16px; }
+  .sec { padding-block: 84px; }
+  .top nav a { display: none; }
+  .top nav a.keep { display: inline-block; }
+  .hero .wrap { padding-block: 92px 40px; }
+  .name { margin-bottom: 26px; }
+  .facts { gap: 12px; }
+  .facts b { font-size: 1.45rem; }
+  .route { grid-template-columns: minmax(0, 1fr); }
+  .row { padding: 22px 0; }
+  .fig, .board-side, .board-main { padding: 18px; }
+  .cmp-r { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .cmp-r.h { display: none; }
+  .cmp-r > div:first-child { font-size: 0.78rem; }
+  .caps-cc, .engines, .tokens { grid-template-columns: minmax(0, 1fr); }
+  .swipe { display: block; }
+  .caps-cc div { border-right: 0; border-bottom: 1px solid var(--line); }
+  .portal, .pipe, .kanban { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .funnel { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .ficha, .journey { grid-template-columns: minmax(0, 1fr); }
+  .ident { padding: 24px; }
+  .tech { grid-template-columns: minmax(0, 1fr); margin-top: 64px; }
+  .strip { grid-template-columns: minmax(0, 1fr); }
+  .strip > div { min-height: 0; padding: 18px; }
+  .sw-n { min-height: 150px !important; } .sw-p { min-height: 110px !important; }
+  .outro { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 480px) {
+  .facts { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .facts li { grid-template-columns: 92px minmax(0, 1fr); align-items: baseline; gap: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .sym .d { stroke-dashoffset: 0; }
+}
+@media (max-width: 680px) {
+  .status i { display: none; }
+}
+@media (max-width: 480px) {
+  .facts { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; text-align: center; }
+  .facts li { grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 4px; }
+}
+</style>
+</head>
+<body>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="mark" href="#inicio" aria-label="César Osorio, inicio">
+      <svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="17" fill="none" style="stroke:var(--cobalto)" stroke-width="1.4"/><path d="M8 12 C 16 12, 14 18, 20 18 M8 24 C 16 24, 14 18, 20 18" fill="none" style="stroke:var(--cobalto)" stroke-width="2" stroke-linecap="round"/><path d="M20 18 H 27" style="stroke:var(--mandarina)" stroke-width="2.8" stroke-linecap="round"/><circle cx="28" cy="18" r="3" style="fill:var(--mandarina)"/></svg>
+      <b>César Osorio</b>
+    </a>
+    <nav aria-label="Secciones">
+      <a class="keep" href="#proyectos" data-sec="proyectos">Proyectos</a>
+      <a href="#miax" data-sec="miax">MiaX</a>
+      <a href="#contact-center" data-sec="contact-center">Contact center</a>
+      <a href="#suite" data-sec="suite">Suite</a>
+      <a href="#capacidades" data-sec="capacidades">Capacidades</a>
+    </nav>
+  </div>
+</header>
+
+<nav class="rail" aria-label="Avance en la página">
+  <span class="rail-line"></span><span class="rail-fill" id="rail-fill"></span>
+  <ol>
+    <li><a href="#inicio" data-sec="inicio"><i></i><span>Inicio</span></a></li>
+    <li><a href="#metodo" data-sec="metodo"><i></i><span>Cómo trabajo</span></a></li>
+    <li><a href="#proyectos" data-sec="proyectos"><i></i><span>Proyectos</span></a></li>
+    <li><a href="#miax" data-sec="miax"><i></i><span>MiaX</span></a></li>
+    <li><a href="#contact-center" data-sec="contact-center"><i></i><span>Contact center</span></a></li>
+    <li><a href="#suite" data-sec="suite"><i></i><span>Suite Comercial</span></a></li>
+    <li><a href="#capacidades" data-sec="capacidades"><i></i><span>Capacidades</span></a></li>
+  </ol>
+</nav>
+
+<section class="hero" id="inicio" data-track>
+  <canvas id="flow" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <span class="status"><i></i>Jefe de Estrategia de Canales Multisegmento, Grupo GTD</span>
+    <h1 class="name"><span><b>César</b></span><span><b>Osorio</b></span></h1>
+    <div class="hero-foot">
+      <div class="intro"><p class="thesis">Diseño la ruta para que cada conversación termine resuelta. IA generativa, contact center y canales digitales, de la idea a producción.</p><div class="cta"><a class="btn" href="#proyectos">Ver proyectos</a><a class="btn-g" href="#miax">Leer el caso MiaX</a></div></div>
+      <ul class="facts">
+        <li><b>+90 mil</b><span>conversaciones analizadas</span></li>
+        <li><b>7</b><span>apps en la Suite Comercial</span></li>
+        <li><b>10</b><span>operadores monitoreados</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<main>
+  <section class="sec" id="metodo" data-track>
+    <div class="wrap">
+      <div class="sec-h">
+        <h2>Cómo trabajo</h2>
+        <p>El mismo recorrido en cada proyecto, de la evidencia a la operación.</p>
+      </div>
+      <ol class="route">
+        <li><span class="n">01</span><h3>Diagnóstico con datos</h3><p>Leo conversaciones, derivaciones y ventas reales para encontrar dónde se pierde el cliente.</p></li>
+        <li><span class="n">02</span><h3>Arquitectura</h3><p>Decido qué resuelve la IA, qué queda en flujos seguros y cómo se integra con lo que ya existe.</p></li>
+        <li><span class="n">03</span><h3>Construcción</h3><p>Desarrollo y pongo en producción apps, bots, integraciones y despliegues en la nube.</p></li>
+        <li><span class="n">04</span><h3>Caso de negocio</h3><p>Costeo cada escenario y mido ahorro, ROI y payback para decidir con números.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec" id="proyectos" data-track style="padding-top:40px">
+    <div class="wrap">
+      <div class="sec-h">
+        <h2>Lo que he construido</h2>
+        <p>Desarrollos internos de Grupo GTD. Los datos de las maquetas son ilustrativos y las cifras se muestran agregadas.</p>
+      </div>
+      <div class="index">
+        <a class="row main" href="#miax">
+          <h3>MiaX</h3>
+          <p>Asistente con IA generativa en WhatsApp para Gtd y Telsur.</p>
+          <span class="area">Proyecto principal</span>
+          <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <div class="pv"><div style="display:grid;gap:8px"><div class="bub u">Hola, desde ayer no tengo señal</div><div class="trace"><span>clasificar</span><span>autodiagnóstico</span><span>resuelta</span></div><div class="bub b">Veo una falla en tu zona y ya está en reparación. Te aviso por aquí cuando vuelva.</div></div></div>
+        </a>
+        <a class="row" href="#contact-center">
+          <h3>Contact center con IA</h3>
+          <p>Genesys Cloud y Lynn: flujos, bots, integraciones y WhatsApp.</p>
+          <span class="area">Desarrollo y gobernanza</span>
+          <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <div class="pv"><p class="pv-t">Cada contacto, por la ruta que lo resuelve</p><div class="chips"><span>WhatsApp</span><span>Voz</span><span>Web</span><span>Bots</span><span>Knowledge</span><span>Predictive Routing</span><span>Agent Assist</span><span class="on">Resuelta</span></div></div>
+        </a>
+        <a class="row" href="#suite">
+          <h3>Suite Comercial GTD</h3>
+          <p>7 apps para la fuerza de ventas, con un solo acceso.</p>
+          <span class="area">Diseño y desarrollo</span>
+          <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <div class="pv"><p class="pv-t">Un portal, siete herramientas</p><div class="chips"><span class="on">Portal</span><span>Asistente Comercial</span><span>Scraper</span><span>Comparador</span><span>Sala de Captación</span><span>Asesor Mayorista</span><span>Journey MIA</span></div></div>
+        </a>
+        <a class="row" href="#suite" data-app="3">
+          <h3>Scraper competitivo</h3>
+          <p>La oferta de 10 operadores, leída cada día con IA.</p>
+          <span class="area">Inteligencia de mercado</span>
+          <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <div class="pv"><p class="pv-t">Recorrido diario de 10 sitios</p><div class="opsg"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+        </a>
+        <a class="row" href="#identidad">
+          <h3>Identidad común</h3>
+          <p>Norma de diseño para todas las apps internas.</p>
+          <span class="area">Diseño</span>
+          <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <div class="pv"><p class="pv-t">Tokens, componentes y galería</p><div class="tokens"><div><div class="tk-c"><i style="background:var(--cobalto)"></i><i style="background:var(--menta)"></i><i style="background:var(--mandarina)"></i></div><span>Color</span></div><div><div class="tk-t">Aa</div><span>Texto</span></div><div><div class="tk-b"><b>Guardar</b></div><span>Botón</span></div></div></div>
+        </a>
+      </div>
+    </div>
+    <div class="peek inst" id="peek" aria-hidden="true"></div>
+  </section>
+
+  <!-- MiaX -->
+  <section class="sec band" id="miax" data-track>
+    <div class="wrap">
+      <div class="case-h">
+        <div>
+          <span class="tag">Proyecto principal, como líder</span>
+          <h2>MiaX</h2>
+          <p class="sum">La evolución del asistente de Gtd y Telsur en WhatsApp: de un bot de menús e intenciones fijas a un asistente con IA generativa que entiende lenguaje natural, recuerda la conversación y resuelve sin derivar.</p>
+        </div>
+        <dl class="meta inst">
+          <div><dt>Rol</dt><dd>Líder: diagnóstico, arquitectura, business case y hoja de ruta</dd></div>
+          <div><dt>Canal</dt><dd>WhatsApp, Gtd y Telsur</dd></div>
+          <div><dt>Estado</dt><dd>Fase 1, migración</dd></div>
+        </dl>
+      </div>
+
+      <div class="story" id="story">
+        <div class="stage" id="stage" aria-live="off"></div>
+        <div class="steps">
+          <article class="st" data-step="0">
+            <span class="n">01 Diagnóstico</span>
+            <h3>3 de cada 4 conversaciones terminaban en un ejecutivo</h3>
+            <p>Analicé <strong>más de 90 mil conversaciones</strong> de dos meses en WhatsApp para entender por qué el asistente no cerraba las consultas.</p>
+            <ul class="ticks">
+              <li>Cuando el bot no entendía, el menú empujaba a la derivación o al abandono.</li>
+              <li>No recordaba la conversación: quien volvía el mismo día explicaba todo de nuevo.</li>
+              <li>Audios, fotos y PDF no se podían leer y se derivaban.</li>
+            </ul>
+            <div class="fig inst">
+              <div class="fig-t"><b>Conversaciones de WhatsApp</b><span>período analizado</span></div>
+              <div class="big">74%</div>
+              <p>terminaba con un ejecutivo humano.</p>
+              <div class="gauges">
+                <div class="gauge amb"><div class="gauge-h"><span>Derivadas a un ejecutivo</span><b>74%</b></div><div class="bar"><i style="width:74%"></i></div></div>
+                <div class="gauge"><div class="gauge-h"><span>Resueltas por el asistente</span><b>26%</b></div><div class="bar"><i style="width:26%"></i></div></div>
+                <div class="gauge amb"><div class="gauge-h"><span>Consultas de control remoto derivadas aunque tenían respuesta</span><b>64%</b></div><div class="bar"><i style="width:64%"></i></div></div>
+                <div class="gauge"><div class="gauge-h"><span>Veces que el menú terminó en abandono</span><b>17%</b></div><div class="bar"><i style="width:17%"></i></div></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="st" data-step="1">
+            <span class="n">02 Arquitectura</span>
+            <h3>Dos caminos evaluados, con seguridad desde la entrada</h3>
+            <p><strong>Híbrida:</strong> Watson sigue con lo crítico y un agente de IA toma lo informativo, para avanzar por fases con bajo riesgo. <strong>Unificada:</strong> LangGraph reemplaza a Watson y cada paso es un estado explícito y auditable.</p>
+            <ul class="ticks">
+              <li><b>RAG</b> sobre la información pública de gtd.cl y telsur.cl, con reglas de negocio.</li>
+              <li><b>Guardrails</b> que bloquean la inyección de prompts y ocultan datos sensibles.</li>
+              <li><b>Multimedia:</b> lee PDF e imágenes, transcribe audios y puede responder con voz.</li>
+              <li><b>Configuración</b> por campaña, tono de marca, zona y segmento.</li>
+            </ul>
+            <div class="stack"><span>Modelos GPT de OpenAI</span><span>LangGraph</span><span>RAG</span><span>IBM Watson</span><span>AWS Bedrock Guardrails</span><span>STT y TTS</span></div>
+            <div class="fig inst">
+              <div class="fig-t"><b>Arquitectura</b>
+                <div class="seg" role="group" aria-label="Elegir arquitectura">
+                  <button type="button" aria-pressed="true" data-arch="a">Híbrida</button>
+                  <button type="button" aria-pressed="false" data-arch="b">Unificada</button>
+                </div>
+              </div>
+              <p class="swipe">Desliza el diagrama hacia el lado para verlo completo.</p>
+              <div class="diagram" data-arch-view="a">
+                <svg viewBox="0 0 600 300" role="img" aria-label="Arquitectura híbrida: un enrutador envía las consultas informativas al agente de IA con RAG y las transaccionales a Watson con las APIs">
+                  <defs><marker id="ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path class="arrow" d="M0 0 L8 4 L0 8 z"/></marker><marker id="ara" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path class="arrow a" d="M0 0 L8 4 L0 8 z"/></marker></defs><path class="e" d="M106 150 H 138" marker-end="url(#ar)"/><path class="e" d="M250 150 H 282" marker-end="url(#ar)"/><path class="e a" d="M380 145 C 405 145, 400 70, 428 70" marker-end="url(#ara)"/><path class="e" d="M380 155 C 405 155, 400 230, 428 230" marker-end="url(#ar)"/><path class="f" d="M58 150 H 380"/><path class="f a" d="M380 145 C 405 145, 400 70, 428 70"/>
+                  <rect class="n" x="10" y="125" width="96" height="50" rx="6"/><text x="58" y="155" text-anchor="middle">Cliente</text>
+                  <rect class="n sec" x="140" y="125" width="110" height="50" rx="6"/><text x="195" y="148" text-anchor="middle">Guardrails</text><text class="s" x="195" y="164" text-anchor="middle">filtra y oculta datos</text>
+                  <rect class="n ia" x="284" y="125" width="96" height="50" rx="6"/><text x="332" y="155" text-anchor="middle">Enrutador</text>
+                  <rect class="n ok" x="430" y="40" width="160" height="60" rx="6"/><text x="510" y="66" text-anchor="middle">Agente de IA + RAG</text><text class="s" x="510" y="84" text-anchor="middle">planes, precios, cobertura</text>
+                  <rect class="n" x="430" y="200" width="160" height="60" rx="6"/><text x="510" y="226" text-anchor="middle">Watson + APIs</text><text class="s" x="510" y="244" text-anchor="middle">login, pagos, diagnóstico</text>
+                  
+                  
+                  
+                  <text class="s" x="404" y="112">informativa</text><text class="s" x="404" y="196">transaccional</text>
+                </svg>
+              </div>
+              <div class="diagram" data-arch-view="b" hidden>
+                <svg viewBox="0 0 600 300" role="img" aria-label="Arquitectura unificada: LangGraph clasifica con IA y lleva cada conversación por estados explícitos hasta la API, con RAG para lo informativo">
+                  <defs><marker id="br" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path class="arrow" d="M0 0 L8 4 L0 8 z"/></marker></defs><path class="e" d="M106 63 H 138" marker-end="url(#br)"/><path class="e" d="M280 63 H 318" marker-end="url(#br)"/><path class="e" d="M210 86 V 170" marker-end="url(#br)"/><path class="e" d="M246 192 H 264" marker-end="url(#br)"/><path class="e" d="M356 192 H 374" marker-end="url(#br)"/><path class="e" d="M472 192 H 490" marker-end="url(#br)"/><path class="f a" d="M201 192 H 535"/>
+                  <rect class="n" x="10" y="40" width="96" height="46" rx="6"/><text x="58" y="68" text-anchor="middle">Cliente</text>
+                  <rect class="n ia" x="140" y="40" width="140" height="46" rx="6"/><text x="210" y="60" text-anchor="middle">Clasificador IA</text><text class="s" x="210" y="76" text-anchor="middle">intención y entidades</text>
+                  <rect class="n ok" x="320" y="40" width="270" height="46" rx="6"/><text x="455" y="60" text-anchor="middle">Generador de respuestas + RAG</text><text class="s" x="455" y="76" text-anchor="middle">consultas informativas</text>
+                  <rect x="140" y="130" width="450" height="150" rx="8" fill="none" style="stroke:color-mix(in srgb, var(--cobalto) 30%, transparent)" stroke-dasharray="4 5"/>
+                  <text class="s" x="156" y="152">LangGraph: cada paso es un estado guardado y auditable</text>
+                  <rect class="n" x="156" y="172" width="90" height="40" rx="6"/><text x="201" y="197" text-anchor="middle">Clasificar</text>
+                  <rect class="n" x="266" y="172" width="90" height="40" rx="6"/><text x="311" y="197" text-anchor="middle">Pedir RUT</text>
+                  <rect class="n" x="376" y="172" width="96" height="40" rx="6"/><text x="424" y="197" text-anchor="middle">Validar OTC</text>
+                  <rect class="n ok" x="492" y="172" width="86" height="40" rx="6"/><text x="535" y="197" text-anchor="middle">API</text>
+                  <text class="s" x="156" y="244">Estado persistente: el sistema sabe en qué paso va cada cliente</text><text class="s" x="156" y="262">y cuántos intentos le quedan.</text>
+                  
+                  
+                  
+                </svg>
+              </div>
+            </div>
+          </article>
+
+          <article class="st" data-step="2">
+            <span class="n">03 Antes y después</span>
+            <h3>De responder por menú a conversar con contexto</h3>
+            <p>El cambio se nota en lo que el cliente ya no tiene que hacer: repetir, elegir opciones o esperar a un ejecutivo por un audio.</p>
+            <div class="fig inst">
+              <div class="cmp" aria-label="Comparación entre el asistente actual y MiaX">
+                <div class="cmp-r h"><div></div><div>Asistente actual</div><div>MiaX</div></div>
+                <div class="cmp-r"><div>Memoria</div><div>Se pierde a los 5 minutos de inactividad</div><div>Sesiones de 24 horas que recuerdan el día</div></div>
+                <div class="cmp-r"><div>Cobertura</div><div>Solo los temas programados en flujos</div><div>Toda la información de los sitios como base de conocimiento</div></div>
+                <div class="cmp-r"><div>Respuestas</div><div>Predefinidas</div><div>Generadas según el contexto y el tono</div></div>
+                <div class="cmp-r"><div>Lenguaje</div><div>Palabras clave e intenciones fijas</div><div>Lenguaje natural, sin menú obligatorio</div></div>
+                <div class="cmp-r"><div>Mantenimiento</div><div>Reentrenamiento manual por tickets</div><div>Se actualiza la base sin reprogramar flujos</div></div>
+                <div class="cmp-r"><div>Audio e imágenes</div><div>Se derivan a un ejecutivo</div><div>Se transcriben y se analizan</div></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="st" data-step="3">
+            <span class="n">04 Hoja de ruta</span>
+            <h3>Tres fases, con el caso de negocio detrás</h3>
+            <p>El business case comparó tres escenarios con su costo, ahorro, ROI y payback, sumando beneficios como menos reincidencia, menos abandono y accesibilidad por voz.</p>
+            <div class="fig inst">
+              <div class="phases">
+                <div class="ph now"><i></i><div><span>Fase 1, en curso</span><h4>Migrar a MiaX</h4><p>Llevar la operación actual a la nueva plataforma. Es la base para todo lo demás.</p></div></div>
+                <div class="ph"><i></i><div><span>Fase 2</span><h4>Nuevas funcionalidades</h4><p>Consulta de servicios del cliente por API y factibilidad técnica dentro de la conversación.</p></div></div>
+                <div class="ph"><i></i><div><span>Fase 3</span><h4>Agente autónomo</h4><p>MiaX decide y ejecuta acciones de punta a punta, y gestiona casos de forma proactiva.</p></div></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact center -->
+  <section class="sec band-t" id="contact-center" data-track>
+    <div class="wrap">
+      <div class="sec-h">
+        <h2>Contact center con IA</h2>
+        <p>Genesys Cloud es el centro de la atención de Gtd y Telsur. Lynn, partner de Genesys, lo complementa en canales digitales y WhatsApp. Diseño y gobierno cómo fluye cada contacto entre ambos.</p>
+      </div>
+
+      <div class="inst">
+        <div class="board">
+          <div class="board-side">
+            <h3>Elige un caso y sigue su ruta</h3>
+            <div class="scen" role="radiogroup" aria-label="Casos de atención">
+              <button type="button" role="radio" aria-checked="true" data-sc="0"><b>Pregunta por un plan</b><span>Entra por WhatsApp</span></button>
+              <button type="button" role="radio" aria-checked="false" data-sc="1" tabindex="-1"><b>Reporta una falla</b><span>Llama por teléfono</span></button>
+              <button type="button" role="radio" aria-checked="false" data-sc="2" tabindex="-1"><b>Pide hablar con alguien</b><span>Escribe por WhatsApp</span></button>
+            </div>
+            <ol class="trail" id="trail" aria-live="polite"></ol>
+          </div>
+          <div class="board-main">
+            <p class="swipe">Desliza el diagrama hacia el lado para verlo completo.</p>
+            <div class="diagram">
+              <svg viewBox="0 0 660 330" role="img" aria-label="Flujo del contact center: los canales entran a Lynn o a Genesys Cloud; ahí los bots y Knowledge resuelven, Predictive Routing elige al ejecutivo y Agent Assist lo apoya"><path class="e" d="M100 70 C120 70 120 90 140 90"/><path class="e" d="M100 150 C120 150 120 130 140 130"/><path class="e" d="M270 100 C292 100 300 69 324 69"/><path class="e" d="M270 120 C300 120 300 197 324 197"/><path class="e" d="M100 250 C220 250 250 80 324 80"/><path class="e" d="M411 92 V110"/><path class="e" d="M411 220 V238"/><path class="e" d="M498 133 C522 133 524 110 548 110"/><path class="e" d="M498 261 C522 261 524 236 548 236"/><path id="cc-route" d=""/><circle id="cc-dot" r="6"><animateMotion id="cc-anim" dur="2.6s" repeatCount="indefinite" rotate="auto"><mpath href="#cc-route"/></animateMotion></circle>
+                <rect class="n" data-k="wa" x="10" y="52" width="90" height="36" rx="18"/><text x="55" y="75" text-anchor="middle">WhatsApp</text>
+                <rect class="n" data-k="web" x="10" y="132" width="90" height="36" rx="18"/><text x="55" y="155" text-anchor="middle">Web</text>
+                <rect class="n" data-k="voz" x="10" y="232" width="90" height="36" rx="18"/><text x="55" y="255" text-anchor="middle">Voz</text>
+                <rect class="n" data-k="lynn" x="140" y="50" width="130" height="120" rx="6"/><text x="205" y="104" text-anchor="middle">Lynn</text><text class="s" x="205" y="122" text-anchor="middle">WhatsApp y web</text>
+                <rect x="310" y="14" width="202" height="302" rx="8" fill="none" style="stroke:color-mix(in srgb, var(--cobalto) 35%, transparent)"/>
+                <text class="s" x="324" y="34">Genesys Cloud</text>
+                <rect class="n ia" data-k="bot" x="324" y="46" width="174" height="46" rx="6"/><text x="411" y="66" text-anchor="middle">Bots y flujos</text><text class="s" x="411" y="82" text-anchor="middle">Architect y Dialogflow</text>
+                <rect class="n ia" data-k="kn" x="324" y="110" width="174" height="46" rx="6"/><text x="411" y="130" text-anchor="middle">Knowledge</text><text class="s" x="411" y="146" text-anchor="middle">la respuesta oficial</text>
+                <rect class="n" data-k="pr" x="324" y="174" width="174" height="46" rx="6"/><text x="411" y="194" text-anchor="middle">Predictive Routing</text><text class="s" x="411" y="210" text-anchor="middle">el mejor ejecutivo</text>
+                <rect class="n" data-k="aa" x="324" y="238" width="174" height="46" rx="6"/><text x="411" y="258" text-anchor="middle">Agent Assist</text><text class="s" x="411" y="274" text-anchor="middle">apoyo en tiempo real</text>
+                <rect class="n ok" data-k="ok" x="548" y="86" width="104" height="48" rx="6"/><text x="600" y="107" text-anchor="middle">Resuelta</text><text class="s" x="600" y="123" text-anchor="middle">autogestión</text>
+                <rect class="n" data-k="ej" x="548" y="212" width="104" height="48" rx="6"/><text x="600" y="233" text-anchor="middle">Ejecutivo</text><text class="s" x="600" y="249" text-anchor="middle">con apoyo de IA</text>
+                
+                
+                
+                
+                
+                
+                
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="caps-cc">
+          <div><b>Flujos y bots</b><p>Flujos en Architect con intenciones entrenadas y versiones controladas.</p></div>
+          <div><b>Knowledge</b><p>La misma respuesta para el bot y para el ejecutivo.</p></div>
+          <div><b>Predictive Routing</b><p>Asigna cada contacto a quien tiene más probabilidad de resolverlo.</p></div>
+          <div><b>Agent Assist</b><p>Sugerencias en tiempo real mientras el ejecutivo atiende.</p></div>
+        </div>
+      </div>
+
+      <div class="lynn">
+        <div>
+          <h3>Bot propio sobre Lynn</h3>
+          <p>Un servicio que conversa con Lynn por WhatsApp, con historial por conversación, modelo de respaldo y respuesta garantizada antes del tiempo límite. El motor se cambia sin tocar el canal.</p>
+          <div class="stack" style="margin-top:20px"><span>Genesys Cloud Architect</span><span>Lynn</span><span>Dialogflow</span><span>Vertex AI</span><span>Docker</span></div>
+        </div>
+        <div class="engines" aria-label="Motores que acepta el bot">
+          <span>Reglas <em>sin IA</em></span><span>Claude <em>API</em></span><span>Gemini <em>Vertex AI o API</em></span><span>Motor externo <em>por HTTP</em></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Suite -->
+  <section class="sec" id="suite" data-track>
+    <div class="wrap">
+      <div class="sec-h">
+        <h2>Suite Comercial GTD</h2>
+        <p>Apps para la fuerza de ventas residencial y de empresas. Un portal con acceso único conecta todo, y la IA aparece donde ahorra tiempo al vendedor.</p>
+      </div>
+
+      <div class="dock" role="tablist" aria-label="Apps de la Suite Comercial">
+        <button role="tab" id="ap-t1" aria-controls="ap-p1" aria-selected="true">Portal</button>
+        <button role="tab" id="ap-t2" aria-controls="ap-p2" aria-selected="false" tabindex="-1">Asistente Comercial</button>
+        <button role="tab" id="ap-t3" aria-controls="ap-p3" aria-selected="false" tabindex="-1">Scraper</button>
+        <button role="tab" id="ap-t4" aria-controls="ap-p4" aria-selected="false" tabindex="-1">Comparador</button>
+        <button role="tab" id="ap-t5" aria-controls="ap-p5" aria-selected="false" tabindex="-1">Sala de Captación</button>
+        <button role="tab" id="ap-t6" aria-controls="ap-p6" aria-selected="false" tabindex="-1">Asesor Mayorista</button>
+        <button role="tab" id="ap-t7" aria-controls="ap-p7" aria-selected="false" tabindex="-1">Journey MIA</button>
+      </div>
+
+      <div role="tabpanel" id="ap-p1" aria-labelledby="ap-t1" class="view">
+        <div class="persp"><div class="device"><div class="device-bar"><i></i><i></i><i></i><span>suite.gtd / portal</span></div>
+          <div class="screen">
+            <div class="ui-row"><div><div class="ui-label">Hola</div><div class="ui-title">Tus apps</div></div><span class="pill ok">Sesión verificada</span></div>
+            <div class="portal">
+              <div class="ui-card on"><span class="ui-label">Ventas residencial</span><b>Sala de Captación</b></div>
+              <div class="ui-card"><span class="ui-label">Mercado</span><b>Comparador</b></div>
+              <div class="ui-card"><span class="ui-label">Empresas</span><b>Asesor Mayorista</b></div>
+              <div class="ui-card"><span class="ui-label">Empresas</span><b>Asistente Comercial</b></div>
+              <div class="ui-card"><span class="ui-label">Mercado</span><b>Scraper</b></div>
+              <div class="ui-card"><span class="ui-label">Atención</span><b>Journey MIA</b></div>
+            </div>
+            <div class="ui-card pass"><span class="mono">pase firmado, un solo uso</span><div class="track"><div class="fill amb" style="width:62%"></div></div><span class="pill amb">vence en segundos</span></div>
+          </div></div></div>
+        <div class="app-txt"><h3>Portal y acceso único</h3><p>Se entra una vez y el portal muestra solo las apps de cada persona. Para abrir una app genera un pase firmado de un solo uso que vence en segundos.</p>
+          <ul class="ticks"><li>Pase firmado con HMAC por app: una clave filtrada solo sirve para su app.</li><li>Un motor único sirve a todas las apps nuevas, sin publicar nada.</li><li>Tablero con indicadores de todas las apps.</li></ul></div>
+      </div>
+
+      <div role="tabpanel" id="ap-p2" aria-labelledby="ap-t2" class="view" hidden>
+        <div class="persp"><div class="device"><div class="device-bar"><i></i><i></i><i></i><span>suite.gtd / asistente-empresas</span></div>
+          <div class="screen" style="display:grid;gap:10px;align-content:start">
+            <div class="bub u">Cliente necesita 4 racks de 5 kW en Tier III, contrato a 36 meses. ¿Qué datacenter le ofrezco?</div>
+            <div class="bub b">Para esa densidad te recomiendo un sitio Tier III de la Región Metropolitana. A 36 meses aplica el descuento por plazo. Te dejé la oportunidad lista en el pipeline.<br><span class="ui-label">Fuentes: ficha de datacenter, tarifario de colocation</span></div>
+            <div class="ui-card" style="display:grid;gap:10px;border-color:color-mix(in srgb, var(--mandarina) 45%, transparent)">
+              <div class="ui-row"><b class="ui-title">Oportunidad creada</b><span class="pill amb">Borrador</span></div>
+              <div class="ui-grid3"><div><div class="ui-label">Racks</div><b>4</b></div><div><div class="ui-label">Consumo</div><b>20 kW</b></div><div><div class="ui-label">Plazo</div><b>36 meses</b></div></div>
+            </div>
+          </div></div></div>
+        <div class="app-txt"><h3>Asistente Comercial Empresas</h3><p>El vendedor pregunta como a un colega y el asistente responde con la documentación comercial: tarifas, fichas técnicas, SLA y certificaciones. Si detecta una cotización, la registra sola.</p>
+          <ul class="ticks"><li>RAG sobre presentaciones, documentos y PDF que se actualizan solos.</li><li>Crea la oportunidad con racks, kW, plazo y valores en UF.</li><li>Modelo de respaldo, registro de uso y valoración de cada respuesta.</li></ul></div>
+      </div>
+
+      <div role="tabpanel" id="ap-p3" aria-labelledby="ap-t3" class="view" hidden>
+        <div class="persp"><div class="device"><div class="device-bar"><i></i><i></i><i></i><span>scraper / ejecución diaria</span></div>
+          <div class="screen">
+            <div class="pipe"><div class="ui-card"><span class="ui-label">1</span><b>Navegar</b></div><div class="ui-card"><span class="ui-label">2</span><b>Extraer</b></div><div class="ui-card"><span class="ui-label">3</span><b>Normalizar</b></div><div class="ui-card"><span class="ui-label">4</span><b>Validar</b></div><div class="ui-card on"><span class="ui-label">5</span><b>Publicar</b></div></div>
+            <div class="opsl"><span>Gtd</span><span>Telsur</span><span>VTR</span><span>Movistar</span><span>Entel</span><span>Claro</span><span>WOM</span><span>Mundo</span><span>DirecTV</span><span>DirecTV GO</span></div>
+<div class="json mono"><span class="k">"empresa"</span>: <span class="v">"Operador A"</span>,
+<span class="k">"plan"</span>: <span class="v">"Fibra 600 + TV"</span>,
+<span class="k">"velocidad_mbps"</span>: <span class="v">600</span>,
+<span class="k">"precio_promo"</span>: <span class="v">"ilustrativo"</span>,
+<span class="k">"fuente"</span>: <span class="v">"web del operador"</span></div>
+          </div></div></div>
+        <div class="app-txt"><h3>Scraper competitivo</h3><p>Cada día recorre los sitios de 10 operadores como lo haría una persona, extrae planes y precios, y los deja en un mismo formato para compararlos. Va en su versión 27.</p>
+          <ul class="ticks"><li>Navegador automático con Playwright y normalización con Gemini, cuidando el gasto de tokens.</li><li>Regla de calidad: el precio de la web siempre manda.</li><li>Pruebas automáticas por operador, histórico mensual y capturas de respaldo.</li></ul></div>
+      </div>
+
+      <div role="tabpanel" id="ap-p4" aria-labelledby="ap-t4" class="view" hidden>
+        <div class="persp"><div class="device"><div class="device-bar"><i></i><i></i><i></i><span>comparador / mercado</span></div>
+          <div class="screen">
+            <div class="ui-row" style="margin-bottom:16px"><div class="ui-title">Precio relativo por 600 Mbps</div><span class="pill">Datos ilustrativos</span></div>
+            <div class="chart" role="img" aria-label="Gráfico ilustrativo de precio relativo por operador">
+              <div><div class="lbl">Operador A</div><div class="track"><div class="fill amb" style="width:58%"></div></div></div>
+              <div><div class="lbl">Operador B</div><div class="track"><div class="fill" style="width:72%"></div></div></div>
+              <div><div class="lbl">Operador C</div><div class="track"><div class="fill" style="width:81%"></div></div></div>
+              <div><div class="lbl">Operador D</div><div class="track"><div class="fill" style="width:66%"></div></div></div>
+              <div><div class="lbl">Operador E</div><div class="track"><div class="fill" style="width:90%"></div></div></div>
+            </div>
+            <div class="cmdk"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4-4"/></svg>Explicar cifras con IA<span class="kbd">Ctrl K</span></div>
+          </div></div></div>
+        <div class="app-txt"><h3>Comparador de Planes Residencial</h3><p>Toma lo que trae el scraper y lo convierte en lectura de mercado: dónde está cada oferta, qué incluye y cómo se mueve en el tiempo.</p>
+          <ul class="ticks"><li>Vistas de pulso, mercado, gráficos, histórico y terreno.</li><li>Análisis con IA que explica las cifras en lenguaje simple.</li><li>Ficha de cada plan y paleta de comandos para moverse rápido.</li></ul></div>
+      </div>
+
+      <div role="tabpanel" id="ap-p5" aria-labelledby="ap-t5" class="view" hidden>
+        <div class="persp"><div class="device"><div class="device-bar"><i></i><i></i><i></i><span>suite.gtd / sala-de-captacion</span></div>
+          <div class="screen">
+            <div class="kanban">
+              <div class="col"><div class="col-h"><span>Nuevos</span><span>12</span></div><div class="lead"><b>Lead web</b><span>Cruzado con la base</span></div><div class="lead"><b>Lead WhatsApp</b><span>Aviso al ejecutivo</span></div></div>
+              <div class="col"><div class="col-h"><span>Contactados</span><span>8</span></div><div class="lead"><b>Lead campaña</b><span>Llamada agendada</span></div></div>
+              <div class="col"><div class="col-h"><span>Propuesta</span><span>5</span></div><div class="lead"><b>Lead referido</b><span>Fibra + TV</span></div></div>
+              <div class="col"><div class="col-h"><span>Ganados</span><span>3</span></div><div class="lead" style="border-color:var(--menta)"><b>Venta cerrada</b><span>Historial auditado</span></div></div>
+            </div>
+            <div class="bub b" style="margin-top:14px;max-width:100%">Agente IA: simulemos la llamada. Yo soy el cliente y no estoy seguro de cambiarme de compañía.</div>
+          </div></div></div>
+        <div class="app-txt"><h3>Sala de Captación</h3><p>El CRM de la venta residencial: capta leads, los cruza con la base de clientes y los lleva por el embudo con roles y trazabilidad.</p>
+          <ul class="ticks"><li>Agente con Gemini para consultas y role play de ventas.</li><li>Aviso al ejecutivo cuando un cliente de su cartera aparece en una campaña.</li><li>Mapa de calor de la cartera y reportes de productividad.</li></ul></div>
+      </div>
+
+      <div role="tabpanel" id="ap-p6" aria-labelledby="ap-t6" class="view" hidden>
+        <div class="persp"><div class="device"><div class="device-bar"><i></i><i></i><i></i><span>suite.gtd / asesor-mayorista</span></div>
+          <div class="screen">
+            <div class="funnel"><div class="stg"><span>Arriba</span><b>14</b></div><div class="stg"><span>Dentro</span><b>9</b></div><div class="stg"><span>De salida</span><b>6</b></div><div class="stg win"><span>Vendido</span><b>4</b></div><div class="stg"><span>Perdido</span><b>2</b></div></div>
+            <div class="ficha">
+              <div class="ui-card" style="display:grid;gap:8px"><div class="ui-row"><b class="ui-title">Ficha 360 del cliente</b><span class="pill amb">Gestión vencida</span></div><span class="ui-label">Oportunidades, gestiones, adjuntos y equipo de la cuenta en una sola vista</span></div>
+              <div class="ui-card score"><span class="ui-label">Simulador de role play</span><b>8,4</b><span class="ui-label">nota de la sesión</span></div>
+            </div>
+          </div></div></div>
+        <div class="app-txt"><h3>Asesor Comercial Mayorista</h3><p>Reemplaza el seguimiento del segmento mayorista que se hacía en una plataforma anterior y suma un asesor con IA y un simulador para practicar la venta.</p>
+          <ul class="ticks"><li>Embudo de 5 etapas con arrastrar y soltar, y checklist obligatorio al cerrar.</li><li>Alarmas de seguimiento y avisos al equipo de la cuenta.</li><li>Al cerrar, deja lista la orden de venta y cruza las campañas de marketing.</li></ul></div>
+      </div>
+
+      <div role="tabpanel" id="ap-p7" aria-labelledby="ap-t7" class="view" hidden>
+        <div class="persp"><div class="device"><div class="device-bar"><i></i><i></i><i></i><span>journey-mia / whatsapp</span></div>
+          <div class="screen">
+            <div class="journey">
+              <div class="phone">
+                <div class="phone-h"><i>M</i><div><b style="font-size:.85rem;font-weight:500">MIA</b><div class="ui-label">en línea</div></div></div>
+                <div class="bub b">Hola, soy MIA. ¿En qué te ayudo hoy?</div>
+                <div class="bub u">Quiero contratar fibra</div>
+                <div class="bub b">Perfecto. ¿Es para tu casa o tu empresa?</div>
+                <div class="opts"><span>Hogar</span><span>Empresa</span></div>
+              </div>
+              <div class="jsteps"><div><b>1</b>Saludo e intención</div><div><b>2</b>Hogar o empresa</div><div><b>3</b>Factibilidad en la dirección</div><div><b>4</b>Oferta según la zona</div><div><b>5</b>Cierre o paso a un ejecutivo</div></div>
+            </div>
+          </div></div></div>
+        <div class="app-txt"><h3>Journey MIA</h3><p>Herramienta para diseñar y revisar los recorridos de MIA, el asistente actual de WhatsApp, antes de llevarlos a producción, con vista previa tal como la verá el cliente.</p>
+          <ul class="ticks"><li>Recorridos residencial y empresas.</li><li>Vista previa navegable de cada mensaje y opción.</li><li>Base para los flujos que luego corren en el contact center.</li></ul></div>
+      </div>
+
+      <div class="ident inst" id="identidad">
+        <div>
+          <h3>Identidad común para las apps</h3>
+          <p>Soy autor de la norma de diseño que siguen todas las apps internas, basada en el brandbook corporativo: colores, tipografía, componentes, líneas residencial y empresas, y una galería navegable para verlos funcionando.</p>
+        </div>
+        <div class="tokens" aria-hidden="true"><div><div class="tk-c"><i style="background:var(--cobalto)"></i><i style="background:var(--menta)"></i><i style="background:var(--mandarina)"></i></div><span>Tokens de color</span></div><div><div class="tk-t">Aa<small>Aa</small></div><span>Tipografía</span></div><div><div class="tk-b"><b>Guardar</b><em>Activo</em></div><span>Componentes</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="capacidades" data-track>
+    <div class="wrap">
+      <div class="sec-h">
+        <h2>Capacidades</h2>
+        <p>Autoevaluación de capacidades de IA de octubre de 2026, respaldada por los proyectos de esta página. Escala de 0 a 4.</p>
+      </div>
+      <div class="caps">
+        <div class="cg">
+          <h3>Estrategia y negocio</h3>
+          <div class="cap"><span>Estrategia de IA generativa</span><span class="lv r" role="img" aria-label="4 de 4"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i></span></div>
+          <div class="cap"><span>Casos de uso</span><span class="lv r" role="img" aria-label="4 de 4"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i></span></div>
+          <div class="cap"><span>Business case</span><span class="lv r" role="img" aria-label="4 de 4"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i></span></div>
+          <div class="cap"><span>Rediseño de procesos</span><span class="lv r" role="img" aria-label="4 de 4"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i></span></div>
+          <div class="cap"><span>Gobernanza de IA</span><span class="lv" role="img" aria-label="3 de 4"><i class="f"></i><i class="f"></i><i class="f"></i><i></i></span></div>
+        </div>
+        <div class="cg">
+          <h3>Construcción</h3>
+          <div class="cap"><span>Apps con IA</span><span class="lv r" role="img" aria-label="4 de 4"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i></span></div>
+          <div class="cap"><span>Integración con sistemas</span><span class="lv r" role="img" aria-label="4 de 4"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i></span></div>
+          <div class="cap"><span>Agentes de IA</span><span class="lv r" role="img" aria-label="4 de 4"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i></span></div>
+          <div class="cap"><span>Personalización de modelos</span><span class="lv r" role="img" aria-label="4 de 4"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i></span></div>
+          <div class="cap"><span>RAG</span><span class="lv" role="img" aria-label="3 de 4"><i class="f"></i><i class="f"></i><i class="f"></i><i></i></span></div>
+        </div>
+        <div class="cg">
+          <h3>Operación y datos</h3>
+          <div class="cap"><span>Preparación de datos</span><span class="lv r" role="img" aria-label="4 de 4"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i></span></div>
+          <div class="cap"><span>Seguridad de IA</span><span class="lv" role="img" aria-label="3 de 4"><i class="f"></i><i class="f"></i><i class="f"></i><i></i></span></div>
+          <div class="cap"><span>MLOps y ciclo de vida</span><span class="lv" role="img" aria-label="3 de 4"><i class="f"></i><i class="f"></i><i class="f"></i><i></i></span></div>
+          <div class="cap"><span>Evaluación de modelos</span><span class="lv" role="img" aria-label="3 de 4"><i class="f"></i><i class="f"></i><i class="f"></i><i></i></span></div>
+          <div class="cap"><span>Contenedores</span><span class="lv" role="img" aria-label="3 de 4"><i class="f"></i><i class="f"></i><i class="f"></i><i></i></span></div>
+        </div>
+      </div>
+      <div class="legend"><span><i style="background:var(--mandarina)"></i>Referente, nivel 4</span><span><i style="background:var(--cobalto)"></i>Avanzado, nivel 3</span></div>
+
+      <div class="tech">
+        <div><h3>Modelos</h3><ul><li>Modelos GPT de OpenAI</li><li>Gemini</li><li>Claude</li><li>IBM Watson Assistant</li></ul></div>
+        <div><h3>Plataformas de IA</h3><ul><li>Vertex AI</li><li>AWS Bedrock</li><li>Dialogflow</li><li>Google AI Studio</li></ul></div>
+        <div><h3>Contact center</h3><ul><li>Genesys Cloud</li><li>Lynn</li><li>WhatsApp y canales digitales</li></ul></div>
+        <div><h3>Desarrollo y nube</h3><ul><li>Python y Playwright</li><li>LangGraph</li><li>Docker y Cloud Run</li><li>Firestore y Apps Script</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="marca" style="padding-top:20px">
+    <div class="wrap">
+      <div class="sec-h">
+        <h2>La paleta de mi trabajo</h2>
+        <p>Una sala oscura donde cada proyecto se exhibe como una pieza, y el color se guarda para lo que importa. Aquí, en la proporción en que se usan.</p>
+      </div>
+      <div class="strip">
+        <div class="sw-n"><b>Obsidiana</b><span>El escenario donde cada proyecto se exhibe.</span><code>#000000</code></div>
+        <div class="sw-p"><b>Carbón</b><span>Los paneles que explican cada caso.</span><code>#1D1D1F</code></div>
+        <div class="sw-c"><b>Porcelana</b><span>El texto y las pausas claras.</span><code>#F5F5F7</code></div>
+        <div class="sw-a"><b>Azul</b><span>Las acciones.</span><code>#0071E3</code></div>
+        <div class="sw-y"><b>Amarillo</b><span>Las cifras.</span><code>#FFD500</code></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="band"><div class="wrap">
+    <div class="outro">
+      <h2>Cada conversación, una ruta resuelta.</h2>
+      <svg class="sym" id="sym" viewBox="0 0 36 36" aria-hidden="true">
+        <circle cx="18" cy="18" r="17" fill="none" style="stroke:color-mix(in srgb, var(--cobalto) 35%, transparent)" stroke-width=".6"/>
+        <path class="d" d="M8 12 C 16 12, 14 18, 20 18" style="stroke:var(--cobalto)" stroke-width="1.2" pathLength="120"/>
+        <path class="d d2" d="M8 24 C 16 24, 14 18, 20 18" style="stroke:var(--cobalto)" stroke-width="1.2" pathLength="120"/>
+        <path class="d d3" d="M20 18 H 27" style="stroke:var(--mandarina)" stroke-width="1.8" pathLength="120"/>
+        <circle cx="28" cy="18" r="1.8" style="fill:var(--mandarina)"/>
+      </svg>
+    </div>
+  </div></div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="mark"><svg viewBox="0 0 36 36" aria-hidden="true" width="26" height="26"><circle cx="18" cy="18" r="17" fill="none" style="stroke:var(--cobalto)" stroke-width="1.4"/><path d="M8 12 C 16 12, 14 18, 20 18 M8 24 C 16 24, 14 18, 20 18" fill="none" style="stroke:var(--cobalto)" stroke-width="2" stroke-linecap="round"/><path d="M20 18 H 27" style="stroke:var(--mandarina)" stroke-width="2.8" stroke-linecap="round"/><circle cx="28" cy="18" r="3" style="fill:var(--mandarina)"/></svg><b>César Osorio</b></span>
+    <span>Formación autodidacta, aplicada en proyectos reales, 2025 y 2026</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var reduce = false;
+  try { reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) {}
+  var finePointer = false;
+  try { finePointer = window.matchMedia("(pointer: fine)").matches; } catch (e) {}
+
+  // Portada: conversaciones que entran por tres canales, pasan por la IA y salen resueltas
+  function flow() {
+    var cv = document.getElementById("flow");
+    if (!cv || !cv.getContext) return;
+    var ctx = cv.getContext("2d"), W = 0, H = 0, dpr = 1, routes = [], ghosts = [], parts = [], core = { x: 0, y: 0 }, visible = true, t0 = 0, raf = 0;
+    function bez(p, t) {
+      var u = 1 - t;
+      return { x: u*u*u*p[0] + 3*u*u*t*p[2] + 3*u*t*t*p[4] + t*t*t*p[6], y: u*u*u*p[1] + 3*u*u*t*p[3] + 3*u*t*t*p[5] + t*t*t*p[7] };
+    }
+    function layout() {
+      var r = cv.getBoundingClientRect();
+      W = r.width; H = r.height; if (!W || !H) return;
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      var wide = W > 900;
+      core = wide ? { x: W * 0.5, y: H * 0.22 } : { x: W * 0.5, y: H * 0.2 };
+      var cx = core.x, cy = core.y;
+      var ins = [
+        { y: H * (wide ? 0.08 : 0.08), label: "WhatsApp" },
+        { y: H * (wide ? 0.22 : 0.17), label: "Web" },
+        { y: H * (wide ? 0.36 : 0.28), label: "Voz" }
+      ];
+      routes = ins.map(function (o) { return { p: [-30, o.y, cx * 0.45, o.y, cx * 0.62, cy, cx, cy], label: o.label, ly: o.y }; });
+      routes.out = [cx, cy, cx + (W - cx) * 0.4, cy, cx + (W - cx) * 0.55, cy - H * 0.08, W + 30, cy - H * 0.08];
+      routes.alt = [cx, cy, cx + (W - cx) * 0.3, cy, cx + (W - cx) * 0.45, cy + H * 0.14, W + 30, cy + H * 0.14];
+      ghosts = [];
+      for (var g = 0; g < 14; g++) {
+        var y1 = Math.random() * H * 0.8, y2 = Math.random() * H * 0.8;
+        ghosts.push([-30, y1, W * 0.3, y1, W * 0.6, y2, W + 30, y2]);
+      }
+      if (!parts.length) {
+        for (var i = 0; i < 150; i++) parts.push(spawn(Math.random()));
+      }
+    }
+    function spawn(t) {
+      return { r: Math.floor(Math.random() * 3), t: t === undefined ? 0 : t, phase: 0, alt: Math.random() < 0.2, s: 0.0018 + Math.random() * 0.0026, j: (Math.random() - 0.5) * 14, z: 0.5 + Math.random() };
+    }
+    function stroke(p, color, w, dash) {
+      ctx.beginPath(); ctx.moveTo(p[0], p[1]); ctx.bezierCurveTo(p[2], p[3], p[4], p[5], p[6], p[7]);
+      ctx.strokeStyle = color; ctx.lineWidth = w; ctx.setLineDash(dash || []); ctx.stroke(); ctx.setLineDash([]);
+    }
+    function draw(now) {
+      ctx.clearRect(0, 0, W, H);
+      ghosts.forEach(function (g) { stroke(g, "rgba(255,255,255,0.035)", 1); });
+      routes.forEach(function (r) { stroke(r.p, "rgba(41,151,255,0.22)", 1); });
+      stroke(routes.out, "rgba(255,213,0,0.5)", 1.6);
+      stroke(routes.alt, "rgba(134,134,139,0.5)", 1, [3, 6]);
+      ctx.globalCompositeOperation = "lighter";
+      parts.forEach(function (p) {
+        if (!reduce) {
+          p.t += p.s * (p.phase ? 1.25 : 1);
+          if (p.t >= 1) { if (p.phase === 0) { p.phase = 1; p.t = 0; } else { var n = spawn(); for (var k in n) p[k] = n[k]; } }
+        }
+        var path = p.phase === 0 ? routes[p.r].p : (p.alt ? routes.alt : routes.out);
+        var a = bez(path, p.t), b = bez(path, Math.max(0, p.t - 0.025));
+        var fade = p.phase === 0 ? Math.min(1, p.t * 4) : Math.min(1, (1 - p.t) * 4);
+        var spread = p.phase === 0 ? (1 - p.t) : p.t * 0.6;
+        var oy = p.j * spread;
+        var col = p.phase === 1 && !p.alt ? "255,213,0" : (p.phase === 1 ? "134,134,139" : "41,151,255");
+        ctx.beginPath(); ctx.moveTo(b.x, b.y + oy); ctx.lineTo(a.x, a.y + oy);
+        ctx.strokeStyle = "rgba(" + col + "," + (0.55 * fade) + ")"; ctx.lineWidth = 1.4 * p.z; ctx.stroke();
+        ctx.beginPath(); ctx.arc(a.x, a.y + oy, 1.4 * p.z, 0, 6.283);
+        ctx.fillStyle = "rgba(" + col + "," + (0.95 * fade) + ")"; ctx.fill();
+      });
+      // núcleo
+      var pulse = reduce ? 0.5 : (Math.sin(now / 700) + 1) / 2;
+      var grd = ctx.createRadialGradient(core.x, core.y, 0, core.x, core.y, 90);
+      grd.addColorStop(0, "rgba(41,151,255,0.45)"); grd.addColorStop(0.3, "rgba(41,151,255,0.1)"); grd.addColorStop(1, "rgba(41,151,255,0)");
+      ctx.fillStyle = grd; ctx.beginPath(); ctx.arc(core.x, core.y, 90, 0, 6.283); ctx.fill();
+      ctx.globalCompositeOperation = "source-over";
+      ctx.beginPath(); ctx.arc(core.x, core.y, 16 + pulse * 6, 0, 6.283); ctx.strokeStyle = "rgba(41,151,255," + (0.5 - pulse * 0.3) + ")"; ctx.lineWidth = 1; ctx.stroke();
+      ctx.beginPath(); ctx.arc(core.x, core.y, 7, 0, 6.283); ctx.fillStyle = "#2997ff"; ctx.fill();
+      // rótulos
+      ctx.font = "11px ui-monospace, Menlo, Consolas, monospace"; ctx.fillStyle = "rgba(134,134,139,0.95)";
+      if (W > 560) routes.forEach(function (r) { ctx.fillText(r.label, Math.max(24, W * 0.04), r.ly + 20); });
+      ctx.fillText("IA", core.x - 6, core.y - 30);
+      var e = bez(routes.out, 0.78); ctx.fillStyle = "#ffd500"; ctx.fillText("Resuelta", Math.min(e.x - 30, W - 70), e.y - 12);
+      var f = bez(routes.alt, 0.72); ctx.fillStyle = "rgba(134,134,139,0.9)"; ctx.fillText("Ejecutivo", Math.min(f.x - 30, W - 74), f.y + 22);
+    }
+    function loop(now) {
+      raf = 0;
+      if (!visible) return;
+      draw(now || 0);
+      if (!reduce) raf = requestAnimationFrame(loop);
+    }
+    layout();
+    window.addEventListener("resize", function () { layout(); if (reduce) draw(0); });
+    try { new IntersectionObserver(function (en) { visible = en[0].isIntersecting; if (visible && !raf && !reduce) raf = requestAnimationFrame(loop); }).observe(cv); } catch (e) {}
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { if (reduce) draw(0); });
+    loop(0);
+  }
+  try { flow(); } catch (e) {}
+
+  // Barra superior sólida al bajar, riel de avance y sección activa
+  var top = document.getElementById("top"), fill = document.getElementById("rail-fill");
+  function onScroll() {
+    var y = window.scrollY || 0, max = document.documentElement.scrollHeight - window.innerHeight;
+    top.classList.toggle("solid", y > 40);
+    if (fill) fill.style.height = "calc((100% - 12px) * " + (max > 0 ? Math.min(1, y / max) : 0) + ")";
+  }
+  window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+  var secs = Array.prototype.slice.call(document.querySelectorAll("[data-track]"));
+  var order = secs.map(function (s) { return s.id; });
+  function setActive(id) {
+    var idx = order.indexOf(id);
+    document.querySelectorAll("[data-sec]").forEach(function (a) {
+      var on = a.dataset.sec === id;
+      if (on) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current");
+      a.classList.toggle("past", order.indexOf(a.dataset.sec) < idx);
+    });
+  }
+  try {
+    var io = new IntersectionObserver(function (en) { en.forEach(function (e) { if (e.isIntersecting) setActive(e.target.id); }); }, { rootMargin: "-45% 0px -50% 0px" });
+    secs.forEach(function (s) { io.observe(s); });
+  } catch (e) {}
+
+  // Índice de proyectos: vista previa que sigue al cursor
+  var peek = document.getElementById("peek");
+  if (finePointer && peek) {
+    var px = 0, py = 0, tx = 0, ty = 0, raf = 0;
+    function move() { px += (tx - px) * 0.18; py += (ty - py) * 0.18; peek.style.left = px + "px"; peek.style.top = py + "px"; raf = (Math.abs(tx - px) + Math.abs(ty - py) > 0.5) ? requestAnimationFrame(move) : 0; }
+    document.querySelectorAll(".row").forEach(function (row) {
+      row.addEventListener("pointerenter", function (e) { var pv = row.querySelector(".pv"); peek.innerHTML = pv ? pv.innerHTML : ""; px = tx = e.clientX + 200; py = ty = e.clientY; peek.classList.add("on"); });
+      row.addEventListener("pointermove", function (e) { tx = Math.min(window.innerWidth - 180, e.clientX + 200); ty = e.clientY; if (!raf) raf = requestAnimationFrame(move); });
+      row.addEventListener("pointerleave", function () { peek.classList.remove("on"); });
+    });
+  }
+
+  // MiaX: en escritorio las figuras pasan a un escenario fijo que cambia con cada paso
+  var story = document.getElementById("story"), stage = document.getElementById("stage");
+  var steps = Array.prototype.slice.call(story.querySelectorAll(".st"));
+  var figs = steps.map(function (s) { return s.querySelector(".fig"); });
+  var mq = window.matchMedia("(min-width: 1120px)");
+  function place() {
+    if (mq.matches) { story.classList.add("js"); figs.forEach(function (f) { stage.appendChild(f); }); }
+    else { story.classList.remove("js"); figs.forEach(function (f, i) { f.classList.remove("on"); steps[i].appendChild(f); }); }
+    showStep(current);
+  }
+  var current = 0;
+  function showStep(i) {
+    current = i;
+    steps.forEach(function (s, k) { s.classList.toggle("on", k === i); });
+    if (mq.matches) figs.forEach(function (f, k) { f.classList.toggle("on", k === i); });
+  }
+  try {
+    var sio = new IntersectionObserver(function (en) { en.forEach(function (e) { if (e.isIntersecting) showStep(steps.indexOf(e.target)); }); }, { rootMargin: "-40% 0px -55% 0px" });
+    steps.forEach(function (s) { sio.observe(s); });
+  } catch (e) {}
+  if (mq.addEventListener) mq.addEventListener("change", place); else if (mq.addListener) mq.addListener(place);
+  place();
+
+  var archBtns = document.querySelectorAll("[data-arch]");
+  archBtns.forEach(function (b) {
+    b.addEventListener("click", function () {
+      archBtns.forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+      document.querySelectorAll("[data-arch-view]").forEach(function (v) { v.hidden = v.dataset.archView !== b.dataset.arch; });
+    });
+  });
+
+  // Contact center: cada caso dibuja su ruta por el tablero
+  var SC = [
+    { d: "M100 70 C120 70 120 90 140 90 L270 100 C292 100 300 69 324 69 L411 69 L411 133 L498 133 C522 133 524 110 548 110 L600 110", k: ["wa", "lynn", "bot", "kn", "ok"],
+      t: ["Entra por WhatsApp a Lynn.", "El bot entiende la intención sin menú.", "Knowledge entrega la respuesta oficial.", "Se resuelve sin pasar a un ejecutivo."] },
+    { d: "M100 250 C220 250 250 80 324 80 L411 80 L411 261 L498 261 C522 261 524 236 548 236 L600 236", k: ["voz", "bot", "pr", "aa", "ej"],
+      t: ["Llama y el flujo de voz lo atiende.", "El bot hace el primer diagnóstico.", "Predictive Routing elige al ejecutivo.", "Agent Assist le sugiere los pasos."] },
+    { d: "M100 70 C120 70 120 90 140 90 L270 120 C300 120 300 197 324 197 L411 197 L411 261 L498 261 C522 261 524 236 548 236 L600 236", k: ["wa", "lynn", "pr", "aa", "ej"],
+      t: ["Lynn recibe el mensaje.", "Predictive Routing busca a quien mejor lo resuelve.", "Agent Assist lo apoya en tiempo real."] }
+  ];
+  var route = document.getElementById("cc-route"), anim = document.getElementById("cc-anim"), trail = document.getElementById("trail");
+  var scBtns = Array.prototype.slice.call(document.querySelectorAll("[data-sc]"));
+  function scenario(i, focus) {
+    var s = SC[i];
+    scBtns.forEach(function (b, k) { b.setAttribute("aria-checked", k === i ? "true" : "false"); b.tabIndex = k === i ? 0 : -1; });
+    if (focus) scBtns[i].focus();
+    route.setAttribute("d", s.d);
+    document.querySelectorAll("svg [data-k]").forEach(function (n) { n.classList.toggle("on", s.k.indexOf(n.dataset.k) > -1); });
+    trail.innerHTML = s.t.map(function (x) { return "<li>" + x + "</li>"; }).join("");
+    try {
+      var len = route.getTotalLength();
+      route.style.strokeDasharray = len; route.style.strokeDashoffset = reduce ? 0 : len;
+      route.getBoundingClientRect();
+      route.style.transition = reduce ? "none" : "stroke-dashoffset 1.2s cubic-bezier(.2,.8,.2,1)";
+      route.style.strokeDashoffset = 0;
+      if (anim && anim.beginElement) anim.beginElement();
+      if (reduce && route.ownerSVGElement.pauseAnimations) route.ownerSVGElement.pauseAnimations();
+    } catch (e) {}
+  }
+  scBtns.forEach(function (b, i) {
+    b.addEventListener("click", function () { scenario(i, false); });
+    b.addEventListener("keydown", function (e) {
+      var n = null;
+      if (e.key === "ArrowDown" || e.key === "ArrowRight") n = (i + 1) % scBtns.length;
+      if (e.key === "ArrowUp" || e.key === "ArrowLeft") n = (i - 1 + scBtns.length) % scBtns.length;
+      if (n !== null) { e.preventDefault(); scenario(n, true); }
+    });
+  });
+  scenario(0, false);
+
+  // Suite: pestañas accesibles
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.dock [role="tab"]'));
+  function selectApp(tab, focus) {
+    tabs.forEach(function (t) {
+      var on = t === tab, p = document.getElementById(t.getAttribute("aria-controls"));
+      t.setAttribute("aria-selected", on ? "true" : "false"); t.tabIndex = on ? 0 : -1;
+      if (p) { p.hidden = !on; if (on) { p.classList.remove("panel-anim"); void p.offsetWidth; p.classList.add("panel-anim"); } }
+    });
+    if (focus) tab.focus();
+    tab.scrollIntoView({ block: "nearest", inline: "nearest" });
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener("click", function () { selectApp(t, false); });
+    t.addEventListener("keydown", function (e) {
+      var n = null;
+      if (e.key === "ArrowRight") n = tabs[(i + 1) % tabs.length];
+      if (e.key === "ArrowLeft") n = tabs[(i - 1 + tabs.length) % tabs.length];
+      if (e.key === "Home") n = tabs[0];
+      if (e.key === "End") n = tabs[tabs.length - 1];
+      if (n) { e.preventDefault(); selectApp(n, true); }
+    });
+  });
+  document.querySelectorAll("[data-app]").forEach(function (a) {
+    a.addEventListener("click", function () { var t = tabs[+a.dataset.app - 1]; if (t) selectApp(t, false); });
+  });
+
+  // Dispositivo que se inclina hacia el cursor
+  if (finePointer && !reduce) {
+    document.querySelectorAll(".persp").forEach(function (p) {
+      var d = p.querySelector(".device");
+      p.addEventListener("pointermove", function (e) {
+        var r = p.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+        d.style.setProperty("--ry", (x * 8).toFixed(2) + "deg"); d.style.setProperty("--rx", (-y * 6).toFixed(2) + "deg");
+      });
+      p.addEventListener("pointerleave", function () { d.style.removeProperty("--ry"); d.style.removeProperty("--rx"); });
+    });
+  }
+
+  // Símbolo final: las dos rutas se dibujan y salen en ámbar
+  var sym = document.getElementById("sym");
+  try { new IntersectionObserver(function (en) { if (en[0].isIntersecting) sym.classList.add("on"); }, { threshold: 0.6 }).observe(sym); } catch (e) { sym.classList.add("on"); }
+})();
+</script>
+</body>
+</html>
