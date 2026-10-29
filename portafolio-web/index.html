@@ -617,6 +617,36 @@ footer { border-top: 0; }
   .facts { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; text-align: center; }
   .facts li { grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 4px; }
 }
+/* Sobre mí: biografía a la izquierda y la trayectoria como ruta en un panel carbón; el cargo actual va en amarillo */
+.about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 64px; align-items: start; }
+.about h2 { font-size: clamp(2.25rem, 5vw, 3.5rem); font-weight: 600; letter-spacing: -0.015em; line-height: 1.07; margin-bottom: 28px; }
+.about-lead { font-size: clamp(1.2rem, 2vw, 1.45rem); line-height: 1.4; letter-spacing: -0.01em; margin-bottom: 18px; max-width: 34ch; }
+.about-txt > p:not(.about-lead) { color: var(--muted); max-width: 52ch; }
+.about-facts { margin: 32px 0; border-top: 1px solid var(--line); }
+.about-facts div { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.about-facts dt { font-size: 0.88rem; color: var(--dim); }
+.about-facts dd { margin: 0; font-size: 0.95rem; }
+.path { list-style: none; margin: 0; padding: clamp(24px, 4vw, 40px); background: var(--paper); border-radius: 28px; display: grid; gap: 28px; }
+.path li { position: relative; padding-left: 34px; display: grid; gap: 4px; }
+.path li::before { content: ""; position: absolute; left: 0; top: 4px; width: 15px; height: 15px; box-sizing: border-box; border-radius: 50%; border: 2px solid var(--cobalto); background: var(--paper); z-index: 1; }
+.path li::after { content: ""; position: absolute; left: 7px; top: 22px; bottom: -30px; width: 1px; background: var(--line-2); }
+.path li:last-child::after { display: none; }
+.path li.now::before { background: var(--mandarina); border-color: var(--mandarina); }
+.path .yr { font-size: 0.8rem; color: var(--cobalto); font-variant-numeric: tabular-nums; }
+.path .now .yr { color: var(--mandarina-t); }
+.path h3 { font-size: 1.15rem; font-weight: 600; letter-spacing: -0.01em; line-height: 1.25; }
+.path .org { font-size: 0.88rem; color: var(--dim); }
+.path p { color: var(--muted); font-size: 0.95rem; margin-top: 4px; max-width: 54ch; }
+footer a { color: var(--cobalto); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+@media (max-width: 1000px) {
+  .about { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+}
+@media (max-width: 680px) {
+  .about-facts div { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .path { padding: 22px; border-radius: 22px; gap: 24px; }
+  .path li::after { bottom: -26px; }
+}
 /* Móvil: diagramas en vertical en vez de deslizar, ritmo más compacto y método como línea de tiempo */
 .flow-m { display: none; }
 @media (max-width: 680px) {
@@ -664,6 +694,7 @@ footer { border-top: 0; }
       <b>César Osorio</b>
     </a>
     <nav aria-label="Secciones">
+      <a href="#sobre-mi" data-sec="sobre-mi">Sobre mí</a>
       <a class="keep" href="#proyectos" data-sec="proyectos">Proyectos</a>
       <a href="#miax" data-sec="miax">MiaX</a>
       <a href="#contact-center" data-sec="contact-center">Contact center</a>
@@ -677,6 +708,7 @@ footer { border-top: 0; }
   <span class="rail-line"></span><span class="rail-fill" id="rail-fill"></span>
   <ol>
     <li><a href="#inicio" data-sec="inicio"><i></i><span>Inicio</span></a></li>
+    <li><a href="#sobre-mi" data-sec="sobre-mi"><i></i><span>Sobre mí</span></a></li>
     <li><a href="#metodo" data-sec="metodo"><i></i><span>Cómo trabajo</span></a></li>
     <li><a href="#proyectos" data-sec="proyectos"><i></i><span>Proyectos</span></a></li>
     <li><a href="#miax" data-sec="miax"><i></i><span>MiaX</span></a></li>
@@ -703,6 +735,30 @@ footer { border-top: 0; }
 </section>
 
 <main>
+  <section class="sec" id="sobre-mi" data-track>
+    <div class="wrap">
+      <div class="about">
+        <div class="about-txt">
+          <h2>Sobre mí</h2>
+          <p class="about-lead">Llevo seis años en la atención de Gtd y Telsur. Empecé como analista leyendo conversaciones de chat y WhatsApp; hoy dirijo la estrategia de todos los canales de atención y venta.</p>
+          <p>Mi foco es que el cliente resuelva solo, en el canal que elija, y que la IA haga crecer la atención y la venta sin crecer en dotación. Trabajo con tecnología, producto, operaciones y negocio, y priorizo por impacto en experiencia, eficiencia y conversión.</p>
+          <dl class="about-facts">
+            <div><dt>Base</dt><dd>Santiago, Chile</dd></div>
+            <div><dt>Formación</dt><dd>Ingeniería Civil, Universidad de Las Américas. La IA, aprendida en proyectos reales.</dd></div>
+            <div><dt>Indicadores</dt><dd>NPS, FCR, satisfacción, adopción digital, deflexión de canales y eficiencia operativa.</dd></div>
+          </dl>
+          <a class="btn-g" href="https://www.linkedin.com/in/cesar-osoriotorres" target="_blank" rel="noopener">Ver perfil en LinkedIn</a>
+        </div>
+        <ol class="path" aria-label="Trayectoria">
+          <li class="now"><span class="yr">2026 – hoy</span><h3>Jefe de Estrategia de Canales Multisegmento</h3><span class="org">Gtd · Santiago</span><p>Estrategia de atención y venta para todos los segmentos: IA aplicada, automatización, autogestión omnicanal y eCommerce integrado al CRM.</p></li>
+          <li><span class="yr">2022 – 2026</span><h3>Jefe de Plataforma de Atención, Canales Digitales</h3><span class="org">Gtd · Santiago</span><p>Redes sociales, chat web y WhatsApp. Herramientas de IA con aliados para atender en tiempo real y fomentar la autoatención.</p></li>
+          <li><span class="yr">2020 – 2022</span><h3>Coordinador de Plataforma de Atención, Canales Digitales</h3><span class="org">Telsur · Valdivia</span><p>Operación diaria, KPIs y mejoras de eficiencia y calidad. Primeras iniciativas de autogestión digital.</p></li>
+          <li><span class="yr">2020</span><h3>Analista de Contact Center, Canales Digitales</h3><span class="org">Telsur · Valdivia</span><p>Datos de interacciones, TMO, SLA y NPS. Apoyo en la puesta en marcha de chatbots.</p></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
   <section class="sec" id="metodo" data-track>
     <div class="wrap">
       <div class="sec-h">
@@ -1186,7 +1242,7 @@ footer { border-top: 0; }
 <footer>
   <div class="wrap">
     <span class="mark"><svg viewBox="0 0 36 36" aria-hidden="true" width="26" height="26"><circle cx="18" cy="18" r="17" fill="none" style="stroke:var(--cobalto)" stroke-width="1.4"/><path d="M8 12 C 16 12, 14 18, 20 18 M8 24 C 16 24, 14 18, 20 18" fill="none" style="stroke:var(--cobalto)" stroke-width="2" stroke-linecap="round"/><path d="M20 18 H 27" style="stroke:var(--mandarina)" stroke-width="2.8" stroke-linecap="round"/><circle cx="28" cy="18" r="3" style="fill:var(--mandarina)"/></svg><b>César Osorio</b></span>
-    <span>Formación autodidacta, aplicada en proyectos reales, 2025 y 2026</span>
+    <span>Santiago, Chile · <a href="https://www.linkedin.com/in/cesar-osoriotorres" target="_blank" rel="noopener">LinkedIn</a></span>
   </div>
 </footer>
 
