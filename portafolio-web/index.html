@@ -617,10 +617,46 @@ footer { border-top: 0; }
   .facts { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; text-align: center; }
   .facts li { grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 4px; }
 }
+/* Móvil: diagramas en vertical en vez de deslizar, ritmo más compacto y método como línea de tiempo */
+.flow-m { display: none; }
+@media (max-width: 680px) {
+  .sec { padding-block: 64px; }
+  .sec-h { margin-bottom: 32px; }
+  .route { row-gap: 28px; padding-left: 0; }
+  .route::before { display: block; left: 11px; right: auto; top: 12px; bottom: 12px; width: 1px; height: auto; }
+  .route li { padding: 0 0 0 44px; gap: 4px; }
+  .route li::before { top: 2px; }
+  .route .n { font-size: 0.95rem; letter-spacing: 0; }
+  .route h3 { font-size: 1.2rem; font-weight: 500; }
+  .swipe { display: none !important; }
+  .diagram { overflow: visible; margin-top: 4px; }
+  .diagram svg { display: none; }
+  .flow-m { display: grid; gap: 0; list-style: none; margin: 0; padding: 0; }
+  .flow-m > li { position: relative; }
+  .flow-m > li + li { margin-top: 22px; }
+  .flow-m > li + li::before { content: ""; position: absolute; left: 50%; top: -20px; height: 18px; width: 1px; background: color-mix(in srgb, var(--cobalto) 55%, transparent); }
+  .fm { display: grid; gap: 2px; padding: 12px 14px; border-radius: 12px; border: 1px solid var(--line-2); background: var(--paper); text-align: center; }
+  .fm b { font-weight: 500; font-size: 0.95rem; }
+  .fm span { font-size: 0.8rem; color: var(--dim); }
+  .fm.ia { background: var(--n-ia); border-color: var(--cobalto); }
+  .fm.ok { background: var(--n-ok); border-color: var(--mandarina); }
+  .fm.sec { background: var(--n-sec); border-color: color-mix(in srgb, var(--menta) 65%, transparent); }
+  .fm-fork { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px; }
+  .fm-fork > div { display: grid; gap: 6px; align-content: start; }
+  .fm-fork i { font-style: normal; font-size: 0.74rem; color: var(--dim); text-align: center; }
+  .fm-steps { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px; margin-top: 6px; }
+  .fm-steps em { font-style: normal; font-size: 0.74rem; padding: 3px 7px; border-radius: 999px; border: 1px solid var(--line-2); color: var(--ink); }
+  .fm-steps em:last-child { border-color: var(--mandarina); color: var(--mandarina-t); }
+  .board-main { display: none; }
+  .board-side { border-bottom: 0; padding: 20px; }
+  .strip > div, .sw-n, .sw-p { min-height: 0 !important; padding: 16px 18px; gap: 2px; }
+  .outro { padding-block: 56px; gap: 28px; }
+  .sym { width: 76px; }
+}
 </style>
+
 </head>
 <body>
-
 <header class="top" id="top">
   <div class="wrap">
     <a class="mark" href="#inicio" aria-label="César Osorio, inicio">
@@ -802,6 +838,12 @@ footer { border-top: 0; }
                   
                   <text class="s" x="404" y="112">informativa</text><text class="s" x="404" y="196">transaccional</text>
                 </svg>
+                <ol class="flow-m" aria-hidden="true">
+                  <li><div class="fm"><b>Cliente</b></div></li>
+                  <li><div class="fm sec"><b>Guardrails</b><span>filtra y oculta datos</span></div></li>
+                  <li><div class="fm ia"><b>Enrutador</b></div></li>
+                  <li><div class="fm-fork"><div><i>informativa</i><div class="fm ok"><b>Agente de IA + RAG</b><span>planes, precios, cobertura</span></div></div><div><i>transaccional</i><div class="fm"><b>Watson + APIs</b><span>login, pagos, diagnóstico</span></div></div></div></li>
+                </ol>
               </div>
               <div class="diagram" data-arch-view="b" hidden>
                 <svg viewBox="0 0 600 300" role="img" aria-label="Arquitectura unificada: LangGraph clasifica con IA y lleva cada conversación por estados explícitos hasta la API, con RAG para lo informativo">
@@ -820,6 +862,11 @@ footer { border-top: 0; }
                   
                   
                 </svg>
+                <ol class="flow-m" aria-hidden="true">
+                  <li><div class="fm"><b>Cliente</b></div></li>
+                  <li><div class="fm ia"><b>Clasificador IA</b><span>intención y entidades</span></div></li>
+                  <li><div class="fm-fork"><div><i>informativa</i><div class="fm ok"><b>Respuestas + RAG</b><span>consultas informativas</span></div></div><div><i>transaccional</i><div class="fm"><b>LangGraph</b><span>cada paso, un estado auditable</span><div class="fm-steps"><em>Clasificar</em><em>RUT</em><em>OTC</em><em>API</em></div></div></div></div></li>
+                </ol>
               </div>
             </div>
           </article>
