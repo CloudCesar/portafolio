@@ -530,6 +530,7 @@ h1, h2, h3, h4 { font-weight: 600; letter-spacing: -0.015em; line-height: 1.07; 
 .sw-y { background: #ffd500; color: #1d1d1f; }
 .outro h2 { font-size: clamp(2.4rem, 5.2vw, 4.5rem); font-weight: 600; letter-spacing: -0.015em; line-height: 1.05; max-width: 16ch; }
 .band .outro { padding-inline: clamp(8px, 2vw, 24px); }
+.outro-txt p { color: var(--muted); font-size: clamp(1.05rem, 1.6vw, 1.25rem); max-width: 44ch; margin: 20px 0 28px; }
 footer { border-top: 0; }
 @media (max-width: 680px) {
   .sw-n { border-radius: 28px 28px 0 0; }
@@ -643,7 +644,7 @@ footer { border-top: 0; }
 .about-lead { font-size: clamp(1.2rem, 2vw, 1.45rem); line-height: 1.4; letter-spacing: -0.01em; margin-bottom: 18px; max-width: 34ch; }
 .about-txt > p:not(.about-lead) { color: var(--muted); max-width: 52ch; margin-bottom: 14px; }
 .about-q { margin: 26px 0 0; padding-left: 18px; border-left: 2px solid var(--mandarina); font-size: 1.08rem; line-height: 1.45; max-width: 44ch; }
-.about-txt > p.about-cta { color: var(--ink); margin: 0 0 16px; }
+.about-txt > p.about-cta { color: var(--ink); margin: 32px 0 16px; }
 .about-facts { margin: 32px 0; border-top: 1px solid var(--line); }
 .about-facts div { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); }
 .about-facts dt { font-size: 0.88rem; color: var(--dim); }
@@ -767,11 +768,6 @@ footer a:hover { text-decoration: underline; }
           <p>Nunca diseño pensando solo en la métrica, sino en la persona que está del otro lado. Es fácil olvidarlo cuando trabajas con tecnología a escala, y ahí está la diferencia.</p>
           <p>Mi rol es ser el puente que une el negocio, la tecnología y la operación: convertir una capacidad de IA en una conversación que resuelve, un objetivo comercial en un flujo sin fricción y un problema operativo en automatización, en lugar de más personas haciendo lo mismo.</p>
           <blockquote class="about-q">No me basta con la estrategia en una lámina: me importa verla funcionando y medir su impacto real.</blockquote>
-          <dl class="about-facts">
-            <div><dt>Base</dt><dd>Santiago, Chile</dd></div>
-            <div><dt>Formación</dt><dd>Ingeniería Civil, Universidad de Las Américas. La IA, aprendida en proyectos reales.</dd></div>
-            <div><dt>Indicadores</dt><dd>NPS, FCR, satisfacción, adopción digital, deflexión de canales y eficiencia operativa.</dd></div>
-          </dl>
           <p class="about-cta">¿Conversamos sobre IA aplicada a la experiencia de cliente, automatización o el futuro de los canales digitales?</p>
           <a class="btn-g" href="https://www.linkedin.com/in/cesar-osoriotorres" target="_blank" rel="noopener">Escríbeme en LinkedIn</a>
         </div>
@@ -1251,25 +1247,13 @@ footer a:hover { text-decoration: underline; }
     </div>
   </section>
 
-  <section class="sec" id="marca" style="padding-top:20px">
-    <div class="wrap">
-      <div class="sec-h">
-        <h2>La paleta de mi trabajo</h2>
-        <p>Una sala oscura donde cada proyecto se exhibe como una pieza, y el color se guarda para lo que importa. Aquí, en la proporción en que se usan.</p>
-      </div>
-      <div class="strip">
-        <div class="sw-n"><b>Obsidiana</b><span>El escenario donde cada proyecto se exhibe.</span><code>#000000</code></div>
-        <div class="sw-p"><b>Carbón</b><span>Los paneles que explican cada caso.</span><code>#1D1D1F</code></div>
-        <div class="sw-c"><b>Porcelana</b><span>El texto y las pausas claras.</span><code>#F5F5F7</code></div>
-        <div class="sw-a"><b>Azul</b><span>Las acciones.</span><code>#0071E3</code></div>
-        <div class="sw-y"><b>Amarillo</b><span>Las cifras.</span><code>#FFD500</code></div>
-      </div>
-    </div>
-  </section>
-
   <div class="band"><div class="wrap">
     <div class="outro">
-      <h2>Cada conversación, una ruta resuelta.</h2>
+      <div class="outro-txt">
+        <h2>Tu cliente escribe. La IA lo resuelve.</h2>
+        <p>Llevo la IA de la idea a producción, con números que la respaldan. Si quieres eso en tu operación, conversemos.</p>
+        <a class="btn" href="https://www.linkedin.com/in/cesar-osoriotorres" target="_blank" rel="noopener">Conversemos en LinkedIn</a>
+      </div>
       <svg class="sym" id="sym" viewBox="0 0 36 36" aria-hidden="true">
         <circle cx="18" cy="18" r="17" fill="none" style="stroke:color-mix(in srgb, var(--cobalto) 35%, transparent)" stroke-width=".6"/>
         <path class="d" d="M8 12 C 16 12, 14 18, 20 18" style="stroke:var(--cobalto)" stroke-width="1.2" pathLength="120"/>
@@ -1284,7 +1268,7 @@ footer a:hover { text-decoration: underline; }
 <footer>
   <div class="wrap">
     <span class="mark"><svg viewBox="0 0 36 36" aria-hidden="true" width="26" height="26"><circle cx="18" cy="18" r="17" fill="none" style="stroke:var(--cobalto)" stroke-width="1.4"/><path d="M8 12 C 16 12, 14 18, 20 18 M8 24 C 16 24, 14 18, 20 18" fill="none" style="stroke:var(--cobalto)" stroke-width="2" stroke-linecap="round"/><path d="M20 18 H 27" style="stroke:var(--mandarina)" stroke-width="2.8" stroke-linecap="round"/><circle cx="28" cy="18" r="3" style="fill:var(--mandarina)"/></svg><b>César Osorio</b></span>
-    <span>Santiago, Chile · <a href="https://www.linkedin.com/in/cesar-osoriotorres" target="_blank" rel="noopener">LinkedIn</a></span>
+    <span>IA que atiende, vende y resuelve · <a href="https://www.linkedin.com/in/cesar-osoriotorres" target="_blank" rel="noopener">LinkedIn</a></span>
   </div>
 </footer>
 
