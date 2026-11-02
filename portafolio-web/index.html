@@ -707,6 +707,75 @@ footer a:hover { text-decoration: underline; }
   .outro { padding-block: 56px; gap: 28px; }
   .sym { width: 76px; }
 }
+/* Demos de la Suite: cada maqueta se reproduce como un video corto. data-t = segundo en que entra, data-off = en que sale, data-hl = en que se destaca */
+.device-bar { position: relative; }
+.demo-tag { margin-left: auto; display: inline-flex; align-items: center; gap: 6px; font-style: normal; font-size: 0.72rem; color: var(--dim); }
+.demo-tag::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--dim); }
+.view.demo .demo-tag::before { background: var(--mandarina); animation: rec 1.2s ease-in-out infinite; }
+@keyframes rec { 50% { opacity: .3; } }
+.demo-bar { position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; }
+.demo-bar i { display: block; height: 100%; width: 0; background: var(--cobalto); }
+.screen { position: relative; }
+.view.demo [data-t] { opacity: 0; transform: translateY(6px); transition: opacity .45s var(--ease), transform .45s var(--ease); }
+.view.demo [data-t].is-in { opacity: 1; transform: none; }
+.view.demo .sw:not(.is-in) { display: none; }
+.view:not(.demo) [data-off] { display: none; }
+.view.demo .fill[data-t] { opacity: 1; transform: none; transition: width 1.6s var(--ease); }
+.view.demo .fill[data-t]:not(.is-in) { width: 0 !important; }
+.view.demo .pass .fill[data-t] { transition-duration: 1.7s; transition-timing-function: linear; }
+.portal .ui-card.hl, .pipe .ui-card.hl { border-color: var(--mandarina); }
+.portal .ui-card, .pipe .ui-card, .opsl span, .stg, .cmdk, .opts span, .lead, .chart > div, .jsteps div { transition: border-color .35s, background-color .35s, color .35s, opacity .45s var(--ease), transform .45s var(--ease); }
+.view.demo .opsl span:not(.hl) { color: var(--dim); }
+.view.demo .opsl span:not(.hl)::before { background: var(--line-2); }
+.stg.hl { border-color: var(--cobalto); }
+.stg.win.hl { border-color: var(--menta); }
+.cmdk.hl { border-color: var(--cobalto); color: var(--ink); }
+.opts span.hl { background: var(--cobalto); color: var(--on-c); border-color: var(--cobalto); }
+.lead.hl { border-color: var(--cobalto); }
+.view.demo .chart > div.hl .lbl { color: var(--mandarina-t); }
+.view.demo .jsteps div:not(.hl) { opacity: .45; }
+.jsteps div.hl { color: var(--ink); }
+.toast { margin-top: 14px; display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 99px; background: color-mix(in srgb, var(--menta) 14%, transparent); color: var(--menta-t); font-size: 0.82rem; }
+.toast::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--menta); }
+.dots { display: inline-flex; gap: 4px; padding: 12px 14px; border-radius: 14px; border: 1px solid var(--line); width: max-content; }
+.dots i { width: 6px; height: 6px; border-radius: 50%; background: var(--dim); animation: dot 1s ease-in-out infinite; }
+.dots i:nth-child(2) { animation-delay: .15s; } .dots i:nth-child(3) { animation-delay: .3s; }
+@keyframes dot { 50% { transform: translateY(-3px); opacity: .5; } }
+.json .ln { display: inline; }
+.view.demo .json .ln[data-t] { transform: none; }
+.cur { position: absolute; left: 0; top: 0; width: 20px; height: 20px; pointer-events: none; z-index: 3; opacity: 0; transition: left .9s var(--ease), top .9s var(--ease), opacity .3s; }
+.view.demo .cur { opacity: 1; }
+.cur svg { display: block; filter: drop-shadow(0 2px 4px rgba(0, 0, 0, .5)); }
+.cur::after { content: ""; position: absolute; left: -9px; top: -9px; width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--cobalto); opacity: 0; }
+.cur.tap::after { animation: tap .55s ease-out; }
+@keyframes tap { from { opacity: 1; transform: scale(.4); } to { opacity: 0; transform: scale(1.6); } }
+/* Suite como ecosistema: el portal al centro conecta las apps; debajo, cada app tiene su propia vitrina con demo */
+.eco { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr) minmax(0, 1fr); gap: 56px; align-items: stretch; }
+.eco-side { display: grid; gap: 14px; }
+.eco a { position: relative; display: grid; gap: 4px; padding: 18px 20px; border-radius: 20px; background: var(--paper); border: 1px solid var(--line); color: inherit; text-decoration: none; transition: border-color .3s; }
+.eco a:hover { border-color: var(--cobalto); }
+.eco a span { font-size: 0.78rem; color: var(--dim); }
+.eco a b { font-size: 1.05rem; font-weight: 600; letter-spacing: -0.01em; }
+.eco-side a::after { content: ""; position: absolute; top: 50%; width: 56px; height: 1px; background: color-mix(in srgb, var(--cobalto) 55%, transparent); }
+.eco-side:first-child a::after { left: 100%; }
+.eco-side:last-child a::after { right: 100%; }
+.eco-hub.eco-hub { align-content: center; justify-items: center; text-align: center; gap: 8px; padding: 32px 28px; border-radius: 28px; border-color: var(--cobalto); }
+.eco-hub b { font-size: clamp(1.5rem, 2.6vw, 2rem); }
+.eco-hub em { font-style: normal; color: var(--muted); font-size: 0.92rem; max-width: 28ch; }
+.apps { display: grid; gap: clamp(80px, 11vw, 150px); margin-top: clamp(80px, 10vw, 130px); }
+.apps > .view { scroll-margin-top: 90px; }
+.apps > .view:nth-child(even) .persp { order: 2; }
+.app-k { display: block; font-size: 0.85rem; color: var(--cobalto); margin-bottom: 10px; font-variant-numeric: tabular-nums; }
+@media (max-width: 1000px) {
+  .apps > .view:nth-child(even) .persp { order: 0; }
+}
+@media (max-width: 680px) {
+  .eco { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .eco-hub.eco-hub { order: -1; padding: 24px 20px; }
+  .eco-side { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
+  .eco-side a::after { display: none; }
+  .eco a { padding: 14px 16px; }
+}
 </style>
 
 </head>
@@ -828,19 +897,12 @@ footer a:hover { text-decoration: underline; }
           <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           <div class="pv"><p class="pv-t">Un portal, siete herramientas</p><div class="chips"><span class="on">Portal</span><span>Asistente Comercial</span><span>Scraper</span><span>Comparador</span><span>Sala de Captación</span><span>Asesor Mayorista</span><span>Journey MIA</span></div></div>
         </a>
-        <a class="row" href="#suite" data-app="3">
+        <a class="row" href="#ap-p3">
           <h3>Scraper competitivo</h3>
           <p>La oferta de 10 operadores, leída cada día con IA.</p>
           <span class="area">Inteligencia de mercado</span>
           <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           <div class="pv"><p class="pv-t">Recorrido diario de 10 sitios</p><div class="opsg"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
-        </a>
-        <a class="row" href="#identidad">
-          <h3>Identidad común</h3>
-          <p>Norma de diseño para todas las apps internas.</p>
-          <span class="area">Diseño</span>
-          <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          <div class="pv"><p class="pv-t">Tokens, componentes y galería</p><div class="tokens"><div><div class="tk-c"><i style="background:var(--cobalto)"></i><i style="background:var(--menta)"></i><i style="background:var(--mandarina)"></i></div><span>Color</span></div><div><div class="tk-t">Aa</div><span>Texto</span></div><div><div class="tk-b"><b>Guardar</b></div><span>Botón</span></div></div></div>
         </a>
       </div>
     </div>
@@ -1059,147 +1121,141 @@ footer a:hover { text-decoration: underline; }
     <div class="wrap">
       <div class="sec-h">
         <h2>Suite Comercial GTD</h2>
-        <p>Apps para la fuerza de ventas residencial y de empresas. Un portal con acceso único conecta todo, y la IA aparece donde ahorra tiempo al vendedor.</p>
+        <p>Apps para la fuerza de ventas residencial y de empresas. Un portal conecta todo el ecosistema. Cada app resuelve una parte de la venta, y aquí cada una se muestra en acción.</p>
       </div>
 
-      <div class="dock" role="tablist" aria-label="Apps de la Suite Comercial">
-        <button role="tab" id="ap-t1" aria-controls="ap-p1" aria-selected="true">Portal</button>
-        <button role="tab" id="ap-t2" aria-controls="ap-p2" aria-selected="false" tabindex="-1">Asistente Comercial</button>
-        <button role="tab" id="ap-t3" aria-controls="ap-p3" aria-selected="false" tabindex="-1">Scraper</button>
-        <button role="tab" id="ap-t4" aria-controls="ap-p4" aria-selected="false" tabindex="-1">Comparador</button>
-        <button role="tab" id="ap-t5" aria-controls="ap-p5" aria-selected="false" tabindex="-1">Sala de Captación</button>
-        <button role="tab" id="ap-t6" aria-controls="ap-p6" aria-selected="false" tabindex="-1">Asesor Mayorista</button>
-        <button role="tab" id="ap-t7" aria-controls="ap-p7" aria-selected="false" tabindex="-1">Journey MIA</button>
+      <div class="eco" aria-label="Ecosistema de la Suite Comercial">
+        <div class="eco-side">
+          <a href="#ap-p2"><span>Empresas</span><b>Asistente Comercial</b></a>
+          <a href="#ap-p6"><span>Empresas</span><b>Asesor Mayorista</b></a>
+          <a href="#ap-p5"><span>Ventas residencial</span><b>Sala de Captación</b></a>
+        </div>
+        <a class="eco-hub" href="#ap-p1"><span>Un solo acceso</span><b>Portal Suite</b><em>Cada persona ve solo sus apps, con un pase firmado por app.</em></a>
+        <div class="eco-side">
+          <a href="#ap-p3"><span>Mercado</span><b>Scraper competitivo</b></a>
+          <a href="#ap-p4"><span>Mercado</span><b>Comparador</b></a>
+          <a href="#ap-p7"><span>Atención</span><b>Journey MIA</b></a>
+        </div>
       </div>
 
-      <div class="car" aria-roledescription="carrusel" aria-label="Apps de la Suite Comercial">
-      <div class="car-track" tabindex="0">
-      <div role="tabpanel" id="ap-p1" aria-labelledby="ap-t1" class="view" aria-roledescription="diapositiva" aria-label="1 de 7">
+      <div class="apps">
+      <div id="ap-p1" class="view" data-dur="8">
         <div class="persp"><div class="device"><div class="device-bar"><i></i><i></i><i></i><span>suite.gtd / portal</span></div>
-          <div class="screen">
+          <div class="screen" data-path="0:out;1.6:sala;2.2:tap;6.2:out">
             <div class="ui-row"><div><div class="ui-label">Hola</div><div class="ui-title">Tus apps</div></div><span class="pill ok">Sesión verificada</span></div>
             <div class="portal">
-              <div class="ui-card on"><span class="ui-label">Ventas residencial</span><b>Sala de Captación</b></div>
-              <div class="ui-card"><span class="ui-label">Mercado</span><b>Comparador</b></div>
-              <div class="ui-card"><span class="ui-label">Empresas</span><b>Asesor Mayorista</b></div>
-              <div class="ui-card"><span class="ui-label">Empresas</span><b>Asistente Comercial</b></div>
-              <div class="ui-card"><span class="ui-label">Mercado</span><b>Scraper</b></div>
-              <div class="ui-card"><span class="ui-label">Atención</span><b>Journey MIA</b></div>
+              <div class="ui-card" data-t="0.3" data-hl="2.2" data-k="sala"><span class="ui-label">Ventas residencial</span><b>Sala de Captación</b></div>
+              <div class="ui-card" data-t="0.42"><span class="ui-label">Mercado</span><b>Comparador</b></div>
+              <div class="ui-card" data-t="0.54"><span class="ui-label">Empresas</span><b>Asesor Mayorista</b></div>
+              <div class="ui-card" data-t="0.66"><span class="ui-label">Empresas</span><b>Asistente Comercial</b></div>
+              <div class="ui-card" data-t="0.78"><span class="ui-label">Mercado</span><b>Scraper</b></div>
+              <div class="ui-card" data-t="0.9"><span class="ui-label">Atención</span><b>Journey MIA</b></div>
             </div>
-            <div class="ui-card pass"><span class="mono">pase firmado, un solo uso</span><div class="track"><div class="fill amb" style="width:62%"></div></div><span class="pill amb">vence en segundos</span></div>
+            <div class="ui-card pass" data-t="2.6"><span class="mono">pase firmado, un solo uso</span><div class="track"><div class="fill amb" data-t="2.9" style="width:100%"></div></div><span class="pill amb sw" data-off="4.6">firmando</span><span class="pill ok sw" data-t="4.6">pase válido</span></div>
+            <div class="toast" data-t="5.2">Abriendo Sala de Captación</div>
           </div></div></div>
-        <div class="app-txt"><h3>Portal y acceso único</h3><p>Se entra una vez y el portal muestra solo las apps de cada persona. Para abrir una app genera un pase firmado de un solo uso que vence en segundos.</p>
+        <div class="app-txt"><span class="app-k">01 · Acceso</span><h3>Portal y acceso único</h3><p>Se entra una vez y el portal muestra solo las apps de cada persona. Para abrir una app genera un pase firmado de un solo uso que vence en segundos.</p>
           <ul class="ticks"><li>Pase firmado con HMAC por app: una clave filtrada solo sirve para su app.</li><li>Un motor único sirve a todas las apps nuevas, sin publicar nada.</li><li>Tablero con indicadores de todas las apps.</li></ul></div>
       </div>
 
-      <div role="tabpanel" id="ap-p2" aria-labelledby="ap-t2" class="view" aria-roledescription="diapositiva" aria-label="2 de 7">
+      <div id="ap-p2" class="view" data-dur="10">
         <div class="persp"><div class="device"><div class="device-bar"><i></i><i></i><i></i><span>suite.gtd / asistente-empresas</span></div>
           <div class="screen" style="display:grid;gap:10px;align-content:start">
-            <div class="bub u">Cliente necesita 4 racks de 5 kW en Tier III, contrato a 36 meses. ¿Qué datacenter le ofrezco?</div>
-            <div class="bub b">Para esa densidad te recomiendo un sitio Tier III de la Región Metropolitana. A 36 meses aplica el descuento por plazo. Te dejé la oportunidad lista en el pipeline.<br><span class="ui-label">Fuentes: ficha de datacenter, tarifario de colocation</span></div>
-            <div class="ui-card" style="display:grid;gap:10px;border-color:color-mix(in srgb, var(--mandarina) 45%, transparent)">
-              <div class="ui-row"><b class="ui-title">Oportunidad creada</b><span class="pill amb">Borrador</span></div>
-              <div class="ui-grid3"><div><div class="ui-label">Racks</div><b>4</b></div><div><div class="ui-label">Consumo</div><b>20 kW</b></div><div><div class="ui-label">Plazo</div><b>36 meses</b></div></div>
+            <div class="bub u" data-t="0.3" data-type>Cliente necesita 4 racks de 5 kW en Tier III, contrato a 36 meses. ¿Qué datacenter le ofrezco?</div>
+            <div class="dots sw" data-t="2.4" data-off="3.6"><i></i><i></i><i></i></div>
+            <div class="bub b" data-t="3.6">Para esa densidad te recomiendo un sitio Tier III de la Región Metropolitana. A 36 meses aplica el descuento por plazo. Te dejé la oportunidad lista en el pipeline.<br><span class="ui-label">Fuentes: ficha de datacenter, tarifario de colocation</span></div>
+            <div class="ui-card" data-t="5.2" style="display:grid;gap:10px;border-color:color-mix(in srgb, var(--mandarina) 45%, transparent)">
+              <div class="ui-row"><b class="ui-title">Oportunidad creada</b><span class="pill amb sw" data-off="7.4">Borrador</span><span class="pill ok sw" data-t="7.4">Registrada</span></div>
+              <div class="ui-grid3"><div data-t="5.7"><div class="ui-label">Racks</div><b>4</b></div><div data-t="6.0"><div class="ui-label">Consumo</div><b>20 kW</b></div><div data-t="6.3"><div class="ui-label">Plazo</div><b>36 meses</b></div></div>
             </div>
           </div></div></div>
-        <div class="app-txt"><h3>Asistente Comercial Empresas</h3><p>El vendedor pregunta como a un colega y el asistente responde con la documentación comercial: tarifas, fichas técnicas, SLA y certificaciones. Si detecta una cotización, la registra sola.</p>
+        <div class="app-txt"><span class="app-k">02 · Empresas</span><h3>Asistente Comercial Empresas</h3><p>El vendedor pregunta como a un colega y el asistente responde con la documentación comercial: tarifas, fichas técnicas, SLA y certificaciones. Si detecta una cotización, la registra sola.</p>
           <ul class="ticks"><li>RAG sobre presentaciones, documentos y PDF que se actualizan solos.</li><li>Crea la oportunidad con racks, kW, plazo y valores en UF.</li><li>Modelo de respaldo, registro de uso y valoración de cada respuesta.</li></ul></div>
       </div>
 
-      <div role="tabpanel" id="ap-p3" aria-labelledby="ap-t3" class="view" aria-roledescription="diapositiva" aria-label="3 de 7">
+      <div id="ap-p3" class="view" data-dur="9">
         <div class="persp"><div class="device"><div class="device-bar"><i></i><i></i><i></i><span>scraper / ejecución diaria</span></div>
           <div class="screen">
-            <div class="pipe"><div class="ui-card"><span class="ui-label">1</span><b>Navegar</b></div><div class="ui-card"><span class="ui-label">2</span><b>Extraer</b></div><div class="ui-card"><span class="ui-label">3</span><b>Normalizar</b></div><div class="ui-card"><span class="ui-label">4</span><b>Validar</b></div><div class="ui-card on"><span class="ui-label">5</span><b>Publicar</b></div></div>
-            <div class="opsl"><span>Gtd</span><span>Telsur</span><span>VTR</span><span>Movistar</span><span>Entel</span><span>Claro</span><span>WOM</span><span>Mundo</span><span>DirecTV</span><span>DirecTV GO</span></div>
-<div class="json mono"><span class="k">"empresa"</span>: <span class="v">"Operador A"</span>,
-<span class="k">"plan"</span>: <span class="v">"Fibra 600 + TV"</span>,
-<span class="k">"velocidad_mbps"</span>: <span class="v">600</span>,
-<span class="k">"precio_promo"</span>: <span class="v">"ilustrativo"</span>,
-<span class="k">"fuente"</span>: <span class="v">"web del operador"</span></div>
+            <div class="pipe"><div class="ui-card" data-hl="0.4"><span class="ui-label">1</span><b>Navegar</b></div><div class="ui-card" data-hl="1.5"><span class="ui-label">2</span><b>Extraer</b></div><div class="ui-card" data-hl="2.6"><span class="ui-label">3</span><b>Normalizar</b></div><div class="ui-card" data-hl="3.7"><span class="ui-label">4</span><b>Validar</b></div><div class="ui-card" data-hl="4.8"><span class="ui-label">5</span><b>Publicar</b></div></div>
+            <div class="opsl"><span data-hl="0.6">Gtd</span><span data-hl="0.9">Telsur</span><span data-hl="1.2">VTR</span><span data-hl="1.5">Movistar</span><span data-hl="1.8">Entel</span><span data-hl="2.1">Claro</span><span data-hl="2.4">WOM</span><span data-hl="2.7">Mundo</span><span data-hl="3.0">DirecTV</span><span data-hl="3.3">DirecTV GO</span></div>
+<div class="json mono"><span class="ln" data-t="2.8"><span class="k">"empresa"</span>: <span class="v">"Operador A"</span>,</span>
+<span class="ln" data-t="3.1"><span class="k">"plan"</span>: <span class="v">"Fibra 600 + TV"</span>,</span>
+<span class="ln" data-t="3.4"><span class="k">"velocidad_mbps"</span>: <span class="v">600</span>,</span>
+<span class="ln" data-t="3.7"><span class="k">"precio_promo"</span>: <span class="v">"ilustrativo"</span>,</span>
+<span class="ln" data-t="4.0"><span class="k">"fuente"</span>: <span class="v">"web del operador"</span></span></div>
+            <div class="toast" data-t="5.4">10 de 10 operadores al día</div>
           </div></div></div>
-        <div class="app-txt"><h3>Scraper competitivo</h3><p>Cada día recorre los sitios de 10 operadores como lo haría una persona, extrae planes y precios, y los deja en un mismo formato para compararlos. Va en su versión 27.</p>
+        <div class="app-txt"><span class="app-k">03 · Mercado</span><h3>Scraper competitivo</h3><p>Cada día recorre los sitios de 10 operadores como lo haría una persona, extrae planes y precios, y los deja en un mismo formato para compararlos. Va en su versión 27.</p>
           <ul class="ticks"><li>Navegador automático con Playwright y normalización con Gemini, cuidando el gasto de tokens.</li><li>Regla de calidad: el precio de la web siempre manda.</li><li>Pruebas automáticas por operador, histórico mensual y capturas de respaldo.</li></ul></div>
       </div>
 
-      <div role="tabpanel" id="ap-p4" aria-labelledby="ap-t4" class="view" aria-roledescription="diapositiva" aria-label="4 de 7">
+      <div id="ap-p4" class="view" data-dur="9">
         <div class="persp"><div class="device"><div class="device-bar"><i></i><i></i><i></i><span>comparador / mercado</span></div>
-          <div class="screen">
+          <div class="screen" data-path="0:out;2.6:cmdk;3.2:tap;5.6:out">
             <div class="ui-row" style="margin-bottom:16px"><div class="ui-title">Precio relativo por 600 Mbps</div><span class="pill">Datos ilustrativos</span></div>
             <div class="chart" role="img" aria-label="Gráfico ilustrativo de precio relativo por operador">
-              <div><div class="lbl">Operador A</div><div class="track"><div class="fill amb" style="width:58%"></div></div></div>
-              <div><div class="lbl">Operador B</div><div class="track"><div class="fill" style="width:72%"></div></div></div>
-              <div><div class="lbl">Operador C</div><div class="track"><div class="fill" style="width:81%"></div></div></div>
-              <div><div class="lbl">Operador D</div><div class="track"><div class="fill" style="width:66%"></div></div></div>
-              <div><div class="lbl">Operador E</div><div class="track"><div class="fill" style="width:90%"></div></div></div>
+              <div data-hl="4.2"><div class="lbl">Operador A</div><div class="track"><div class="fill amb" data-t="0.4" style="width:58%"></div></div></div>
+              <div><div class="lbl">Operador B</div><div class="track"><div class="fill" data-t="0.6" style="width:72%"></div></div></div>
+              <div><div class="lbl">Operador C</div><div class="track"><div class="fill" data-t="0.8" style="width:81%"></div></div></div>
+              <div><div class="lbl">Operador D</div><div class="track"><div class="fill" data-t="1.0" style="width:66%"></div></div></div>
+              <div><div class="lbl">Operador E</div><div class="track"><div class="fill" data-t="1.2" style="width:90%"></div></div></div>
             </div>
-            <div class="cmdk"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4-4"/></svg>Explicar cifras con IA<span class="kbd">Ctrl K</span></div>
+            <div class="cmdk" data-k="cmdk" data-hl="3.2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4-4"/></svg>Explicar cifras con IA<span class="kbd">Ctrl K</span></div>
+            <div class="bub b" data-t="4.2" style="margin-top:12px;max-width:100%">El Operador A es la oferta más baja en 600 Mbps. Ojo: es precio promocional y sube desde el séptimo mes.</div>
           </div></div></div>
-        <div class="app-txt"><h3>Comparador de Planes Residencial</h3><p>Toma lo que trae el scraper y lo convierte en lectura de mercado: dónde está cada oferta, qué incluye y cómo se mueve en el tiempo.</p>
+        <div class="app-txt"><span class="app-k">04 · Mercado</span><h3>Comparador de Planes Residencial</h3><p>Toma lo que trae el scraper y lo convierte en lectura de mercado: dónde está cada oferta, qué incluye y cómo se mueve en el tiempo.</p>
           <ul class="ticks"><li>Vistas de pulso, mercado, gráficos, histórico y terreno.</li><li>Análisis con IA que explica las cifras en lenguaje simple.</li><li>Ficha de cada plan y paleta de comandos para moverse rápido.</li></ul></div>
       </div>
 
-      <div role="tabpanel" id="ap-p5" aria-labelledby="ap-t5" class="view" aria-roledescription="diapositiva" aria-label="5 de 7">
+      <div id="ap-p5" class="view" data-dur="10">
         <div class="persp"><div class="device"><div class="device-bar"><i></i><i></i><i></i><span>suite.gtd / sala-de-captacion</span></div>
-          <div class="screen">
+          <div class="screen" data-path="0:out;1.4:lead;2.0:tap;3.0:col2;3.3:tap;4.6:out">
             <div class="kanban">
-              <div class="col"><div class="col-h"><span>Nuevos</span><span>12</span></div><div class="lead"><b>Lead web</b><span>Cruzado con la base</span></div><div class="lead"><b>Lead WhatsApp</b><span>Aviso al ejecutivo</span></div></div>
-              <div class="col"><div class="col-h"><span>Contactados</span><span>8</span></div><div class="lead"><b>Lead campaña</b><span>Llamada agendada</span></div></div>
-              <div class="col"><div class="col-h"><span>Propuesta</span><span>5</span></div><div class="lead"><b>Lead referido</b><span>Fibra + TV</span></div></div>
-              <div class="col"><div class="col-h"><span>Ganados</span><span>3</span></div><div class="lead" style="border-color:var(--menta)"><b>Venta cerrada</b><span>Historial auditado</span></div></div>
+              <div class="col"><div class="col-h"><span>Nuevos</span><span class="sw" data-off="3.3">12</span><span class="sw" data-t="3.3">11</span></div><div class="lead sw" data-t="0.3" data-off="3.3" data-k="lead" data-hl="2.0"><b>Lead web</b><span>Cruzado con la base</span></div><div class="lead" data-t="0.5"><b>Lead WhatsApp</b><span>Aviso al ejecutivo</span></div></div>
+              <div class="col" data-k="col2"><div class="col-h"><span>Contactados</span><span class="sw" data-off="3.3">8</span><span class="sw" data-t="3.3">9</span></div><div class="lead sw hl" data-t="3.3"><b>Lead web</b><span>Llamada agendada</span></div><div class="lead" data-t="0.7"><b>Lead campaña</b><span>Llamada agendada</span></div></div>
+              <div class="col"><div class="col-h"><span>Propuesta</span><span>5</span></div><div class="lead" data-t="0.9"><b>Lead referido</b><span>Fibra + TV</span></div></div>
+              <div class="col"><div class="col-h"><span>Ganados</span><span>3</span></div><div class="lead" data-t="1.1" style="border-color:var(--menta)"><b>Venta cerrada</b><span>Historial auditado</span></div></div>
             </div>
-            <div class="bub b" style="margin-top:14px;max-width:100%">Agente IA: simulemos la llamada. Yo soy el cliente y no estoy seguro de cambiarme de compañía.</div>
+            <div class="bub b" data-t="4.8" style="margin-top:14px;max-width:100%">Agente IA: simulemos la llamada. Yo soy el cliente y no estoy seguro de cambiarme de compañía.</div>
+            <div class="bub u" data-t="6.6" data-type style="margin-top:10px">¿Qué te frena más, el precio o la instalación?</div>
           </div></div></div>
-        <div class="app-txt"><h3>Sala de Captación</h3><p>El CRM de la venta residencial: capta leads, los cruza con la base de clientes y los lleva por el embudo con roles y trazabilidad.</p>
+        <div class="app-txt"><span class="app-k">05 · Ventas residencial</span><h3>Sala de Captación</h3><p>El CRM de la venta residencial: capta leads, los cruza con la base de clientes y los lleva por el embudo con roles y trazabilidad.</p>
           <ul class="ticks"><li>Agente con Gemini para consultas y role play de ventas.</li><li>Aviso al ejecutivo cuando un cliente de su cartera aparece en una campaña.</li><li>Mapa de calor de la cartera y reportes de productividad.</li></ul></div>
       </div>
 
-      <div role="tabpanel" id="ap-p6" aria-labelledby="ap-t6" class="view" aria-roledescription="diapositiva" aria-label="6 de 7">
+      <div id="ap-p6" class="view" data-dur="9">
         <div class="persp"><div class="device"><div class="device-bar"><i></i><i></i><i></i><span>suite.gtd / asesor-mayorista</span></div>
           <div class="screen">
-            <div class="funnel"><div class="stg"><span>Arriba</span><b>14</b></div><div class="stg"><span>Dentro</span><b>9</b></div><div class="stg"><span>De salida</span><b>6</b></div><div class="stg win"><span>Vendido</span><b>4</b></div><div class="stg"><span>Perdido</span><b>2</b></div></div>
+            <div class="funnel"><div class="stg" data-hl="0.4"><span>Arriba</span><b>14</b></div><div class="stg" data-hl="0.8"><span>Dentro</span><b>9</b></div><div class="stg" data-hl="1.2"><span>De salida</span><b>6</b></div><div class="stg win" data-hl="1.6"><span>Vendido</span><b>4</b></div><div class="stg"><span>Perdido</span><b>2</b></div></div>
             <div class="ficha">
-              <div class="ui-card" style="display:grid;gap:8px"><div class="ui-row"><b class="ui-title">Ficha 360 del cliente</b><span class="pill amb">Gestión vencida</span></div><span class="ui-label">Oportunidades, gestiones, adjuntos y equipo de la cuenta en una sola vista</span></div>
-              <div class="ui-card score"><span class="ui-label">Simulador de role play</span><b>8,4</b><span class="ui-label">nota de la sesión</span></div>
+              <div class="ui-card" data-t="2.4" style="display:grid;gap:8px"><div class="ui-row"><b class="ui-title">Ficha 360 del cliente</b><span class="pill amb sw" data-off="4.2">Gestión vencida</span><span class="pill ok sw" data-t="4.2">Gestión al día</span></div><span class="ui-label">Oportunidades, gestiones, adjuntos y equipo de la cuenta en una sola vista</span></div>
+              <div class="ui-card score" data-t="5.0"><span class="ui-label">Simulador de role play</span><b data-count="8,4">8,4</b><span class="ui-label">nota de la sesión</span></div>
             </div>
           </div></div></div>
-        <div class="app-txt"><h3>Asesor Comercial Mayorista</h3><p>Reemplaza el seguimiento del segmento mayorista que se hacía en una plataforma anterior y suma un asesor con IA y un simulador para practicar la venta.</p>
+        <div class="app-txt"><span class="app-k">06 · Empresas</span><h3>Asesor Comercial Mayorista</h3><p>Reemplaza el seguimiento del segmento mayorista que se hacía en una plataforma anterior y suma un asesor con IA y un simulador para practicar la venta.</p>
           <ul class="ticks"><li>Embudo de 5 etapas con arrastrar y soltar, y checklist obligatorio al cerrar.</li><li>Alarmas de seguimiento y avisos al equipo de la cuenta.</li><li>Al cerrar, deja lista la orden de venta y cruza las campañas de marketing.</li></ul></div>
       </div>
 
-      <div role="tabpanel" id="ap-p7" aria-labelledby="ap-t7" class="view" aria-roledescription="diapositiva" aria-label="7 de 7">
+      <div id="ap-p7" class="view" data-dur="10">
         <div class="persp"><div class="device"><div class="device-bar"><i></i><i></i><i></i><span>journey-mia / whatsapp</span></div>
-          <div class="screen">
+          <div class="screen" data-path="0:out;4.6:hogar;5.2:tap;6.4:out">
             <div class="journey">
               <div class="phone">
                 <div class="phone-h"><i>M</i><div><b style="font-size:.85rem;font-weight:500">MIA</b><div class="ui-label">en línea</div></div></div>
-                <div class="bub b">Hola, soy MIA. ¿En qué te ayudo hoy?</div>
-                <div class="bub u">Quiero contratar fibra</div>
-                <div class="bub b">Perfecto. ¿Es para tu casa o tu empresa?</div>
-                <div class="opts"><span>Hogar</span><span>Empresa</span></div>
+                <div class="bub b" data-t="0.4">Hola, soy MIA. ¿En qué te ayudo hoy?</div>
+                <div class="bub u" data-t="1.6" data-type>Quiero contratar fibra</div>
+                <div class="bub b" data-t="3.2">Perfecto. ¿Es para tu casa o tu empresa?</div>
+                <div class="opts sw" data-t="3.8" data-off="5.6"><span data-k="hogar" data-hl="5.2">Hogar</span><span>Empresa</span></div>
+                <div class="bub u sw" data-t="5.6">Hogar</div>
+                <div class="bub b sw" data-t="6.6">Revisando factibilidad en tu dirección…</div>
               </div>
-              <div class="jsteps"><div><b>1</b>Saludo e intención</div><div><b>2</b>Hogar o empresa</div><div><b>3</b>Factibilidad en la dirección</div><div><b>4</b>Oferta según la zona</div><div><b>5</b>Cierre o paso a un ejecutivo</div></div>
+              <div class="jsteps"><div data-hl="0.4"><b>1</b>Saludo e intención</div><div data-hl="3.2"><b>2</b>Hogar o empresa</div><div data-hl="6.6"><b>3</b>Factibilidad en la dirección</div><div><b>4</b>Oferta según la zona</div><div><b>5</b>Cierre o paso a un ejecutivo</div></div>
             </div>
           </div></div></div>
-        <div class="app-txt"><h3>Journey MIA</h3><p>Herramienta para diseñar y revisar los recorridos de MIA, el asistente actual de WhatsApp, antes de llevarlos a producción, con vista previa tal como la verá el cliente.</p>
+        <div class="app-txt"><span class="app-k">07 · Atención</span><h3>Journey MIA</h3><p>Herramienta para diseñar y revisar los recorridos de MIA, el asistente actual de WhatsApp, antes de llevarlos a producción, con vista previa tal como la verá el cliente.</p>
           <ul class="ticks"><li>Recorridos residencial y empresas.</li><li>Vista previa navegable de cada mensaje y opción.</li><li>Base para los flujos que luego corren en el contact center.</li></ul></div>
       </div>
 
-      </div>
-      <div class="car-ctl">
-        <button type="button" class="car-b" data-car="prev" aria-label="App anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
-        <button type="button" class="car-b" data-car="next" aria-label="App siguiente"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
-        <span class="car-n" aria-live="polite"><b>1</b> de 7</span>
-        <div class="car-bar" aria-hidden="true"><i></i></div>
-        <button type="button" class="car-p" data-car="play" aria-pressed="false">Pausar</button>
-      </div>
-      </div>
-
-      <div class="ident inst" id="identidad">
-        <div>
-          <h3>Identidad común para las apps</h3>
-          <p>Soy autor de la norma de diseño que siguen todas las apps internas, basada en el brandbook corporativo: colores, tipografía, componentes, líneas residencial y empresas, y una galería navegable para verlos funcionando.</p>
-        </div>
-        <div class="tokens" aria-hidden="true"><div><div class="tk-c"><i style="background:var(--cobalto)"></i><i style="background:var(--menta)"></i><i style="background:var(--mandarina)"></i></div><span>Tokens de color</span></div><div><div class="tk-t">Aa<small>Aa</small></div><span>Tipografía</span></div><div><div class="tk-b"><b>Guardar</b><em>Activo</em></div><span>Componentes</span></div></div>
       </div>
     </div>
   </section>
@@ -1568,6 +1624,103 @@ footer a:hover { text-decoration: underline; }
       if (t) { stopAuto(); setTimeout(function () { goApp(tabs.indexOf(t), false); }, 0); }
     });
   });
+
+
+  // Demos de la Suite: reproduce la maqueta de la app activa como un video corto y en bucle
+  var demoTimers = [], demoView = null;
+  function demoAt(s, fn) { demoTimers.push(setTimeout(fn, s * 1000)); }
+  function demoType(el) {
+    var full = el.dataset.full || (el.dataset.full = el.textContent), n = 0;
+    el.textContent = "";
+    var iv = setInterval(function () { n += 2; el.textContent = full.slice(0, n); if (n >= full.length) clearInterval(iv); }, 28);
+    demoTimers.push(iv);
+  }
+  function demoCount(el) {
+    var to = parseFloat(el.dataset.count.replace(",", ".")), t0 = performance.now();
+    (function step(now) {
+      var k = Math.min(1, (now - t0) / 1100);
+      el.textContent = (to * (1 - Math.pow(1 - k, 3))).toFixed(1).replace(".", ",");
+      if (k < 1) demoTimers.push(requestAnimationFrame(step));
+    })(t0);
+  }
+  function demoCursor(view) {
+    var screen = view.querySelector(".screen[data-path]");
+    if (!screen) return;
+    var cur = screen.querySelector(".cur");
+    if (!cur) {
+      cur = document.createElement("span"); cur.className = "cur"; cur.setAttribute("aria-hidden", "true");
+      cur.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24"><path d="M5 3l14 8-6 1.6L10 19z" fill="#f5f5f7" stroke="#000" stroke-width="1.2" stroke-linejoin="round"/></svg>';
+      screen.appendChild(cur);
+    }
+    function moveTo(key) {
+      var x, y;
+      if (key === "out") { x = screen.clientWidth - 40; y = screen.clientHeight - 30; }
+      else {
+        var el = view.querySelector('[data-k="' + key + '"]'); if (!el) return;
+        var a = el.getBoundingClientRect(), b = screen.getBoundingClientRect();
+        x = a.left - b.left + a.width * 0.55; y = a.top - b.top + a.height * 0.5;
+      }
+      cur.style.left = x + "px"; cur.style.top = y + "px";
+    }
+    cur.style.transition = "none"; moveTo("out"); void cur.offsetWidth; cur.style.transition = "";
+    screen.dataset.path.split(";").forEach(function (p) {
+      var s = parseFloat(p), key = p.split(":")[1];
+      demoAt(s, function () {
+        if (key === "tap") { cur.classList.remove("tap"); void cur.offsetWidth; cur.classList.add("tap"); }
+        else moveTo(key);
+      });
+    });
+  }
+  function demoStop() {
+    demoTimers.forEach(function (t) { clearTimeout(t); clearInterval(t); cancelAnimationFrame(t); });
+    demoTimers = [];
+    if (demoView) {
+      demoView.querySelectorAll("[data-full]").forEach(function (el) { el.textContent = el.dataset.full; });
+      demoView.querySelectorAll("[data-count]").forEach(function (el) { el.textContent = el.dataset.count; });
+    }
+  }
+  function demoPlay(view) {
+    demoStop();
+    if (demoView && demoView !== view) demoView.classList.remove("demo");
+    demoView = view;
+    if (reduce || !view || !view.dataset.dur) return;
+    var dur = +view.dataset.dur;
+    view.classList.add("demo");
+    view.querySelectorAll("[data-t],[data-off]").forEach(function (el) { el.classList.toggle("is-in", !el.hasAttribute("data-t")); });
+    view.querySelectorAll("[data-hl]").forEach(function (el) { el.classList.remove("hl"); });
+    view.querySelectorAll("[data-t]").forEach(function (el) {
+      demoAt(+el.dataset.t, function () {
+        el.classList.add("is-in");
+        if (el.hasAttribute("data-type")) demoType(el);
+        if (el.querySelector("[data-count]")) demoCount(el.querySelector("[data-count]"));
+      });
+    });
+    view.querySelectorAll("[data-off]").forEach(function (el) { demoAt(+el.dataset.off, function () { el.classList.remove("is-in"); }); });
+    view.querySelectorAll("[data-hl]").forEach(function (el) { demoAt(+el.dataset.hl, function () { el.classList.add("hl"); }); });
+    demoCursor(view);
+    var bar = view.querySelector(".demo-bar i");
+    if (bar) { bar.style.transition = "none"; bar.style.width = "0"; void bar.offsetWidth; bar.style.transition = "width " + dur + "s linear"; bar.style.width = "100%"; }
+    // La demo vuelve a empezar tras una pausa mientras siga en pantalla
+    demoAt(dur + 1.6, function () { if (demoView === view) demoPlay(view); });
+  }
+  document.querySelectorAll(".view[data-dur] .device-bar").forEach(function (bar) {
+    bar.insertAdjacentHTML("beforeend", '<em class="demo-tag">Demo</em><b class="demo-bar" aria-hidden="true"><i></i></b>');
+  });
+  document.querySelectorAll(".view[data-dur] .device").forEach(function (d) {
+    d.addEventListener("click", function () { demoPlay(d.closest(".view")); });
+  });
+  // Cada vitrina reproduce su demo cuando entra en pantalla
+  var demoVis = new Map();
+  try {
+    var demoIO = new IntersectionObserver(function (en) {
+      en.forEach(function (e) { demoVis.set(e.target.closest(".view"), e.intersectionRatio); });
+      var best = null, r = 0.5;
+      demoVis.forEach(function (v, el) { if (v >= r) { best = el; r = v; } });
+      if (best && best !== demoView) demoPlay(best);
+      if (!best && demoView) { demoStop(); demoView.classList.remove("demo"); demoView = null; }
+    }, { threshold: [0, 0.5, 0.75, 1] });
+    document.querySelectorAll(".apps > .view").forEach(function (v) { demoIO.observe(v.querySelector(".persp")); demoVis.set(v, 0); });
+  } catch (e) {}
 
   // Dispositivo que se inclina hacia el cursor
   if (finePointer && !reduce) {
