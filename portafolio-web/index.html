@@ -637,7 +637,7 @@ footer { border-top: 0; }
   .car-ctl { gap: 8px; margin-top: 18px; }
   .car-n { margin-left: 2px; }
 }
-/* Sobre mí: biografía a la izquierda y la trayectoria como ruta en un panel carbón; el cargo actual va en amarillo */
+/* Sobre mí: biografía a la izquierda y, a la derecha, lo que entrego en un panel carbón */
 .about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 64px; align-items: start; }
 .about h2 { font-size: clamp(2.25rem, 5vw, 3.5rem); font-weight: 600; letter-spacing: -0.015em; line-height: 1.07; margin-bottom: 28px; }
 .about-lead { font-size: clamp(1.2rem, 2vw, 1.45rem); line-height: 1.4; letter-spacing: -0.01em; margin-bottom: 18px; max-width: 34ch; }
@@ -648,17 +648,19 @@ footer { border-top: 0; }
 .about-facts div { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); }
 .about-facts dt { font-size: 0.88rem; color: var(--dim); }
 .about-facts dd { margin: 0; font-size: 0.95rem; }
-.path { list-style: none; margin: 0; padding: clamp(24px, 4vw, 40px); background: var(--paper); border-radius: 28px; display: grid; gap: 28px; }
-.path li { position: relative; padding-left: 34px; display: grid; gap: 4px; }
-.path li::before { content: ""; position: absolute; left: 0; top: 4px; width: 15px; height: 15px; box-sizing: border-box; border-radius: 50%; border: 2px solid var(--cobalto); background: var(--paper); z-index: 1; }
-.path li::after { content: ""; position: absolute; left: 7px; top: 22px; bottom: -30px; width: 1px; background: var(--line-2); }
-.path li:last-child::after { display: none; }
-.path li.now::before { background: var(--mandarina); border-color: var(--mandarina); }
-.path .yr { font-size: 0.8rem; color: var(--cobalto); font-variant-numeric: tabular-nums; }
-.path .now .yr { color: var(--mandarina-t); }
-.path h3 { font-size: 1.15rem; font-weight: 600; letter-spacing: -0.01em; line-height: 1.25; }
-.path .org { font-size: 0.88rem; color: var(--dim); }
-.path p { color: var(--muted); font-size: 0.95rem; margin-top: 4px; max-width: 54ch; }
+/* Lo que entrego: cada entregable lleva a la sección del portafolio que lo muestra */
+.deliv { padding: clamp(24px, 4vw, 40px); background: var(--paper); border-radius: 28px; }
+.deliv-h { font-size: 1.35rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 12px; }
+.deliv ol { list-style: none; margin: 0; padding: 0; }
+.deliv li + li { border-top: 1px solid var(--line); }
+.deliv a { display: grid; grid-template-columns: 36px minmax(0, 1fr); column-gap: 12px; row-gap: 4px; padding: 18px 0; color: inherit; text-decoration: none; }
+.deliv .n { grid-row: span 3; font-size: 0.85rem; color: var(--cobalto); font-variant-numeric: tabular-nums; padding-top: 3px; }
+.deliv b { font-size: 1.1rem; font-weight: 600; letter-spacing: -0.01em; line-height: 1.25; }
+.deliv .d { color: var(--muted); font-size: 0.95rem; max-width: 50ch; }
+.deliv .go { font-size: 0.85rem; color: var(--cobalto); margin-top: 2px; }
+.deliv .go::after { content: " →"; }
+.deliv a:hover b { color: var(--cobalto); }
+.deliv li:first-child .n { color: var(--mandarina-t); }
 footer a { color: var(--cobalto); text-decoration: none; }
 footer a:hover { text-decoration: underline; }
 @media (max-width: 1000px) {
@@ -666,8 +668,7 @@ footer a:hover { text-decoration: underline; }
 }
 @media (max-width: 680px) {
   .about-facts div { grid-template-columns: minmax(0, 1fr); gap: 2px; }
-  .path { padding: 22px; border-radius: 22px; gap: 24px; }
-  .path li::after { bottom: -26px; }
+  .deliv { padding: 22px; border-radius: 22px; }
 }
 /* Móvil: diagramas en vertical en vez de deslizar, ritmo más compacto y método como línea de tiempo */
 .flow-m { display: none; }
@@ -764,7 +765,7 @@ footer a:hover { text-decoration: underline; }
           <h2>Sobre mí</h2>
           <p class="about-lead">Empecé en terreno, instalando servicios y atendiendo clientes cara a cara. Hoy lidero la estrategia digital con la que Gtd atiende a sus clientes usando IA y automatización. Entre esos dos puntos hay más de 15 años y una sola obsesión: que la atención resuelva de verdad.</p>
           <p>Nunca diseño pensando solo en la métrica, sino en la persona que está del otro lado. Es fácil olvidarlo cuando trabajas con tecnología a escala, y ahí está la diferencia.</p>
-          <p>Mi rol es traducir entre el negocio, la tecnología y la operación: convertir una capacidad de IA en una conversación que resuelve, un objetivo comercial en un flujo sin fricción y un problema operativo en automatización, en lugar de más personas haciendo lo mismo.</p>
+          <p>Mi rol es ser el puente que une el negocio, la tecnología y la operación: convertir una capacidad de IA en una conversación que resuelve, un objetivo comercial en un flujo sin fricción y un problema operativo en automatización, en lugar de más personas haciendo lo mismo.</p>
           <blockquote class="about-q">No me basta con la estrategia en una lámina: me importa verla funcionando y medir su impacto real.</blockquote>
           <dl class="about-facts">
             <div><dt>Base</dt><dd>Santiago, Chile</dd></div>
@@ -774,13 +775,16 @@ footer a:hover { text-decoration: underline; }
           <p class="about-cta">¿Conversamos sobre IA aplicada a la experiencia de cliente, automatización o el futuro de los canales digitales?</p>
           <a class="btn-g" href="https://www.linkedin.com/in/cesar-osoriotorres" target="_blank" rel="noopener">Escríbeme en LinkedIn</a>
         </div>
-        <ol class="path" aria-label="Trayectoria">
-          <li class="now"><span class="yr">2026 – hoy</span><h3>Jefe de Estrategia de Canales Multisegmento</h3><span class="org">Gtd · Santiago</span><p>Estrategia de canales para residencial, pyme, empresas y mayoristas, con lo digital como motor: IA aplicada, automatización, autogestión omnicanal y eCommerce.</p></li>
-          <li><span class="yr">2022 – 2026</span><h3>Jefe de Plataforma de Atención, Canales Digitales</h3><span class="org">Gtd · Santiago</span><p>Redes sociales, chat web y WhatsApp. Herramientas de IA con aliados para atender en tiempo real y fomentar la autoatención.</p></li>
-          <li><span class="yr">2020 – 2022</span><h3>Coordinador de Plataforma de Atención, Canales Digitales</h3><span class="org">Telsur · Valdivia</span><p>Operación diaria, KPIs y mejoras de eficiencia y calidad. Primeras iniciativas de autogestión digital.</p></li>
-          <li><span class="yr">2020</span><h3>Analista de Contact Center, Canales Digitales</h3><span class="org">Telsur · Valdivia</span><p>Datos de interacciones, TMO, SLA y NPS. Apoyo en la puesta en marcha de chatbots.</p></li>
-          <li><span class="yr">Inicios</span><h3>En terreno</h3><span class="org">Instalación y atención cara a cara</span><p>Instalando servicios y atendiendo clientes en su casa. De ahí viene la idea fija: que la atención resuelva.</p></li>
-        </ol>
+        <div class="deliv">
+          <h3 class="deliv-h">Lo que entrego</h3>
+          <ol>
+            <li><a href="#miax"><span class="n">01</span><b>Agentes de IA que resuelven</b><span class="d">Diseño, seguridad y caso de negocio de un asistente que conversa con contexto.</span><span class="go">Caso MiaX</span></a></li>
+            <li><a href="#contact-center"><span class="n">02</span><b>Contact center integrado</b><span class="d">Genesys Cloud y Lynn conectados con IA, WhatsApp y canales digitales.</span><span class="go">Ver la ruta</span></a></li>
+            <li><a href="#suite"><span class="n">03</span><b>Apps en producción</b><span class="d">7 apps para la fuerza de ventas, con un solo acceso.</span><span class="go">Suite Comercial</span></a></li>
+            <li><a href="#suite"><span class="n">04</span><b>Inteligencia de mercado</b><span class="d">La oferta de 10 operadores, leída cada día y lista para comparar.</span><span class="go">Scraper y Comparador</span></a></li>
+            <li><a href="#metodo"><span class="n">05</span><b>Decisiones con números</b><span class="d">Escenarios costeados con ahorro, ROI y payback.</span><span class="go">Cómo trabajo</span></a></li>
+          </ol>
+        </div>
       </div>
     </div>
   </section>
