@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Apps en pantalla real · César Osorio</title>
+<meta name="description" content="Grabaciones de las apps de César Osorio corriendo de verdad, con datos de prueba.">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Subpágina de demos reales: misma galería oscura del portafolio (DESIGN.md). Cada app es una pieza con su video */
+:root {
+  --bg: #000000; --panel: #1d1d1f; --ink: #f5f5f7; --muted: #a1a1a6; --dim: #86868b; --line: #333336;
+  --link: #2997ff; --accion: #0071e3; --cifra: #ffd500;
+  --ease: cubic-bezier(.2, .8, .2, 1);
+}
+* { box-sizing: border-box; margin: 0; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { background: var(--bg); color: var(--ink); font: 400 17px/1.5 Inter, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.wrap { width: min(1200px, 100% - 48px); margin-inline: auto; }
+.top { position: sticky; top: 0; z-index: 5; background: rgba(0, 0, 0, .78); backdrop-filter: saturate(180%) blur(18px); -webkit-backdrop-filter: saturate(180%) blur(18px); border-bottom: 1px solid var(--line); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 52px; }
+.top b { font-weight: 600; font-size: 0.95rem; }
+.top a { font-size: 0.9rem; }
+.intro { padding: clamp(64px, 10vw, 120px) 0 40px; }
+.intro h1 { font-size: clamp(2.4rem, 6vw, 4.5rem); font-weight: 600; letter-spacing: -0.015em; line-height: 1.05; max-width: 14ch; }
+.intro p { color: var(--muted); font-size: clamp(1.05rem, 1.8vw, 1.3rem); max-width: 52ch; margin-top: 20px; }
+.nota { display: inline-flex; gap: 10px; align-items: center; margin-top: 28px; padding: 10px 16px; border-radius: 999px; background: var(--panel); color: var(--muted); font-size: 0.88rem; }
+.nota::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--cifra); flex: none; }
+.indice { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 36px; }
+.indice a { padding: 8px 16px; border-radius: 999px; border: 1px solid var(--line); color: var(--ink); font-size: 0.9rem; }
+.indice a:hover { border-color: var(--link); text-decoration: none; }
+.pieza { padding: clamp(56px, 8vw, 96px) 0; border-top: 1px solid var(--line); scroll-margin-top: 52px; }
+.pieza-h { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; align-items: end; margin-bottom: 32px; }
+.k { display: block; color: var(--link); font-size: 0.88rem; margin-bottom: 10px; font-variant-numeric: tabular-nums; }
+.pieza h2 { font-size: clamp(1.9rem, 4vw, 3rem); font-weight: 600; letter-spacing: -0.015em; line-height: 1.08; }
+.pieza-h p { color: var(--muted); max-width: 48ch; }
+.marco { position: relative; border-radius: 28px; background: var(--panel); padding: clamp(10px, 1.6vw, 18px); }
+.marco video { display: block; width: 100%; aspect-ratio: 16 / 10; border-radius: 16px; background: #111; cursor: pointer; }
+.marco .estado { position: absolute; right: clamp(22px, 3vw, 34px); bottom: clamp(22px, 3vw, 34px); padding: 6px 12px; border-radius: 999px; background: rgba(0, 0, 0, .7); color: var(--ink); font-size: 0.78rem; pointer-events: none; opacity: 0; transition: opacity .3s; }
+.marco.pausa .estado { opacity: 1; }
+.ve { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 20px; list-style: none; padding: 0; }
+.ve li { padding: 16px 18px; border-radius: 20px; background: var(--panel); color: var(--muted); font-size: 0.92rem; }
+.ve b { display: block; color: var(--ink); font-weight: 500; margin-bottom: 2px; }
+.cierre { padding: 72px 0 96px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; }
+.cierre p { color: var(--muted); max-width: 46ch; }
+.btn { display: inline-flex; padding: 12px 22px; border-radius: 999px; background: var(--accion); color: #fff; font-weight: 500; }
+.btn:hover { text-decoration: none; filter: brightness(1.08); }
+@media (max-width: 760px) {
+  .wrap { width: calc(100% - 32px); }
+  .pieza-h { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .ve { grid-template-columns: minmax(0, 1fr); }
+  .marco { border-radius: 20px; }
+  .marco video { border-radius: 12px; }
+}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap"><b>César Osorio</b><a href="./#suite">Volver al portafolio</a></div></header>
+
+<main class="wrap">
+  <section class="intro">
+    <h1>Las apps, en pantalla real.</h1>
+    <p>Sin maquetas: cada video es la app funcionando, grabada en mi computador con sus vistas previas de desarrollo.</p>
+    <span class="nota">Datos de prueba. Nombres, empresas, RUT y correos son ficticios.</span>
+    <nav class="indice" aria-label="Apps">
+      <a href="#portal">Portal Suite</a><a href="#asistente">Asistente Comercial</a><a href="#scraper">Scraper</a><a href="#comparador">Comparador</a><a href="#sala">Sala de Captación</a><a href="#mayorista">Asesor Mayorista</a><a href="#mia">Journey MIA</a>
+    </nav>
+  </section>
+
+  <section class="pieza" id="portal">
+    <div class="pieza-h"><div><span class="k">01 · Acceso</span><h2>Portal Suite</h2></div><p>Se entra una vez con la cuenta de Google y el portal muestra solo las apps de cada persona.</p></div>
+    <div class="marco"><video src="demos/portal.mp4" poster="demos/portal.jpg" muted loop playsinline preload="none" aria-label="Video del Portal Suite: ingreso y selector de apps"></video><span class="estado">En pausa</span></div>
+    <ul class="ve"><li><b>Ingreso único</b>Cuenta de Google, sin contraseñas.</li><li><b>Apps por persona</b>Cada rol ve solo lo suyo.</li><li><b>Pase firmado</b>Abre cada app sin volver a entrar.</li></ul>
+  </section>
+
+  <section class="pieza" id="asistente">
+    <div class="pieza-h"><div><span class="k">02 · Empresas</span><h2>Asistente Comercial</h2></div><p>El vendedor pregunta como a un colega y el asistente responde con la documentación comercial.</p></div>
+    <div class="marco"><video src="demos/asistente.mp4" poster="demos/asistente.jpg" muted loop playsinline preload="none" aria-label="Video del Asistente Comercial respondiendo una consulta"></video><span class="estado">En pausa</span></div>
+    <ul class="ve"><li><b>Respuesta con fuentes</b>Fichas, tarifas y SLA de la base.</li><li><b>Oportunidad sola</b>Si detecta una cotización, la registra.</li><li><b>Historial</b>Conversaciones guardadas por usuario.</li></ul>
+  </section>
+
+  <section class="pieza" id="scraper">
+    <div class="pieza-h"><div><span class="k">03 · Mercado</span><h2>Scraper competitivo</h2></div><p>Una corrida real: recorre los sitios de los operadores, mide cada página y extrae los planes.</p></div>
+    <div class="marco"><video src="demos/scraper.mp4" poster="demos/scraper.jpg" muted loop playsinline preload="none" aria-label="Video de una corrida real del scraper con su consola y las páginas que lee"></video><span class="estado">En pausa</span></div>
+    <ul class="ve"><li><b>Navegador automático</b>Lee cada sitio como una persona.</li><li><b>Control de calidad</b>Puntúa cada página antes de usarla.</li><li><b>Planes limpios</b>Consolida duplicados y deja un formato común.</li></ul>
+  </section>
+
+  <section class="pieza" id="comparador">
+    <div class="pieza-h"><div><span class="k">04 · Mercado</span><h2>Comparador de Planes</h2></div><p>Lo que trae el scraper convertido en lectura de mercado: quién se movió, cuánto y dónde quedamos.</p></div>
+    <div class="marco"><video src="demos/comparador.mp4" poster="demos/comparador.jpg" muted loop playsinline preload="none" aria-label="Video del Comparador: pulso, radar, gráficos y evolución"></video><span class="estado">En pausa</span></div>
+    <ul class="ve"><li><b>Pulso competitivo</b>Resumen automático de la semana.</li><li><b>Radar</b>Bajas, alzas y lanzamientos.</li><li><b>Evolución</b>Precios mes a mes por operador.</li></ul>
+  </section>
+
+  <section class="pieza" id="sala">
+    <div class="pieza-h"><div><span class="k">05 · Ventas residencial</span><h2>Sala de Captación</h2></div><p>El CRM de la captación: cartera, embudo, mapa de calor y reportes del equipo.</p></div>
+    <div class="marco"><video src="demos/sala.mp4" poster="demos/sala.jpg" muted loop playsinline preload="none" aria-label="Video de la Sala de Captación: inicio, cartera, embudo, mapa y reportes"></video><span class="estado">En pausa</span></div>
+    <ul class="ve"><li><b>Embudo</b>Casos por etapa, con trazabilidad.</li><li><b>Mapa de calor</b>Dónde se concentra la cartera.</li><li><b>Reportes</b>Del subgerente al ejecutivo.</li></ul>
+  </section>
+
+  <section class="pieza" id="mayorista">
+    <div class="pieza-h"><div><span class="k">06 · Empresas</span><h2>Asesor Comercial Mayorista</h2></div><p>Seguimiento del segmento mayorista con un asesor de IA y un simulador para practicar la venta.</p></div>
+    <div class="marco"><video src="demos/mayorista.mp4" poster="demos/mayorista.jpg" muted loop playsinline preload="none" aria-label="Video del Asesor Mayorista: inicio, cartera, embudo, reportes y agente IA"></video><span class="estado">En pausa</span></div>
+    <ul class="ve"><li><b>Alarmas</b>Gestiones vencidas a la vista.</li><li><b>Embudo de 5 etapas</b>Arrastrar y soltar, con bitácora.</li><li><b>Agente y roleplay</b>Consultas y práctica con nota.</li></ul>
+  </section>
+
+  <section class="pieza" id="mia">
+    <div class="pieza-h"><div><span class="k">07 · Atención</span><h2>Journey MIA</h2></div><p>El simulador de MIA en WhatsApp y la base maestra de sus mensajes, antes de pasar a producción.</p></div>
+    <div class="marco"><video src="demos/mia.mp4" poster="demos/mia.jpg" muted loop playsinline preload="none" aria-label="Video de Journey MIA: simulador, catálogo y flujos"></video><span class="estado">En pausa</span></div>
+    <ul class="ve"><li><b>Simulador</b>La conversación tal como la ve el cliente.</li><li><b>Catálogo</b>Cada mensaje, con su estado de revisión.</li><li><b>Flujos</b>Los recorridos completos del bot.</li></ul>
+  </section>
+
+  <section class="cierre">
+    <p>¿Quieres verlas en vivo o conversar sobre cómo llevar algo así a tu operación?</p>
+    <a class="btn" href="https://www.linkedin.com/in/cesar-osoriotorres" target="_blank" rel="noopener">Conversemos en LinkedIn</a>
+  </section>
+</main>
+
+<script>
+// Cada video corre solo mientras está en pantalla; un clic lo pausa o lo retoma
+(function () {
+  var vids = Array.prototype.slice.call(document.querySelectorAll(".marco video"));
+  var reduce = false;
+  try { reduce = matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) {}
+  vids.forEach(function (v) {
+    v.addEventListener("click", function () {
+      v.dataset.manual = "1";
+      if (v.paused) { v.play(); v.parentNode.classList.remove("pausa"); } else { v.pause(); v.parentNode.classList.add("pausa"); }
+    });
+  });
+  if (reduce || !("IntersectionObserver" in window)) {
+    vids.forEach(function (v) { v.setAttribute("controls", ""); v.preload = "metadata"; });
+    return;
+  }
+  var io = new IntersectionObserver(function (en) {
+    en.forEach(function (e) {
+      var v = e.target;
+      if (e.isIntersecting && e.intersectionRatio >= 0.4) {
+        if (v.dataset.manual !== "1") { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+      } else if (!v.paused) v.pause();
+    });
+  }, { threshold: [0, 0.4] });
+  vids.forEach(function (v) { io.observe(v); });
+})();
+</script>
+</body>
+</html>

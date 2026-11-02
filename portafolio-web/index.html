@@ -776,6 +776,12 @@ footer a:hover { text-decoration: underline; }
   .eco-side a::after { display: none; }
   .eco a { padding: 14px 16px; }
 }
+/* Enlaces a la subpágina de demos reales (demos.html) */
+.app-demo { display: inline-block; margin-top: 18px; color: var(--cobalto); font-size: 0.95rem; font-weight: 500; text-decoration: none; }
+.app-demo::after { content: " 92"; }
+.app-demo:hover { text-decoration: underline; }
+.eco-demos { display: inline-flex; margin: -24px 0 40px; padding: 11px 20px; border-radius: 999px; background: var(--blue, #0071e3); color: #fff; font-weight: 500; text-decoration: none; }
+.eco-demos:hover { filter: brightness(1.08); }
 </style>
 
 </head>
@@ -1124,6 +1130,7 @@ footer a:hover { text-decoration: underline; }
         <p>Apps para la fuerza de ventas residencial y de empresas. Un portal conecta todo el ecosistema. Cada app resuelve una parte de la venta, y aquí cada una se muestra en acción.</p>
       </div>
 
+      <a class="eco-demos" href="demos.html">Ver las apps en pantalla real</a>
       <div class="eco" aria-label="Ecosistema de la Suite Comercial">
         <div class="eco-side">
           <a href="#ap-p2"><span>Empresas</span><b>Asistente Comercial</b></a>
@@ -1155,7 +1162,7 @@ footer a:hover { text-decoration: underline; }
             <div class="toast" data-t="5.2">Abriendo Sala de Captación</div>
           </div></div></div>
         <div class="app-txt"><span class="app-k">01 · Acceso</span><h3>Portal y acceso único</h3><p>Se entra una vez y el portal muestra solo las apps de cada persona. Para abrir una app genera un pase firmado de un solo uso que vence en segundos.</p>
-          <ul class="ticks"><li>Pase firmado con HMAC por app: una clave filtrada solo sirve para su app.</li><li>Un motor único sirve a todas las apps nuevas, sin publicar nada.</li><li>Tablero con indicadores de todas las apps.</li></ul></div>
+          <ul class="ticks"><li>Pase firmado con HMAC por app: una clave filtrada solo sirve para su app.</li><li>Un motor único sirve a todas las apps nuevas, sin publicar nada.</li><li>Tablero con indicadores de todas las apps.</li></ul><a class="app-demo" href="demos.html#portal">Ver la app real</a></div>
       </div>
 
       <div id="ap-p2" class="view" data-dur="10">
@@ -1170,7 +1177,7 @@ footer a:hover { text-decoration: underline; }
             </div>
           </div></div></div>
         <div class="app-txt"><span class="app-k">02 · Empresas</span><h3>Asistente Comercial Empresas</h3><p>El vendedor pregunta como a un colega y el asistente responde con la documentación comercial: tarifas, fichas técnicas, SLA y certificaciones. Si detecta una cotización, la registra sola.</p>
-          <ul class="ticks"><li>RAG sobre presentaciones, documentos y PDF que se actualizan solos.</li><li>Crea la oportunidad con racks, kW, plazo y valores en UF.</li><li>Modelo de respaldo, registro de uso y valoración de cada respuesta.</li></ul></div>
+          <ul class="ticks"><li>RAG sobre presentaciones, documentos y PDF que se actualizan solos.</li><li>Crea la oportunidad con racks, kW, plazo y valores en UF.</li><li>Modelo de respaldo, registro de uso y valoración de cada respuesta.</li></ul><a class="app-demo" href="demos.html#asistente">Ver la app real</a></div>
       </div>
 
       <div id="ap-p3" class="view" data-dur="9">
@@ -1186,7 +1193,7 @@ footer a:hover { text-decoration: underline; }
             <div class="toast" data-t="5.4">10 de 10 operadores al día</div>
           </div></div></div>
         <div class="app-txt"><span class="app-k">03 · Mercado</span><h3>Scraper competitivo</h3><p>Cada día recorre los sitios de 10 operadores como lo haría una persona, extrae planes y precios, y los deja en un mismo formato para compararlos. Va en su versión 27.</p>
-          <ul class="ticks"><li>Navegador automático con Playwright y normalización con Gemini, cuidando el gasto de tokens.</li><li>Regla de calidad: el precio de la web siempre manda.</li><li>Pruebas automáticas por operador, histórico mensual y capturas de respaldo.</li></ul></div>
+          <ul class="ticks"><li>Navegador automático con Playwright y normalización con Gemini, cuidando el gasto de tokens.</li><li>Regla de calidad: el precio de la web siempre manda.</li><li>Pruebas automáticas por operador, histórico mensual y capturas de respaldo.</li></ul><a class="app-demo" href="demos.html#scraper">Ver la app real</a></div>
       </div>
 
       <div id="ap-p4" class="view" data-dur="9">
@@ -1204,7 +1211,7 @@ footer a:hover { text-decoration: underline; }
             <div class="bub b" data-t="4.2" style="margin-top:12px;max-width:100%">El Operador A es la oferta más baja en 600 Mbps. Ojo: es precio promocional y sube desde el séptimo mes.</div>
           </div></div></div>
         <div class="app-txt"><span class="app-k">04 · Mercado</span><h3>Comparador de Planes Residencial</h3><p>Toma lo que trae el scraper y lo convierte en lectura de mercado: dónde está cada oferta, qué incluye y cómo se mueve en el tiempo.</p>
-          <ul class="ticks"><li>Vistas de pulso, mercado, gráficos, histórico y terreno.</li><li>Análisis con IA que explica las cifras en lenguaje simple.</li><li>Ficha de cada plan y paleta de comandos para moverse rápido.</li></ul></div>
+          <ul class="ticks"><li>Vistas de pulso, mercado, gráficos, histórico y terreno.</li><li>Análisis con IA que explica las cifras en lenguaje simple.</li><li>Ficha de cada plan y paleta de comandos para moverse rápido.</li></ul><a class="app-demo" href="demos.html#comparador">Ver la app real</a></div>
       </div>
 
       <div id="ap-p5" class="view" data-dur="10">
@@ -1220,7 +1227,7 @@ footer a:hover { text-decoration: underline; }
             <div class="bub u" data-t="6.6" data-type style="margin-top:10px">¿Qué te frena más, el precio o la instalación?</div>
           </div></div></div>
         <div class="app-txt"><span class="app-k">05 · Ventas residencial</span><h3>Sala de Captación</h3><p>El CRM de la venta residencial: capta leads, los cruza con la base de clientes y los lleva por el embudo con roles y trazabilidad.</p>
-          <ul class="ticks"><li>Agente con Gemini para consultas y role play de ventas.</li><li>Aviso al ejecutivo cuando un cliente de su cartera aparece en una campaña.</li><li>Mapa de calor de la cartera y reportes de productividad.</li></ul></div>
+          <ul class="ticks"><li>Agente con Gemini para consultas y role play de ventas.</li><li>Aviso al ejecutivo cuando un cliente de su cartera aparece en una campaña.</li><li>Mapa de calor de la cartera y reportes de productividad.</li></ul><a class="app-demo" href="demos.html#sala">Ver la app real</a></div>
       </div>
 
       <div id="ap-p6" class="view" data-dur="9">
@@ -1233,7 +1240,7 @@ footer a:hover { text-decoration: underline; }
             </div>
           </div></div></div>
         <div class="app-txt"><span class="app-k">06 · Empresas</span><h3>Asesor Comercial Mayorista</h3><p>Reemplaza el seguimiento del segmento mayorista que se hacía en una plataforma anterior y suma un asesor con IA y un simulador para practicar la venta.</p>
-          <ul class="ticks"><li>Embudo de 5 etapas con arrastrar y soltar, y checklist obligatorio al cerrar.</li><li>Alarmas de seguimiento y avisos al equipo de la cuenta.</li><li>Al cerrar, deja lista la orden de venta y cruza las campañas de marketing.</li></ul></div>
+          <ul class="ticks"><li>Embudo de 5 etapas con arrastrar y soltar, y checklist obligatorio al cerrar.</li><li>Alarmas de seguimiento y avisos al equipo de la cuenta.</li><li>Al cerrar, deja lista la orden de venta y cruza las campañas de marketing.</li></ul><a class="app-demo" href="demos.html#mayorista">Ver la app real</a></div>
       </div>
 
       <div id="ap-p7" class="view" data-dur="10">
@@ -1253,7 +1260,7 @@ footer a:hover { text-decoration: underline; }
             </div>
           </div></div></div>
         <div class="app-txt"><span class="app-k">07 · Atención</span><h3>Journey MIA</h3><p>Herramienta para diseñar y revisar los recorridos de MIA, el asistente actual de WhatsApp, antes de llevarlos a producción, con vista previa tal como la verá el cliente.</p>
-          <ul class="ticks"><li>Recorridos residencial y empresas.</li><li>Vista previa navegable de cada mensaje y opción.</li><li>Base para los flujos que luego corren en el contact center.</li></ul></div>
+          <ul class="ticks"><li>Recorridos residencial y empresas.</li><li>Vista previa navegable de cada mensaje y opción.</li><li>Base para los flujos que luego corren en el contact center.</li></ul><a class="app-demo" href="demos.html#mia">Ver la app real</a></div>
       </div>
 
       </div>
